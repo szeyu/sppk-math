@@ -1,0 +1,207 @@
+
+/*////////////////// Global   ///////////////////////*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color:white;
+    padding: 15px;
+    font-size: 15px;
+    color: black;
+}
+
+/*///////////////////banner///////////////////////*/
+.banner{
+    text-align: center;
+    background-color: rgb(194, 247, 240);
+}
+
+.banner h1,h2{
+    background-color: rgb(194, 247, 240);
+}
+
+/*///////////////  Menu  /////////////////////*/
+.topnav {
+    overflow: hidden;               
+    background-color: rgb(63, 58, 56);    /*to make border with dark colour */
+    color: #f2f2f2;
+    /*position: fixed;*/
+}
+
+.topnav a{
+    float: left;                  /*make sure it stay at left*/
+    color: #f2f2f2;             /*text is light colour*/
+    text-align: center;           /*text in the middle*/
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.topnav a:hover{                    /*when pointer move to it, change background colour and text colour to black*/
+    background-color: rgb(99, 192, 161);
+    color: black;
+    cursor: pointer;
+}
+
+.topnav a:active{                   /*when click on it, change to darker background colour*/
+    background-color: rgba(145, 214, 219, 0.897);
+    color: black;
+}
+
+.active {                        /*to make (selected page) this word has different colour*/
+    background-color: rgb(69, 103, 143);
+}
+
+
+
+
+/*/////////////////// Login //////////////////////////*/
+.login {
+    text-align: center;
+    background-color: rgba(204, 255, 239, 0.596);
+    border: 0px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+.login h2,h3{
+    text-align: center;         /*to make it at the center*/
+}
+
+.login form{
+    text-align: center;         /*to make it at the center*/
+}
+
+.login img{
+    text-align: center;         /*to make it at the center*/
+    width: 30%;
+}
+
+.login input[type = password], input[type = text]{          /*input style*/
+    width: 50%;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid rgba(83, 82, 82, 0.527);
+
+}
+
+.login button{
+    background-color: rgb(36, 104, 173);            /*button style*/
+    color: #f2f2f2;
+    padding: 14px 25px;
+    margin: 8px 4px;
+    border: none;
+    cursor: pointer;
+    width: 24.3%;
+}
+
+.login button:hover{                /*thumbnail*/
+    opacity: 0.8;
+}
+
+.login p{
+    text-align: center;          /*to make it at the centre*/
+}
+
+
+
+
+
+
+/*///////////////////// Register ///////////////////////*/
+
+
+.register h1{
+    text-align: center;         /*to make it at the centre*/
+}
+.register {
+    text-align: center;
+    background-color: rgba(204, 255, 239, 0.596);
+    border: 0px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+.register form{
+    text-align: center;         /*to make it at the center*/
+}
+
+
+.register input[type = text], input[type = password]{          /*input style*/
+    width: 41%;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid rgba(83, 82, 82, 0.527);
+
+}
+
+.register button{
+    background-color: rgb(36, 104, 173);            /*button style*/
+    color: #f2f2f2;
+    padding: 14px 25px;
+    margin: 6px 4px;
+    border: none;
+    cursor: pointer;
+    width: 19.6%;
+}
+
+.register button:hover{                /*thumbnail*/
+    opacity: 0.8;
+}
+
+
+/*///////////////// Index Guru ////////////////////////*/
+
+.indexGuru{
+    background-color: white;
+    margin-left: auto;              
+    margin-right: auto;
+    margin-top: -15px;
+    width: 100%;
+    border: 0px;
+    
+}
+
+.indexGuru h1,h2,h3{
+    background-color: white;
+}
+
+/*///////////////// home Guru ////////////////////////*/
+
+.homeGuru{
+    background-color: white;
+    
+}
+
+
+/*//////////////////// log out /////////////////////////*/
+div.logOut{
+    float: right;
+}
+
+div.logOut a{
+    background-color: rgb(36, 104, 173);   /*button style*/
+    color: #f2f2f2;
+    padding: 14px 25px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+}
+
+div.logOut a:hover{                /*thumbnail*/
+    opacity: 0.8;
+}
+
+
