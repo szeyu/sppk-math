@@ -16,21 +16,22 @@
     <body class="login">
 
         <div class = "containerLogin">
-            <p style="background-color: rgba(154, 209, 191, 0.863); color: rgba(154, 209, 191, 0.863);"> . </p>
+            <p style="color: white;"> . </p>
             <!--
             <h2 style="background-color: rgba(154, 209, 191, 0.863);"> Selamat Datang Ke </h2>                        
             <h2 style="background-color: rgba(154, 209, 191, 0.863);"> Sistem Pengurusan Penilaian Kuiz </h2>
             -->
 
-            <h2 style="background-color: rgba(154, 209, 191, 0.863);"> Ilmu Di Hujung Jari </h2>  <!--some welcome messages-->                  
-            <h2 style="background-color: rgba(154, 209, 191, 0.863);"> Matematik Tingkatan 4(DLP) </h2>
+            <h2> Ilmu Di Hujung Jari </h2>  <!--some welcome messages-->                  
+            <h2> Matematik Tingkatan 4(DLP) </h2>
 
+            <!--
             <div class="containerError">
-                <?php foreach($errors as $error):?>
-                    <li class="alert-tag"><?php echo $error; ?></li>
-                <?php endforeach;?>
+                <?php //foreach($errors as $error):?>
+                    <li class="alert-tag"><?php //echo $error; ?></li>
+                <?php //endforeach;?>
             </div>
-
+            -->
             
 
             <form action="login.php" method="POST">
