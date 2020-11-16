@@ -7,21 +7,23 @@
     
     <head>
         <title> Laman Utama </title>
-        <link rel="stylesheet" href="mystyleMurid.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
+        <link rel="stylesheet" href="mystyleMurid.css">
     </head>
 
-    <body class="homeMurid">
+    <body>
+        <div class = "homeMurid">
 
-        <h1> Selamat Datang </h1>
-        <h2> info </h2>
-        <div class="containerInfo">
-            <p> nama: <?php echo $_SESSION['nama']; ?></p>
-            <p> Nombor Telefon: <?php echo $_SESSION['NoTel']; ?></p>
-            <p> Nombor IC: <?php echo $_SESSION['NoIC']; ?></p>
-            <p> peranan: <?php echo $_SESSION['peranan']; ?></p>
+            <h1> Selamat Datang </h1>
+            <hr>
+            <h2> Info: </h2>
+            <div class="containerInfo">
+                <pre> nama           : <?php echo $_SESSION['nama']; ?></pre>
+                <pre> Nombor Telefon : <?php echo $_SESSION['NoTel']; ?></pre>
+                <pre> Nombor IC      : <?php echo $_SESSION['NoIC']; ?></pre>
+                <pre> peranan        : <?php echo $_SESSION['peranan']; ?></pre>
+            </div>
         </div>
-
         
     </body>
 

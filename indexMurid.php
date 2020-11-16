@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 
 <!DOCTYPE html>
 
@@ -58,8 +62,15 @@
     <body class="indexMurid">
         <div id="contentMurid">             <!--put same content with laman utama-->
             <div class="homeMurid">
-                
+                <h1> Selamat Datang </h1>
+                <h2> Info: </h2>
 
+                <div class="containerInfo">
+                    <p> nama: <?php echo $_SESSION['nama']; ?></p>
+                    <p> Nombor Telefon: <?php echo $_SESSION['NoTel']; ?></p>
+                    <p> Nombor IC: <?php echo $_SESSION['NoIC']; ?></p>
+                    <p> peranan: <?php echo $_SESSION['peranan']; ?></p>
+                </div>
             </div>
         </div>
     </body>

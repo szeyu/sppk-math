@@ -83,3 +83,50 @@ div.logOut a{
 div.logOut a:hover{                /*thumbnail*/
     opacity: 0.8;
 }
+
+
+/*////////////////// Laman Utama ////////////////////////*/
+.homeMurid{
+    border-radius: 15px;
+    width: 50%;
+    float: left;
+    border: solid 2px #ccc;
+    background-color:rgba(172, 185, 189, 0.699);
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: auto;
+    padding: 20px;
+}
+
+.containerInfo {
+    border-radius: 5px;
+    background-color:#ccffe6;
+    margin: auto;
+    padding: 10px;
+    
+}
+
+
+/*
+#name {
+    top: 20px;
+    background-color: #4CAF50;
+}
+
+#telephone {
+    top: 80px;
+    background-color: #2196F3;
+}
+  
+#IC {
+    top: 140px;
+    background-color: #f44336;
+}
+  
+#role {
+    top: 200px;
+    background-color: #555
+}
+*/
+
