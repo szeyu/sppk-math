@@ -16,11 +16,13 @@
             <br>
             <br>
             
+            <!--
             <div class="container">
-                <?php foreach($errors as $error):?>
-                    <li class="alert-tag"><?php echo $error; ?></li>
-                <?php endforeach;?>
+                <?php //foreach($errors as $error):?>
+                    <li class="alert-tag"><?php //echo $error; ?></li>
+                <?php //endforeach;?>
             </div>
+            -->
 
             <form action="register.php" method="POST">
                 
