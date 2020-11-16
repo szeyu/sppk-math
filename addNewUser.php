@@ -23,24 +23,7 @@
             $NoTel = $_POST['NoTel'];                // get the value from what user type in NoTel
             $KataLaluanKesah = $_POST['KataLaluanKesah'];   // get the value from what user type in KataLaluanKesah
 
-            if (empty ($NoIC)){
-                header('Location: ./register.php?error=NoIC dikehendaki');
-                exit();
-            }elseif (empty ($nama)){
-                header('Location: ./register.php?error=Nama dikehendaki');
-                exit();
-            }elseif (empty ($NoTel)){
-                header('Location: ./register.php?error=Nombor telefon dikehendaki');
-                exit();
-            }elseif (empty ($KataLaluan)){
-                header('Location: ./register.php?error=KataLaluan dikehendaki');
-                exit();
-            }elseif (empty ($KataLaluankesah)){
-                header('Location: ./register.php?error=Kesahkan kata laluan anda');
-                exit();
-            }else{
-                echo "Valid input";
-            }
+            
 
             if (preg_match("/^[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[0-9]{2}[0-9]{4}$/" ,$NoIC)){  
             } else{
