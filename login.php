@@ -1,6 +1,10 @@
 <?php 
     require_once 'checkPassword.php';
 ?>
+
+<?php 
+    $NoIC = "";
+?>
 <!DOCTYPE html>
     
     <head>
@@ -11,21 +15,19 @@
     
     <body class="login">
 
-        <div style="background-color: rgba(154, 209, 191, 0.863);">
-            <p style="color: rgba(154, 209, 191, 0.863);"> . </p>
-            <h2 style="background-color: rgba(154, 209, 191, 0.66);"> Selamat Datang Ke </h2>                        <!--some welcome messages-->
-            <h2 style="background-color: rgba(154, 209, 191, 0.66);"> Sistem Pengurusan Penilaian Kuiz </h2>
-            <h3 style="background-color: rgba(154, 209, 191, 0.66);"> Ilmu Di Hujung Jari, Matematik Tingkatan 4(DLP) </h3>
+        <div class = "containerLogin">
+            <p style="background-color: rgba(154, 209, 191, 0.863); color: rgba(154, 209, 191, 0.863);"> . </p>
+            <h2 style="background-color: rgba(154, 209, 191, 0.863);"> Selamat Datang Ke </h2>                        <!--some welcome messages-->
+            <h2 style="background-color: rgba(154, 209, 191, 0.863);"> Sistem Pengurusan Penilaian Kuiz </h2>
+            <h3 style="background-color: rgba(154, 209, 191, 0.863);"> Ilmu Di Hujung Jari, Matematik Tingkatan 4(DLP) </h3>
             
-            <div class="container">
+            <div class="containerError">
                 <?php foreach($errors as $error):?>
                     <li class="alert-tag"><?php echo $error; ?></li>
                 <?php endforeach;?>
             </div>
 
-            <?php 
-                $NoIC = "";
-            ?>
+            
 
             <form action="login.php" method="POST">
                 <div>
