@@ -61,15 +61,15 @@ header {
 
 /*/////////////////// Login //////////////////////////*/
 .login {
-    text-align: center;
-    background-color: rgba(204, 255, 239, 0.596);
+    
+    background-color: rgba(85, 196, 161, 0.596);
     display: flex;
     border: 0px solid black;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
+    margin-top: 15px;
     margin-bottom: auto;
     /*width: 50%;*/
 }
@@ -100,7 +100,7 @@ header {
 }
 
 .login button{
-    background-color: rgb(36, 104, 173);            /*button style*/
+    background-color: rgb(54, 116, 179);            /*button style*/
     color: #f2f2f2;
     padding: 14px 25px;
     margin: 8px 4px;
@@ -121,10 +121,16 @@ header {
 .containerLogin {
     border-radius: 20px;
     width: 35%;
-    background-color: rgba(154, 209, 191, 0.863);;
+    background-color: white;
     border: solid 2px #ccc;
 }
 
+.login label{
+    color: #888;
+    font-size: 18px;
+    padding: 10px;
+    
+}
 
 
 
@@ -133,7 +139,7 @@ header {
 
 /*///////////////////// Register ///////////////////////*/
 .containerRegister{
-    background-color: rgba(154, 209, 191, 0.863);
+    background-color: white;
     text-align: center;
     width: 35%;
     border: solid 2px #ccc;
@@ -145,8 +151,8 @@ header {
     text-align: center;         /*to make it at the centre*/
 }
 .register {
-    text-align: center;
-    background-color: rgba(204, 255, 239, 0.596);
+    
+    background-color: rgba(85, 196, 161, 0.596);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +180,7 @@ header {
 }
 
 .register button{
-    background-color: rgb(36, 104, 173);            /*button style*/
+    background-color: rgb(54, 116, 179);            /*button style*/
     color: #f2f2f2;
     padding: 14px 25px;
     margin: 6px 4px;
@@ -186,6 +192,12 @@ header {
 
 .register button:hover{                /*thumbnail*/
     opacity: 0.8;
+}
+
+.register label{
+    color: #888;
+    font-size: 18px;
+    padding: 10px;
 }
 
 
