@@ -18,10 +18,10 @@
             <hr>
             <h2> Info: </h2>
             <div class="containerInfo">
-                <pre> nama           : <?php echo $_SESSION['nama']; ?></pre>
-                <pre> Nombor Telefon : <?php echo $_SESSION['NoTel']; ?></pre>
-                <pre> Nombor IC      : <?php echo $_SESSION['NoIC']; ?></pre>
-                <pre> peranan        : <?php echo $_SESSION['peranan']; ?></pre>
+                <pre id="name"> Nama                  :  <?php echo $_SESSION['nama']; ?></pre>
+                <pre id="telephone"> Nombor Telefon  :  <?php echo $_SESSION['NoTel']; ?></pre>
+                <pre id="IC"> Nombor IC          :  <?php echo $_SESSION['NoIC']; ?></pre>
+                <pre id="role"> peranan              :  <?php echo $_SESSION['peranan']; ?></pre>
             </div>
         </div>
         
