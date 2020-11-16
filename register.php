@@ -15,6 +15,7 @@
         <h2> Sila isikan borang pendaftaran tersebut </h2>       <!--Instruction-->
         <br>
         <br>
+        
         <div class="container">
             <?php foreach($errors as $error):?>
                 <li class="alert-tag"><?php echo $error; ?></li>
