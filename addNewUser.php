@@ -13,13 +13,7 @@
             echo "Failed to connect to MySQL: " . mysqli_connect_error();    //show errror if unable to connect
             exit();
         }
-        
-        $NoIC = "";
-        $KataLaluan = "";
-        $nama = "";
-        $NoTel = "";
-        $KataLaluanKesah = "";
-        $errors = array();
+    
         
         if(isset($_POST['register-button'])){
             
@@ -29,64 +23,87 @@
             $NoTel = $_POST['NoTel'];                // get the value from what user type in NoTel
             $KataLaluanKesah = $_POST['KataLaluanKesah'];   // get the value from what user type in KataLaluanKesah
 
+            if (empty ($NoIC)){
+                header('Location: ./register.php?error=NoIC dikehendaki');
+                exit();
+            }elseif (empty ($nama)){
+                header('Location: ./register.php?error=Nama dikehendaki');
+                exit();
+            }elseif (empty ($NoTel)){
+                header('Location: ./register.php?error=Nombor telefon dikehendaki');
+                exit();
+            }elseif (empty ($KataLaluan)){
+                header('Location: ./register.php?error=KataLaluan dikehendaki');
+                exit();
+            }elseif (empty ($KataLaluankesah)){
+                header('Location: ./register.php?error=Kesahkan kata laluan anda');
+                exit();
+            }else{
+                echo "Valid input";
+            }
+
             if (preg_match("/^[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[0-9]{2}[0-9]{4}$/" ,$NoIC)){  
             } else{
-                $errors['NoIC'] =   "NoIC dalam format salah";
+                //$errors['NoIC'] =   "NoIC dalam format salah";
+                header('Location: ./register.php?error=NoIC dalam format yang salah');
+                exit();
             }
             
             if (preg_match("/^[0]{1}[1]{1}[0-9]{1}([0-9]{7}|[0-9]{8})$/",$NoTel)){
             }else {
-                $errors['NoTel'] = "Nombor telefon dalam format yang salah";
+                header('Location: ./register.php?error=Nombor telefon dalam format yang salah');
+                exit();
             }
 
             if ($KataLaluan != $KataLaluanKesah){
-                $errors['KataLaluan'] = "Kedua-dua kata laluan tidak sama"
+                header('Location: ./register.php?error=Kedua-dua kata laluan tidak sama');
+                exit();
             }
 
 
-            if(count($errors) == 0){
-                // select all with the NoIC and Password same with what user type in (to check whether alr exst or not)
-                $checkExistanceSQL = "SELECT * FROM PENGGUNA WHERE NoIC = '".$NoIC."'OR KataLaluan = '".$KataLaluan."' OR NoTel = '".$NoTel."' LIMIT 1";
+            
+            // select all with the NoIC and Password same with what user type in (to check whether alr exst or not)
+            $checkExistanceSQL = "SELECT * FROM PENGGUNA WHERE NoIC = '".$NoIC."'OR KataLaluan = '".$KataLaluan."' OR NoTel = '".$NoTel."' LIMIT 1";
 
 
-                $result = mysqli_query($con,$checkExistanceSQL);         // run the checkexist
+            $result = mysqli_query($con,$checkExistanceSQL);         // run the checkexist
 
-                if(mysqli_num_rows($result) != 0){   //if got show result  (that mean alr exist this account)
+            if(mysqli_num_rows($result) != 0){   //if got show result  (that mean alr exist this account)
 
-                    //echo ("can work");
-                    //echo file_get_contents("indexGuru.html");
+                //echo ("can work");
+                //echo file_get_contents("indexGuru.html");
 
-                    echo '<script> alert("Pengguna tersebut sudah dalam pangkalan data!") </script>';
-                    echo file_get_contents("register.php");    //kick him back to sign up form
+                echo '<script> alert("Pengguna tersebut sudah dalam pangkalan data!") </script>';
+                echo file_get_contents("register.php");    //kick him back to sign up form
                     
-                    exit();
-                }
-                else {                                        //add user detail in database
-                    //echo("cannot work");
-
-                    $perananAuto = "murid";
-                    $addDataToPengguna = "INSERT INTO PENGGUNA (NoIC, KataLaluan, peranan, NoTel) VALUES ('".$NoIC."','".$KataLaluan."','".$perananAuto."','".$NoTel."')";
-                    $addDataToTelefon = "INSERT INTO TELEFON (NoTel, nama) VALUES ('".$NoTel."', '".$nama."')";
-
-                    mysqli_query($con, $addDataToPengguna);       //run addDataToPengguna
-                    mysqli_query($con, $addDataToTelefon);       //run addDataToTelefon
-
-                    /*
-                    if(mysqli_query($con, $addDataToTelefon)){   
-                        echo("succesfully added to telefon table");
-                    }
-                    */       
-                    
-                    echo '<script> alert("Berjaya didaftarkan!") </script>';
-                    echo file_get_contents("login.php");       // direct user to login page to login
-
-                    exit();
-                }
+                exit();
             }
+            else {                                        //add user detail in database
+                //echo("cannot work");
+
+                $perananAuto = "murid";
+                $addDataToPengguna = "INSERT INTO PENGGUNA (NoIC, KataLaluan, peranan, NoTel) VALUES ('".$NoIC."','".$KataLaluan."','".$perananAuto."','".$NoTel."')";
+                $addDataToTelefon = "INSERT INTO TELEFON (NoTel, nama) VALUES ('".$NoTel."', '".$nama."')";
+
+                mysqli_query($con, $addDataToPengguna);       //run addDataToPengguna
+                mysqli_query($con, $addDataToTelefon);       //run addDataToTelefon
+
+                /*
+                if(mysqli_query($con, $addDataToTelefon)){   
+                    echo("succesfully added to telefon table");
+                }
+                */       
+                    
+                echo '<script> alert("Berjaya didaftarkan!") </script>';
+                echo file_get_contents("login.php");       // direct user to login page to login
+
+                exit();
+            }
+            
 
 
         }
-        mysqli_close($con);        //disconnect
+        //mysqli_close($con);        //disconnect
         
 
     ?>
