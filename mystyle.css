@@ -69,7 +69,7 @@ header {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: auto;
     /*width: 50%;*/
 }
@@ -132,8 +132,20 @@ header {
     
 }
 
+.errorLogin{
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: rgba(248, 43, 43, 0.336);
+    color: #A94442;
+    border-radius: 5px;
+    border: none;
+    width: 75%;
+    padding: 9px;
+}
 
-
+.errorLogin:hover{
+    box-shadow: 0 0 2px 1px rgba(248, 38, 38, 0.589);
+}
 
 
 
@@ -198,6 +210,21 @@ header {
     color: #888;
     font-size: 18px;
     padding: 10px;
+}
+
+.errorRegister{
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: rgba(248, 43, 43, 0.336);
+    color: #A94442;
+    border-radius: 5px;
+    border: none;
+    width: 75%;
+    padding: 9px;
+}
+
+.errorRegister:hover{
+    box-shadow: 0 0 2px 1px rgba(248, 38, 38, 0.589);
 }
 
 
