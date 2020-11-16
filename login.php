@@ -2,9 +2,6 @@
     require_once 'checkPassword.php';
 ?>
 
-<?php 
-    $NoIC = "";
-?>
 <!DOCTYPE html>
     
     <head>
@@ -39,12 +36,17 @@
                     <img src="Image/user icon.png">        <!--user icon-->
                 </div>
                 <br>
+                 
+                <?php if (isset($_GET['error'])){ ?>
+                    <p class="errorLogin"><?php echo $_GET['error'];?></p>
+                <?php } ?>
+                
                 <div>
                 <label for="NoIC"> Nombor IC: </label> <br>         <!--ask user to input NoIC-->
-                <input type="text" placeholder="04041714****" value = "<?php echo $NoIC?>" id = "NoIC" name="NoIC" value="" required><br>
+                <input type="text" placeholder="04041714****" id = "NoIC" name="NoIC" value=""><br>
                 <br>
                 <label for="KataLaluan"> Kata Laluan: </label> <br>     <!--ask user to input password-->
-                <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan" value="" required><br>
+                <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan"><br>
                 <br>
                 <button type="submit" name="login-button"> Log Masuk </button>    <!--login button-->
                 <button type="reset" value="reset"> semula </button>     <!--reset the value if type wrong -->
