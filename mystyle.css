@@ -63,12 +63,15 @@ header {
 .login {
     text-align: center;
     background-color: rgba(204, 255, 239, 0.596);
+    display: flex;
     border: 0px solid black;
+    justify-content: center;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    width: 50%;
+    /*width: 50%;*/
 }
 
 .login h2,h3{
@@ -110,6 +113,14 @@ header {
 .login p{
     text-align: center;          /*to make it at the centre*/
 }
+
+.containerLogin {
+    border-radius: 20px;
+    width: 40%;
+    background-color: rgba(154, 209, 191, 0.863);;
+    border: solid 2px #ccc;
+}
+
 
 
 
