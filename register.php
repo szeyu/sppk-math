@@ -9,8 +9,8 @@
         <div class = "containerRegister">
             <br>
             <a href="login.php" style="color: white;"><button type="button" style="float: left;"> Balik </button></a>  <!--back to login button-->
-            <p style="color: rgba(154, 209, 191, 0.863);"> . </p>       <!--to make it space down-->
-            <p style="color: rgba(154, 209, 191, 0.863);"> . </p>       <!--to make it space down-->
+            <p style="color: white;"> . </p>       <!--to make it space down-->
+            <p style="color: white;"> . </p>       <!--to make it space down-->
 
             <h2> Sila isikan borang pendaftaran tersebut </h2>       <!--Instruction-->
             <br>
@@ -25,21 +25,25 @@
             -->
 
             <form action="register.php" method="POST">
-                
+
+                <?php if (isset($_GET['error'])){ ?>
+                    <p class="errorRegister"><?php echo $_GET['error'];?></p>
+                <?php } ?>
+
                 <label for="NoIC"> Nombor IC: </label> <br>         <!--ask user to input NoIC-->
-                <input type="text" placeholder="04041714****" id = "newNoIC" name="newNoIC" value="" required><br>
+                <input type="text" placeholder="04041714****" id = "newNoIC" name="newNoIC" value=""><br>
                 <br>
                 <label for="nama"> Nama: </label> <br>     <!--ask user to input Nama-->
-                <input type="text" placeholder="Masukkan nama anda" id = "nama" name="nama" value="" required><br>
+                <input type="text" placeholder="Masukkan nama anda" id = "nama" name="nama" value=""><br>
                 <br>
                 <label for="NoTel"> Nombor Telefon: </label> <br>     <!--ask user to input NoTel-->
-                <input type="text" placeholder="Masukkan nombor telefon anda" id = "NoTel" name="NoTel" value="" required><br>
+                <input type="text" placeholder="Masukkan nombor telefon anda" id = "NoTel" name="NoTel" value=""><br>
                 <br>
                 <label for="KataLaluan"> Kata Laluan: </label> <br>     <!--ask user to input password-->
-                <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan" required><br>
+                <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan"><br>
                 <br>
                 <label for="KataLaluanKesah"> Kesahkan Kata Laluan: </label> <br>     <!--ask user to input password-->
-                <input type="password" placeholder="Kesahkan kata lauan anda" id = "KataLaluanKesah" name="KataLaluanKesah" required><br>
+                <input type="password" placeholder="Kesahkan kata lauan anda" id = "KataLaluanKesah" name="KataLaluanKesah"><br>
                 <br>
                 <button type="submit" name="register-button"> Daftar </button>    <!--register button-->
                 <button type="reset" value="reset"> semula </button>     <!--reset the value if type wrong -->
