@@ -40,7 +40,7 @@
             }
 
             if ($KataLaluan != $KataLaluanKesah){
-                $errors['KataLaluan'] = "Kedua-dua kata laluan tidak sama"
+                $errors['KataLaluan'] = "Kedua-dua kata laluan tidak sama";
             }
 
 
