@@ -56,9 +56,11 @@
     </head>
 
     <body class="indexMurid">
-        <div id="contentMurid">
-            <h1>Selamat datang</h1>         <!--put same content with laman utama-->
-        
+        <div id="contentMurid">             <!--put same content with laman utama-->
+            <div class="homeMurid">
+                
+
+            </div>
         </div>
     </body>
 

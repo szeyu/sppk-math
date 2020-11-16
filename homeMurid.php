@@ -9,7 +9,10 @@
 
     <body class="homeMurid">
 
-        <h2> this is laman utama Murid</h2>
+        <h1> Selamat Datang </h1>
+        <br>
+        <h2> info </h2>
+        
         
     </body>
 
