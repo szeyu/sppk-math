@@ -88,11 +88,14 @@ header {
 }
 
 .login input[type = password], input[type = text]{          /*input style*/
-    width: 50%;
+    display: block;
+    width: 75%;
     padding: 12px 20px;
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid rgba(83, 82, 82, 0.527);
+    margin: 5px auto;
+    border-radius: 5px;
 
 }
 
@@ -103,7 +106,8 @@ header {
     margin: 8px 4px;
     border: none;
     cursor: pointer;
-    width: 24.3%;
+    width: 36%;
+    border-radius: 5px;
 }
 
 .login button:hover{                /*thumbnail*/
@@ -116,7 +120,7 @@ header {
 
 .containerLogin {
     border-radius: 20px;
-    width: 40%;
+    width: 35%;
     background-color: rgba(154, 209, 191, 0.863);;
     border: solid 2px #ccc;
 }
@@ -128,6 +132,13 @@ header {
 
 
 /*///////////////////// Register ///////////////////////*/
+.containerRegister{
+    background-color: rgba(154, 209, 191, 0.863);
+    text-align: center;
+    width: 35%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+}
 
 
 .register h1{
@@ -136,12 +147,15 @@ header {
 .register {
     text-align: center;
     background-color: rgba(204, 255, 239, 0.596);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0px solid black;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    width: 50%;
+    /*width: 35%;*/
 }
 
 .register form{
@@ -150,11 +164,12 @@ header {
 
 
 .register input[type = text], input[type = password]{          /*input style*/
-    width: 41%;
+    width: 75%;
     padding: 12px 20px;
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid rgba(83, 82, 82, 0.527);
+    border-radius: 5px;
 
 }
 
@@ -165,7 +180,8 @@ header {
     margin: 6px 4px;
     border: none;
     cursor: pointer;
-    width: 19.6%;
+    width: 36.2%;
+    border-radius: 5px;
 }
 
 .register button:hover{                /*thumbnail*/
