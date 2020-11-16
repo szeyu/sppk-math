@@ -58,6 +58,7 @@
             if ($KataLaluan != $KataLaluanKesah){
                 header('Location: ./register.php?error=Kedua-dua kata laluan tidak sama');
                 exit();
+
             }
 
 
