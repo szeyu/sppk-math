@@ -1,3 +1,7 @@
+<?php
+    //require_once "checkPassword.php";
+    session_start(); // set up global variable
+?>
 
 <!DOCTYPE html>
     
@@ -10,9 +14,14 @@
     <body class="homeMurid">
 
         <h1> Selamat Datang </h1>
-        <br>
         <h2> info </h2>
-        
+        <div class="containerInfo">
+            <p> nama: <?php echo $_SESSION['nama']; ?></p>
+            <p> Nombor Telefon: <?php echo $_SESSION['NoTel']; ?></p>
+            <p> Nombor IC: <?php echo $_SESSION['NoIC']; ?></p>
+            <p> peranan: <?php echo $_SESSION['peranan']; ?></p>
+        </div>
+
         
     </body>
 

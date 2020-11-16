@@ -15,6 +15,7 @@
                 exit();
             }
             
+            session_start(); //set up global variable
 
             if(isset($_POST['login-button'])){
                 
