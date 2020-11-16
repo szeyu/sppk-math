@@ -146,18 +146,22 @@ div.logOut a:hover{                /*thumbnail*/
 
 #name:hover {
     box-shadow: 0 0 4px 2px rgba(0, 129, 69, 0.5);
+    cursor: pointer;
 }
 
 #telephone:hover {
     box-shadow: 0 0 4px 2px rgba(0, 92, 122, 0.5);
+    cursor: pointer;
 }
   
 #IC:hover {
     box-shadow: 0 0 4px 2px rgba(184, 10, 4, 0.5);
+    cursor: pointer;
 }
   
 #role:hover {
     box-shadow: 0 0 4px 2px rgba(56, 56, 56, 0.5);
+    cursor: pointer;
 }
 
 
