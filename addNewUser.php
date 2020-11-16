@@ -77,7 +77,7 @@
                 */       
                     
                 echo '<script> alert("Berjaya didaftarkan!") </script>';
-                echo file_get_contents("login.php");       // direct user to login page to login
+                header('Location: ./login.php');       // direct user to login page to login
 
                 exit();
             }

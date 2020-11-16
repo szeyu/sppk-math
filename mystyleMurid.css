@@ -89,10 +89,10 @@ div.logOut a:hover{                /*thumbnail*/
 .homeMurid{
     border-radius: 15px;
     width: 50%;
-    float: left;
+    align-items: center;
     border: solid 2px #ccc;
     background-color:rgba(172, 185, 189, 0.699);
-    margin-left: 40px;
+    margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: auto;
