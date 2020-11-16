@@ -54,12 +54,10 @@
 
             if(mysqli_num_rows($result) != 0){   //if got show result  (that mean alr exist this account)
 
-                //echo ("can work");
-                //echo file_get_contents("indexGuru.html");
-
-                echo '<script> alert("Pengguna tersebut sudah dalam pangkalan data!") </script>';
-                echo file_get_contents("register.php");    //kick him back to sign up form
-                    
+               
+                //echo '<script> alert("Pengguna tersebut sudah dalam pangkalan data!") </script>';
+                //echo file_get_contents("register.php");    //kick him back to sign up form
+                header('Location: ./register.php?error=Pengguna tersebut sudah dalam pangkalan data');
                 exit();
             }
             else {                                        //add user detail in database

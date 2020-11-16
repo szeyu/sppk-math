@@ -1,3 +1,6 @@
+<?php 
+    require_once 'addNewUser.php';
+?>
 
 <html>
     <head>
@@ -51,7 +54,7 @@
                 
             
             </form>
-            <p style="color: rgba(154, 209, 191, 0.863);"> . </p>   <!--to make it space down-->
+            <p style="color: white;"> . </p>   <!--to make it space down-->
         </div>
     </body>
 </html>
