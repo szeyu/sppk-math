@@ -337,6 +337,8 @@ div.logOut a{
     margin: auto;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 div.logOut a:hover{                /*thumbnail*/
@@ -344,3 +346,79 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 
+/*////////////////////// Sedia Kuiz /////////////////////////////*/
+.createGuruContainer{
+    background-color: white;
+    align-items: center;
+    width: 90%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    text-align: right;
+}
+
+.createGuru {
+    
+    background-color: rgba(85, 196, 161, 0.596);
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    /*width: 35%;*/
+}
+
+
+.createGuruContainer form{
+    align-items: center;        /*to make it at the center*/
+}
+
+
+.createGuruContainer input[type = text]{          /*input style*/
+    width: 75%;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid rgba(83, 82, 82, 0.527);
+    border-radius: 5px;
+    margin-right: 14%;
+
+}
+
+.createGuruContainer button{
+    background-color: rgb(54, 116, 179);            /*button style*/
+    color: #f2f2f2;
+    padding: 14px 25px;
+    margin: 6px 4px;
+    border: none;
+    cursor: pointer;
+    width: 18%;
+    border-radius: 5px;
+    float: left;
+    margin-left: 10px;
+}
+
+.createGuruContainer button:hover{                /*thumbnail*/
+    opacity: 0.8;
+}
+
+.createGuruContainer label{
+    color: #888;
+    font-size: 18px;
+    padding: 10px;
+    float: left;
+}
+
+.pilihanBox {
+    width: 30%;
+}
+
+.pilihanBox input[type = text]{
+    margin-right: auto;
+}
