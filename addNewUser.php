@@ -1,18 +1,7 @@
 <html>
     <body>
         <?php
-        
-        $host = "localhost";
-        $user =  "root";
-        $password = "";
-        $db = "sppk math";
-
-        $con = mysqli_connect($host,$user,$password,$db);   //connect to localhost server
-
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();    //show errror if unable to connect
-            exit();
-        }
+        require "connectPHP.php";
     
         
         if(isset($_POST['register-button'])){
@@ -64,11 +53,11 @@
                 //echo("cannot work");
 
                 $perananAuto = "murid";
-                $addDataToPengguna = "INSERT INTO PENGGUNA (NoIC, KataLaluan, peranan, NoTel) VALUES ('".$NoIC."','".$KataLaluan."','".$perananAuto."','".$NoTel."')";
-                $addDataToTelefon = "INSERT INTO TELEFON (NoTel, nama) VALUES ('".$NoTel."', '".$nama."')";
+                $addDataToPengguna = "INSERT INTO PENGGUNA (NoIC, KataLaluan, peranan, NoTel, nama) VALUES ('".$NoIC."','".$KataLaluan."','".$perananAuto."','".$NoTel."', '".$nama."')";
+                //$addDataToTelefon = "INSERT INTO TELEFON (NoTel, nama) VALUES ('".$NoTel."', '".$nama."')";
 
                 mysqli_query($con, $addDataToPengguna);       //run addDataToPengguna
-                mysqli_query($con, $addDataToTelefon);       //run addDataToTelefon
+                //mysqli_query($con, $addDataToTelefon);       //run addDataToTelefon
 
                 /*
                 if(mysqli_query($con, $addDataToTelefon)){   

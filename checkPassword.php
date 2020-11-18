@@ -3,17 +3,7 @@
     <body>
         <?php
        
-            $host = "localhost";
-            $user =  "root";
-            $password = "";
-            $db = "sppk math";
-
-            $con = mysqli_connect($host,$user,$password,$db);   //connect to localhost server
-
-            if (mysqli_connect_errno()) {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();    //show errror if unable to connect
-                exit();
-            }
+            require "connectPHP.php";
             
             session_start(); //set up global variable
 
@@ -47,6 +37,7 @@
 
                     if($row = mysqli_fetch_assoc($result)){
 
+                        /*
                         //find nama with NoTel(Kunci Primer)
                         $findNamaSQL = "SELECT * FROM TELEFON WHERE NoTel = '".$row['NoTel']."'LIMIT 1";
                         $resultInTelefon = mysqli_query($con,$findNamaSQL);    // query
@@ -58,11 +49,15 @@
                         }else{
                             echo "Pls check your database, database not atomic";  //cannot no telefon in table if like that db crash
                         }
+                        */
+
+
                         
                         //set global variable
                         $_SESSION['NoIC'] = $row['NoIC'];
                         $_SESSION['peranan'] = $row['peranan'];
                         $_SESSION['NoTel'] = $row['NoTel'];
+                        $_SESSION['nama'] = $row['nama'];
 
 
                         if($row['peranan'] == 'murid'){        // if peranan is murid, it will login as murid
