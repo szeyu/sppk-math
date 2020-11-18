@@ -337,7 +337,7 @@ div.logOut a{
     margin: auto;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-right: 10px;
 }
 
@@ -423,3 +423,27 @@ div.logOut a:hover{                /*thumbnail*/
     margin-right: auto;
 }
 
+.jawapanBox{
+    float: left;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    /*border: 2px solid #ccc;*/
+    width: 15.7%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: auto;
+
+
+}
+
+.jawapanBox select{
+    border-radius: 5px;
+    border: 2px solid rgba(83, 82, 82, 0.527);
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin-top: 2px;
+}

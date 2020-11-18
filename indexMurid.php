@@ -31,10 +31,10 @@
         
 
         <!--Top navigation bar with index murid active-->
-        <div class="topnav">
-            <a class="active" onclick="homeMurid()">Laman Utama</a>     
-            <a onclick="collectionMurid()">Koleksi Kuiz</a>
-            <a onclick="checkMurid()">Prestasi Sendiri</a>
+        <div id="topnav" class="topnav">
+            <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
+            <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
+            <a class="active-button" onclick="checkMurid()">Prestasi Sendiri</a>
         </div>
 
 
@@ -42,6 +42,21 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous" ></script>
+
+        <script>
+            var header = document.getElementById("topnav");
+            var activeButton = header.getElementsByClassName("active-button");
+            for (var i = 0; i < activeButton.length; i++) {
+                activeButton[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) { 
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                this.className += " active";
+                });
+            }
+        
+        </script>
 
         <script>
             function homeMurid(){

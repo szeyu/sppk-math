@@ -19,9 +19,53 @@
                 <form action="createGuru.php" method ="POST">
                     <br>
                     <div class="tajukBox">
+                        <label for="subTopik"> Sub Topik :</label>
+                        <input type="text" placeholder="sub topik" name="subTopik" list="subTopik">
+                        <datalist id="subTopik">
+                            <option value="1.1"></option>
+                            <option value="2.1"></option>
+                            <option value="3.1"></option>
+                            <option value="3.2"></option>
+                            <option value="4.1"></option>
+                            <option value="4.2"></option>
+                            <option value="4.3"></option>
+                            <option value="5.1"></option>
+                            <option value="6.1"></option>
+                            <option value="7.1"></option>
+                            <option value="7.2"></option>
+                            <option value="8.1"></option>
+                            <option value="8.2"></option>
+                            <option value="9.1"></option>
+                            <option value="9.2"></option>
+                            <option value="9.3"></option>
+                            <option value="9.4"></option>
+                            <option value="10.1"></option>
+                            <option value="revision"></option>
+                        </datalist>
                         <label for="tajuk"> Tajuk :</label>
-                        <input type="text" placeholder="Tajuk" id="tajuk" name="tajuk">
-                    <div>
+                        <input type="text" placeholder="Tajuk" name="tajuk" list="tajuk">
+                        <datalist id="tajuk">
+                            <option value="Quadratic Function and Equations"></option>
+                            <option value="Number Base"></option>
+                            <option value="Statements"></option>
+                            <option value="Arguments"></option>
+                            <option value="Intersection of Sets"></option>
+                            <option value="Union of Sets"></option>
+                            <option value="Combined Operation on Sets"></option>
+                            <option value="Network"></option>
+                            <option value="Linear Inequalities in Two Variables"></option>
+                            <option value="Systems of Linear Inequalities in Two Variables"></option>
+                            <option value="Distance-Time Graphs"></option>
+                            <option value="Dispersion"></option>
+                            <option value="Measure of Dispersion"></option>
+                            <option value="Combined Event"></option>
+                            <option value="Dependent Events and Independent Events"></option>
+                            <option value="Mutually EXclusive Events and Non-Mutually Exclusive Events"></option>
+                            <option value="Aplication of Probability of Combined Events"></option>
+                            <option value="Financial Planning of combined Events"></option>
+                        </datalist>
+                       
+                    </div>
                     <br>
                     <br>
                     <hr>
@@ -29,11 +73,18 @@
                     <label for="soalan"> Soalan 1 :</label>
                     <input type="text" placeholder="Soalan 1" id="s0001" name="s0001"><br>
                     <br>
-                    <label for="jawapan"> Jawapan :</label>
-                    <input type="text" placeholder="Jawapan Soalan 1" id="jawapan" name="jawapan"><br>
+                    <div class="jawapanBox">
+                        <label for="jawapan"> Jawapan :</label>
+                        <!-- <input type="text" placeholder="Jawapan Soalan 1" id="jawapan" name="jawapan"><br>-->
+                        <select>
+                            <option value="A"> A </option>
+                            <option value="B"> B </option>
+                            <option value="C"> C </option>
+                            <option value="D"> D </option>
+                        </select> 
+                    </div>
                     <br>
-                    <label for="tahap"> Tahap :</label>
-                    <input type="text" placeholder="Tahap Soalan 1" id="tahap" name="tahap"><br>
+                    <br>
                     <br>
                     <div class="pilihanBox">
                         <label for="pilihanA"> pilihan A :</label>
