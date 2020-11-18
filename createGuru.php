@@ -3,6 +3,11 @@
     
 ?>
 
+<script>
+    //set up global variable
+    var noSoalanCounter = 1;
+</script>
+
 <!DOCTYPE html>
     <head>
         <title> Create Quiz </title>
@@ -71,10 +76,10 @@
                     <hr>
                     <br>
                     <label for="soalan"> Soalan 1 :</label>
-                    <input type="text" placeholder="Soalan 1" id="s0001" name="s0001"><br>
+                    <input type="text" placeholder="Soalan 1" id="soalan1" name="soalan1"><br>
                     <br>
                     <div class="jawapanBox">
-                        <label for="jawapan"> Jawapan :</label>
+                        <label for="jawapan" name="jawapan1" id="jawapan1"> Jawapan :</label>
                         <!-- <input type="text" placeholder="Jawapan Soalan 1" id="jawapan" name="jawapan"><br>-->
                         <select>
                             <option value="A"> A </option>
@@ -88,23 +93,99 @@
                     <br>
                     <div class="pilihanBox">
                         <label for="pilihanA"> pilihan A :</label>
-                        <input type="text" placeholder="pilihan A Soalan1" id="pilihanASoalan1" name="pilihanASoalan1">
+                        <input type="text" placeholder="Pilihan A Soalan 1" id="pilihanA1" name="pilihanA1">
                         <label for="pilihanB"> pilihan B :</label>
-                        <input type="text" placeholder="pilihan B Soalan1" id="pilihanBSoalan1" name="pilihanBSoalan1">
+                        <input type="text" placeholder="Pilihan B Soalan 1" id="pilihanB1" name="pilihanB1">
                         <label for="pilihanC"> pilihan C :</label>
-                        <input type="text" placeholder="pilihan C Soalan1" id="pilihanCSoalan1" name="pilihanCSoalan1">
+                        <input type="text" placeholder="Pilihan C Soalan 1" id="pilihanC1" name="pilihanC1">
                         <label for="pilihanD"> pilihan D :</label>
-                        <input type="text" placeholder="pilihan D Soalan1" id="pilihanDSoalan1" name="pilihanDSoalan1"><br>
+                        <input type="text" placeholder="Pilihan D Soalan 1" id="pilihanD1" name="pilihanD1">
+                        <br>
                     </div>
                     <br>
-                    <button name="add-question-button"> Tambah (+) </button><br>
                     <br>
-                    <br>
-                    <br>
-                    <button type="submit" name="register-quiz-button"> Muat Naik </button>
-                    <p style="color: white;">.</P>
-                    <br>
+                    
                 </form>
+                <!-- add new soalan here -->
+                <p id="soalanDitambah"></p>
+                <script>
+                    noSoalanCounter++;
+                    var noSoalan = "soalan" + noSoalanCounter;
+                    var down = document.getElementById("soalanDitambah");
+
+                    // create <br> element
+                    var br =document.createElement("br");
+
+                    function tambahSoalan(){
+
+                        // create form element
+                        var form = document.createElement("form");
+                        form.setAttribute("method","POST");
+                        form.setAttribute("action","createGuru.php");
+
+                        // Create input element
+                        var soalan = document.createElement("input");
+                        soalan.setAttribute("type","text");
+                        soalan.setAttribute("placeholder","Soalan " + noSoalan);
+                        soalan.setAttribute("id",noSoalan);
+                        soalan.setAttribute("name",noSoalan);
+
+                        var jawapan = document.createElement("select");
+                        var jawapanABCD = document.createElement("option");
+                        // add A
+                        jawapanABCD.text = "A";
+                        jawapan.add(pilihanABCD);
+                        // add B
+                        jawapanABCD.text = "B";
+                        jawapan.add(pilihanABCD);
+                        // add C
+                        jawapanABCD.text = "C";
+                        jawapan.add(pilihanABCD);
+                        // add D
+                        jawapanABCD.text = "D";
+                        jawapan.add(pilihanABCD);
+
+                        //input for pilihan A
+                        var pilihanA = document.createElement("input");
+                        pilihanA.setAttribute("type","text");
+                        pilihanA.setAttribute("placeholder","Pilihan A Soalan " + noSoalan);
+                        pilihanA.setAttribute("id","pilihanA" + noSoalan);
+                        pilihanA.setAttribute("name","pilihanA" + noSoalan);
+                        
+                        //input for pilihan B
+                        var pilihanB = document.createElement("input");
+                        pilihanB.setAttribute("type","text");
+                        pilihanB.setAttribute("placeholder","Pilihan B Soalan " + noSoalan);
+                        pilihanB.setAttribute("id","pilihanA" + noSoalan);
+                        pilihanB.setAttribute("name","pilihanA" + noSoalan);
+                        
+                        //input for pilihan C
+                        var pilihanC = document.createElement("input");
+                        pilihanC.setAttribute("type","text");
+                        pilihanC.setAttribute("placeholder","Pilihan C Soalan " + noSoalan);
+                        pilihanC.setAttribute("id","pilihanA" + noSoalan);
+                        pilihanC.setAttribute("name","pilihanA" + noSoalan);
+                        
+                        //input for pilihan D
+                        var pilihanD = document.createElement("input");
+                        pilihanD.setAttribute("type","text");
+                        pilihanD.setAttribute("placeholder","Pilihan D Soalan " + noSoalan);
+                        pilihanD.setAttribute("id","pilihanA" + noSoalan);
+                        pilihanD.setAttribute("name","pilihanA" + noSoalan);
+
+                        
+                        
+                    }
+                </script>
+
+                <!-- when clicked then add create quiz form below -->
+                <a name="add-question-button" onclick="tambahSoalan()"> Tambah (+) </a><br>
+                <br>
+                <br>
+                <br>
+                <a type="submit" name="register-quiz-button"> Muat Naik </a>
+                <p style="color: white;">.</P>
+                <br>
             </div>
         </div>
     </body>

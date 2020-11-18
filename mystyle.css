@@ -391,7 +391,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 }
 
-.createGuruContainer button{
+.createGuruContainer a{
     background-color: rgb(54, 116, 179);            /*button style*/
     color: #f2f2f2;
     padding: 14px 25px;
@@ -402,9 +402,10 @@ div.logOut a:hover{                /*thumbnail*/
     border-radius: 5px;
     float: left;
     margin-left: 10px;
+    text-align: center;
 }
 
-.createGuruContainer button:hover{                /*thumbnail*/
+.createGuruContainer a:hover{                /*thumbnail*/
     opacity: 0.8;
 }
 
