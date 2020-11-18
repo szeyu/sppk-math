@@ -132,30 +132,35 @@
                         labelJawapan.setAttribute("for","jawapan" + noSoalanCounter);
                         labelJawapan.setAttribute("name","jawapan" + noSoalanCounter);
                         labelJawapan.setAttribute("id","jawapan" + noSoalanCounter);
+                        labelJawapan.setAttribute("class","jawapanBox");
                         var textJawapan = document.createTextNode("Jawapan :");
                         labelJawapan.appendChild(textJawapan);
 
                         // label for "Pilihan A"
                         var labelPilihanA = document.createElement("label");
                         labelPilihanA.setAttribute("for","pilihanA");
+                        labelPilihanA.setAttribute("class","pilihanBox");
                         var textPilihanA = document.createTextNode("Pilihan A :");
                         labelSoalan.appendChild(textPilihanA);
                         
                         //label for "Pilihan B"
                         var labelPilihanB = document.createElement("label");
                         labelPilihanB.setAttribute("for","pilihanB");
+                        labelPilihanB.setAttribute("class","pilihanBox");
                         var textPilihanB = document.createTextNode("Pilihan B :");
                         labelSoalan.appendChild(textPilihanB);
 
                         //label for "Pilihan C"
                         var labelPilihanC = document.createElement("label");
                         labelPilihanC.setAttribute("for","pilihanC");
+                        labelPilihanC.setAttribute("class","pilihanBox");
                         var textPilihanC = document.createTextNode("Pilihan C :");
                         labelSoalan.appendChild(textPilihanC);
 
                         //label fot "Pilihan D"
                         var labelPilihanD = document.createElement("label");
                         labelPilihanD.setAttribute("for","pilhanD");
+                        labelPilihanD.setAttribute("class","pilihanBox");
                         var textPilihanD = document.createTextNode("Pilihan D :");
                         labelSoalan.appendChild(textPilihanD);
 
@@ -167,6 +172,7 @@
                         soalan.setAttribute("name",noSoalan);
 
                         var jawapan = document.createElement("select");
+                        jawapan.setAttribute("class","jawapanBox");
                         var jawapanABCD = document.createElement("option");
                         // add A
                         jawapanABCD.text = "A";
@@ -187,6 +193,7 @@
                         pilihanA.setAttribute("placeholder","Pilihan A Soalan " + noSoalanCounter);
                         pilihanA.setAttribute("id","pilihanA" + noSoalan);
                         pilihanA.setAttribute("name","pilihanA" + noSoalan);
+                        pilihanA.setAttribute("class","pilihanBox");
                         
                         //input for pilihan B
                         var pilihanB = document.createElement("input");
@@ -194,6 +201,7 @@
                         pilihanB.setAttribute("placeholder","Pilihan B Soalan " + noSoalanCounter);
                         pilihanB.setAttribute("id","pilihanA" + noSoalan);
                         pilihanB.setAttribute("name","pilihanA" + noSoalan);
+                        pilihanB.setAttribute("class","pilihanBox");
                         
                         //input for pilihan C
                         var pilihanC = document.createElement("input");
@@ -201,6 +209,7 @@
                         pilihanC.setAttribute("placeholder","Pilihan C Soalan " + noSoalanCounter);
                         pilihanC.setAttribute("id","pilihanA" + noSoalan);
                         pilihanC.setAttribute("name","pilihanA" + noSoalan);
+                        pilihanC.setAttribute("class","pilihanBox");
                         
                         //input for pilihan D
                         var pilihanD = document.createElement("input");
@@ -208,31 +217,26 @@
                         pilihanD.setAttribute("placeholder","Pilihan D Soalan " + noSoalanCounter);
                         pilihanD.setAttribute("id","pilihanA" + noSoalan);
                         pilihanD.setAttribute("name","pilihanA" + noSoalan);
+                        pilihanD.setAttribute("class","pilihanBox");
 
-                        // div class="jawapanBox"
-                        var divJawapan = document.createElement('div');
-                        divJawapan.setAttribute("class","jawapanBox");
-                        divJawapan.appendChild(labelJawapan);
-                        divJawapan.appendChild(jawapan);
-
-                        // div class="pilihanBox"
-                        var divPilihan = document.createElement('div');
-                        divPilihan.setAttribute("class","pilihanBox");
-                        divJawapan.appendChild(labelPilihanA);
-                        divJawapan.appendChild(pilihanA);
-                        divJawapan.appendChild(labelPilihanB);
-                        divJawapan.appendChild(pilihanB);
-                        divJawapan.appendChild(labelPilihanC);
-                        divJawapan.appendChild(pilihanC);
-                        divJawapan.appendChild(labelPilihanD);
-                        divJawapan.appendChild(pilihanD);
-
+                      
                         document.getElementById("soalanDitambah").appendChild(labelSoalan);
                         document.getElementById("soalanDitambah").appendChild(soalan);
 
-                        document.getElementById("soalanDitambah").appendChild(divJawapan);
-                        document.getElementById("soalanDitambah").appendChild(divPilihan);
+                        document.getElementById("soalanDitambah").appendChild(labelJawapan);
+                        document.getElementById("soalanDitambah").appendChild(jawapan);
 
+                        document.getElementById("soalanDitambah").appendChild(labelPilihanA);
+                        document.getElementById("soalanDitambah").appendChild(pilihanA);
+
+                        document.getElementById("soalanDitambah").appendChild(labelPilihanB);
+                        document.getElementById("soalanDitambah").appendChild(pilihanB);
+
+                        document.getElementById("soalanDitambah").appendChild(labelPilihanC);
+                        document.getElementById("soalanDitambah").appendChild(pilihanC);
+
+                        document.getElementById("soalanDitambah").appendChild(labelPilihanD);
+                        document.getElementById("soalanDitambah").appendChild(pilihanD);
                     }
                 </script>
 
