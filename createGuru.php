@@ -105,9 +105,11 @@
                     <br>
                     <br>
                     
+                    <!-- add new soalan here -->
+                    <p id="soalanDitambah"></p>
+
                 </form>
-                <!-- add new soalan here -->
-                <p id="soalanDitambah"></p>
+                
                 <script>
                     noSoalanCounter++;
                     var noSoalan = "soalan" + noSoalanCounter;
@@ -118,15 +120,49 @@
 
                     function tambahSoalan(){
 
-                        // create form element
-                        var form = document.createElement("form");
-                        form.setAttribute("method","POST");
-                        form.setAttribute("action","createGuru.php");
+                        // create label element
+                        //label for "Soalan 2,3,4,5..."
+                        var labelSoalan = document.createElement("label");
+                        labelSoalan.setAttribute("for","soalan");
+                        var textSoalan = document.createTextNode("Soalan " + noSoalanCounter +":");
+                        labelSoalan.appendChild(textSoalan);
+                        
+                        // label for "Jawapan :"
+                        var labelJawapan = document.createElement("label");
+                        labelJawapan.setAttribute("for","jawapan" + noSoalanCounter);
+                        labelJawapan.setAttribute("name","jawapan" + noSoalanCounter);
+                        labelJawapan.setAttribute("id","jawapan" + noSoalanCounter);
+                        var textJawapan = document.createTextNode("Jawapan :");
+                        labelJawapan.appendChild(textJawapan);
+
+                        // label for "Pilihan A"
+                        var labelPilihanA = document.createElement("label");
+                        labelPilihanA.setAttribute("for","pilihanA");
+                        var textPilihanA = document.createTextNode("Pilihan A :");
+                        labelSoalan.appendChild(textPilihanA);
+                        
+                        //label for "Pilihan B"
+                        var labelPilihanB = document.createElement("label");
+                        labelPilihanB.setAttribute("for","pilihanB");
+                        var textPilihanB = document.createTextNode("Pilihan B :");
+                        labelSoalan.appendChild(textPilihanB);
+
+                        //label for "Pilihan C"
+                        var labelPilihanC = document.createElement("label");
+                        labelPilihanC.setAttribute("for","pilihanC");
+                        var textPilihanC = document.createTextNode("Pilihan C :");
+                        labelSoalan.appendChild(textPilihanC);
+
+                        //label fot "Pilihan D"
+                        var labelPilihanD = document.createElement("label");
+                        labelPilihanD.setAttribute("for","pilhanD");
+                        var textPilihanD = document.createTextNode("Pilihan D :");
+                        labelSoalan.appendChild(textPilihanD);
 
                         // Create input element
                         var soalan = document.createElement("input");
                         soalan.setAttribute("type","text");
-                        soalan.setAttribute("placeholder","Soalan " + noSoalan);
+                        soalan.setAttribute("placeholder","Soalan " + noSoalanCounter);
                         soalan.setAttribute("id",noSoalan);
                         soalan.setAttribute("name",noSoalan);
 
@@ -148,33 +184,55 @@
                         //input for pilihan A
                         var pilihanA = document.createElement("input");
                         pilihanA.setAttribute("type","text");
-                        pilihanA.setAttribute("placeholder","Pilihan A Soalan " + noSoalan);
+                        pilihanA.setAttribute("placeholder","Pilihan A Soalan " + noSoalanCounter);
                         pilihanA.setAttribute("id","pilihanA" + noSoalan);
                         pilihanA.setAttribute("name","pilihanA" + noSoalan);
                         
                         //input for pilihan B
                         var pilihanB = document.createElement("input");
                         pilihanB.setAttribute("type","text");
-                        pilihanB.setAttribute("placeholder","Pilihan B Soalan " + noSoalan);
+                        pilihanB.setAttribute("placeholder","Pilihan B Soalan " + noSoalanCounter);
                         pilihanB.setAttribute("id","pilihanA" + noSoalan);
                         pilihanB.setAttribute("name","pilihanA" + noSoalan);
                         
                         //input for pilihan C
                         var pilihanC = document.createElement("input");
                         pilihanC.setAttribute("type","text");
-                        pilihanC.setAttribute("placeholder","Pilihan C Soalan " + noSoalan);
+                        pilihanC.setAttribute("placeholder","Pilihan C Soalan " + noSoalanCounter);
                         pilihanC.setAttribute("id","pilihanA" + noSoalan);
                         pilihanC.setAttribute("name","pilihanA" + noSoalan);
                         
                         //input for pilihan D
                         var pilihanD = document.createElement("input");
                         pilihanD.setAttribute("type","text");
-                        pilihanD.setAttribute("placeholder","Pilihan D Soalan " + noSoalan);
+                        pilihanD.setAttribute("placeholder","Pilihan D Soalan " + noSoalanCounter);
                         pilihanD.setAttribute("id","pilihanA" + noSoalan);
                         pilihanD.setAttribute("name","pilihanA" + noSoalan);
 
-                        
-                        
+                        // div class="jawapanBox"
+                        var divJawapan = document.createElement('div');
+                        divJawapan.setAttribute("class","jawapanBox");
+                        divJawapan.appendChild(labelJawapan);
+                        divJawapan.appendChild(jawapan);
+
+                        // div class="pilihanBox"
+                        var divPilihan = document.createElement('div');
+                        divPilihan.setAttribute("class","pilihanBox");
+                        divJawapan.appendChild(labelPilihanA);
+                        divJawapan.appendChild(pilihanA);
+                        divJawapan.appendChild(labelPilihanB);
+                        divJawapan.appendChild(pilihanB);
+                        divJawapan.appendChild(labelPilihanC);
+                        divJawapan.appendChild(pilihanC);
+                        divJawapan.appendChild(labelPilihanD);
+                        divJawapan.appendChild(pilihanD);
+
+                        document.getElementById("soalanDitambah").appendChild(labelSoalan);
+                        document.getElementById("soalanDitambah").appendChild(soalan);
+
+                        document.getElementById("soalanDitambah").appendChild(divJawapan);
+                        document.getElementById("soalanDitambah").appendChild(divPilihan);
+
                     }
                 </script>
 
