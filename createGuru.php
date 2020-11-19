@@ -47,6 +47,7 @@
                             <option value="10.1"></option>
                             <option value="revision"></option>
                         </datalist>
+                        <br>
                         <label for="tajuk"> Tajuk :</label>
                         <input type="text" placeholder="Tajuk" name="tajuk" list="tajuk">
                         <datalist id="tajuk">
@@ -79,15 +80,17 @@
                     <input type="text" placeholder="Soalan 1" id="soalan1" name="soalan1"><br>
                     <br>
                     <div class="jawapanBox">
-                        <label for="jawapan" name="jawapan1" id="jawapan1"> Jawapan :</label>
+                        <label for="jawapan"> Jawapan :</label>
                         <!-- <input type="text" placeholder="Jawapan Soalan 1" id="jawapan" name="jawapan"><br>-->
-                        <select>
+                        <select name="jawapan1" id="jawapan1">
                             <option value="A"> A </option>
                             <option value="B"> B </option>
                             <option value="C"> C </option>
                             <option value="D"> D </option>
                         </select> 
                     </div>
+                    <br>
+                    <br>
                     <br>
                     <br>
                     <br>
@@ -123,10 +126,11 @@
                         // get form element id
                         var formSoalan = document.getElementById("soalanForm");
                         var formPilihan = document.getElementById("soalanForm");
+                        var formJawapan = document.getElementById("soalanForm");
 
                         // create label element
                         //label for "Soalan 2,3,4,5..."
-                        var labelSoalan = document.createElement("label");          //can work
+                        var labelSoalan = document.createElement("label");         
                         labelSoalan.setAttribute("for","soalan");
                         var textSoalan = document.createTextNode("Soalan " + noSoalanCounter +":");
                         labelSoalan.appendChild(textSoalan);
@@ -173,27 +177,43 @@
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////
                         // Create input element
+                        // soalan input
                         var soalan = document.createElement("input");
                         soalan.setAttribute("type","text");
                         soalan.setAttribute("placeholder","Soalan " + noSoalanCounter);
                         soalan.setAttribute("id",noSoalan);
                         soalan.setAttribute("name",noSoalan);
 
+
+                        // jawapan dropdown menu input
                         var jawapan = document.createElement("select");
                         jawapan.setAttribute("class","jawapanBox");
-                        var jawapanABCD = document.createElement("option");
-                        // add A
-                        jawapanABCD.text = "A";
-                        jawapan.add(pilihanABCD);
-                        // add B
-                        jawapanABCD.text = "B";
-                        jawapan.add(pilihanABCD);
-                        // add C
-                        jawapanABCD.text = "C";
-                        jawapan.add(pilihanABCD);
-                        // add D
-                        jawapanABCD.text = "D";
-                        jawapan.add(pilihanABCD);
+                        jawapan.setAttribute("name","jawapan"+noSoalanCounter);
+                        jawapan.setAttribute("id","jawapan"+noSoalanCounter);
+                        
+                        var jawapanA = document.createElement("option"); 
+                        jawapanA.setAttribute("value", "A"); 
+						var nodJawapanA = document.createTextNode("A"); 
+						jawapanA.appendChild(nodJawapanA); 
+						jawapan.appendChild(jawapanA); 
+                        
+                        var jawapanB = document.createElement("option"); 
+                        jawapanB.setAttribute("value", "B"); 
+						var nodJawapanB = document.createTextNode("B"); 
+						jawapanB.appendChild(nodJawapanB); 
+						jawapan.appendChild(jawapanB); 
+                        
+                        var jawapanC = document.createElement("option"); 
+                        jawapanC.setAttribute("value", "C"); 
+						var nodJawapanC = document.createTextNode("C"); 
+						jawapanC.appendChild(nodJawapanC); 
+						jawapan.appendChild(jawapanC); 
+                        
+                        var jawapanD = document.createElement("option"); 
+                        jawapanA.setAttribute("value", "D"); 
+						var nodJawapanD = document.createTextNode("D"); 
+						jawapanD.appendChild(nodJawapanD); 
+						jawapan.appendChild(jawapanD); 
 
 
                         /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -235,29 +255,47 @@
                         formSoalan.appendChild(soalan);
                         formSoalan.appendChild(br.cloneNode());  
                         formSoalan.appendChild(br.cloneNode());  
-
-                        // skip one line
-                        document.getElementById("soalanDitambah").appendChild(br.cloneNode());
+                        //////__________________________________________
 
                         formPilihan.appendChild(labelPilihanA);
                         formPilihan.appendChild(pilihanA);
                         formPilihan.appendChild(br.cloneNode());  
-                        formPilihan.appendChild(br.cloneNode());
+                        //formPilihan.appendChild(br.cloneNode());
 
                         formPilihan.appendChild(labelPilihanB);
                         formPilihan.appendChild(pilihanB);
                         formPilihan.appendChild(br.cloneNode());  
-                        formPilihan.appendChild(br.cloneNode());
+                        //formPilihan.appendChild(br.cloneNode());
 
                         formPilihan.appendChild(labelPilihanC);
                         formPilihan.appendChild(pilihanC);
                         formPilihan.appendChild(br.cloneNode());  
-                        formPilihan.appendChild(br.cloneNode());
+                        //formPilihan.appendChild(br.cloneNode());
 
                         formPilihan.appendChild(labelPilihanD);
                         formPilihan.appendChild(pilihanD);
                         formPilihan.appendChild(br.cloneNode());  
-                        formPilihan.appendChild(br.cloneNode());
+                        //formPilihan.appendChild(br.cloneNode());
+
+                        ///////___________________________________________
+                        formJawapan.appendChild(labelJawapan);
+                        formJawapan.appendChild(jawapan);
+                        formJawapan.appendChild(br.cloneNode()); 
+
+                        /////////////////////////////////////////////////////////////////////////////////////////////
+                        // adding form
+
+                        //soalan form
+                        document.getElementById("soalanDitambah").appendChild(formSoalan);  
+                        document.getElementById("soalanDitambah").appendChild(br.cloneNode());
+
+                        // put dropdown ABCD for jawapan
+                        document.getElementById("soalanDitambah").appendChild(formJawapan);
+                        document.getElementById("soalanDitambah").appendChild(br.cloneNode());
+
+                        // pilihan form
+                        document.getElementById("soalanDitambah").appendChild(formPilihan);
+                        document.getElementById("soalanDitambah").appendChild(br.cloneNode());
 
 
                     }
