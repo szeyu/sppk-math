@@ -114,7 +114,7 @@
                 </form>
                 
                 <script>
-                    noSoalanCounter++;
+                    
                     var noSoalan = "soalan" + noSoalanCounter;
                     var down = document.getElementById("soalanDitambah");
 
@@ -122,6 +122,7 @@
                     var br =document.createElement("br");
 
                     function tambahSoalan(){
+                        noSoalanCounter++;
 
                         // get form element id
                         var formSoalan = document.getElementById("soalanForm");
@@ -150,28 +151,28 @@
                         var labelPilihanA = document.createElement("label");        
                         labelPilihanA.setAttribute("for","pilihanA");
                         labelPilihanA.setAttribute("class","pilihanBox");
-                        var textPilihanA = document.createTextNode("Pilihan A :");
+                        var textPilihanA = document.createTextNode("pilihan A :");
                         labelPilihanA.appendChild(textPilihanA);
                         
                         //label for "Pilihan B"
                         var labelPilihanB = document.createElement("label");           
                         labelPilihanB.setAttribute("for","pilihanB");
                         labelPilihanB.setAttribute("class","pilihanBox");
-                        var textPilihanB = document.createTextNode("Pilihan B :");
+                        var textPilihanB = document.createTextNode("pilihan B :");
                         labelPilihanB.appendChild(textPilihanB);
 
                         //label for "Pilihan C"
                         var labelPilihanC = document.createElement("label");        
                         labelPilihanC.setAttribute("for","pilihanC");
                         labelPilihanC.setAttribute("class","pilihanBox");
-                        var textPilihanC = document.createTextNode("Pilihan C :");
+                        var textPilihanC = document.createTextNode("pilihan C :");
                         labelPilihanC.appendChild(textPilihanC);
 
                         //label fot "Pilihan D"
                         var labelPilihanD = document.createElement("label");        
                         labelPilihanD.setAttribute("for","pilhanD");
                         labelPilihanD.setAttribute("class","pilihanBox");
-                        var textPilihanD = document.createTextNode("Pilihan D :");
+                        var textPilihanD = document.createTextNode("pilihan D :");
                         labelPilihanD.appendChild(textPilihanD);
 
 
@@ -185,9 +186,25 @@
                         soalan.setAttribute("name",noSoalan);
 
 
+                        /*float: left;
+                        padding: 5px;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        margin-left: auto;
+                        width: 15.7%;
+                        display: inline-block;
+                        box-sizing: border-box;
+                        margin-right: auto;*/ 
+
                         // jawapan dropdown menu input
                         var jawapan = document.createElement("select");
                         jawapan.setAttribute("class","jawapanBox");
+                        jawapan.style.float = "left";
+                        jawapan.style.padding = "5px";
+                        jawapan.style.margin = "auto";
+                        jawapan.width = "15.7%";
+                        //jawapan.style.box-sizing = "border-box";
+                        //jawapan.style.display = "inline-block";
                         jawapan.setAttribute("name","jawapan"+noSoalanCounter);
                         jawapan.setAttribute("id","jawapan"+noSoalanCounter);
                         
@@ -219,69 +236,81 @@
                         /////////////////////////////////////////////////////////////////////////////////////////////////////////
                         //input for pilihan A
                         var pilihanA = document.createElement("input");
+                        pilihanA.setAttribute("class","pilihanBox");
+                        pilihanA.style.width = "30%";
+                        //pilihanA.style.margin-right = "auto";
                         pilihanA.setAttribute("type","text");
                         pilihanA.setAttribute("placeholder","Pilihan A Soalan " + noSoalanCounter);
                         pilihanA.setAttribute("id","pilihanA" + noSoalan);
-                        pilihanA.setAttribute("name","pilihanA" + noSoalan);
-                        pilihanA.setAttribute("class","pilihanBox");
+                        pilihanA.setAttribute("name","pilihanA" + noSoalan);                       
                         
                         //input for pilihan B
                         var pilihanB = document.createElement("input");
+                        pilihanB.setAttribute("class","pilihanBox");
+                        pilihanB.style.width = "30%";
                         pilihanB.setAttribute("type","text");
                         pilihanB.setAttribute("placeholder","Pilihan B Soalan " + noSoalanCounter);
                         pilihanB.setAttribute("id","pilihanA" + noSoalan);
                         pilihanB.setAttribute("name","pilihanA" + noSoalan);
-                        pilihanB.setAttribute("class","pilihanBox");
-                        
+                                               
                         //input for pilihan C
                         var pilihanC = document.createElement("input");
+                        pilihanC.setAttribute("class","pilihanBox");
+                        pilihanC.style.width = "30%";
                         pilihanC.setAttribute("type","text");
                         pilihanC.setAttribute("placeholder","Pilihan C Soalan " + noSoalanCounter);
                         pilihanC.setAttribute("id","pilihanA" + noSoalan);
-                        pilihanC.setAttribute("name","pilihanA" + noSoalan);
-                        pilihanC.setAttribute("class","pilihanBox");
+                        pilihanC.setAttribute("name","pilihanA" + noSoalan);                        
                         
                         //input for pilihan D
                         var pilihanD = document.createElement("input");
+                        pilihanD.setAttribute("class","pilihanBox");
+                        pilihanD.style.width = "30%";
                         pilihanD.setAttribute("type","text");
                         pilihanD.setAttribute("placeholder","Pilihan D Soalan " + noSoalanCounter);
                         pilihanD.setAttribute("id","pilihanA" + noSoalan);
                         pilihanD.setAttribute("name","pilihanA" + noSoalan);
-                        pilihanD.setAttribute("class","pilihanBox");
-
+                        
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////
                         // put Soalan 2,3,4...  : __________
                         formSoalan.appendChild(labelSoalan);
                         formSoalan.appendChild(soalan);
                         formSoalan.appendChild(br.cloneNode());  
                         formSoalan.appendChild(br.cloneNode());  
-                        //////__________________________________________
+
+                        //////////////////////////////////////////
+                        formJawapan.appendChild(labelJawapan);
+                        formJawapan.appendChild(jawapan);
+                        formJawapan.appendChild(br.cloneNode()); 
+                        formJawapan.appendChild(br.cloneNode()); 
+                        formJawapan.appendChild(br.cloneNode()); 
+                        formJawapan.appendChild(br.cloneNode()); 
+                        formJawapan.appendChild(br.cloneNode()); 
+
+
+                        ////////////////////////////////////////
 
                         formPilihan.appendChild(labelPilihanA);
                         formPilihan.appendChild(pilihanA);
-                        formPilihan.appendChild(br.cloneNode());  
+                        //formPilihan.appendChild(br.cloneNode());  
                         //formPilihan.appendChild(br.cloneNode());
 
                         formPilihan.appendChild(labelPilihanB);
                         formPilihan.appendChild(pilihanB);
-                        formPilihan.appendChild(br.cloneNode());  
+                        //formPilihan.appendChild(br.cloneNode());  
                         //formPilihan.appendChild(br.cloneNode());
 
                         formPilihan.appendChild(labelPilihanC);
                         formPilihan.appendChild(pilihanC);
-                        formPilihan.appendChild(br.cloneNode());  
+                        //formPilihan.appendChild(br.cloneNode());  
                         //formPilihan.appendChild(br.cloneNode());
 
                         formPilihan.appendChild(labelPilihanD);
                         formPilihan.appendChild(pilihanD);
                         formPilihan.appendChild(br.cloneNode());  
-                        //formPilihan.appendChild(br.cloneNode());
+                        formPilihan.appendChild(br.cloneNode());
 
-                        ///////___________________________________________
-                        formJawapan.appendChild(labelJawapan);
-                        formJawapan.appendChild(jawapan);
-                        formJawapan.appendChild(br.cloneNode()); 
-
+                        
                         /////////////////////////////////////////////////////////////////////////////////////////////
                         // adding form
 
