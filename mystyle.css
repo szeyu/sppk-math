@@ -417,11 +417,19 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 .pilihanBox {
-    width: 30%;
+    width: 86%;
+    display: grid;
+    grid-template-columns: 60% auto;
+}
+
+.pilihanBox > div {
+    float: left;
 }
 
 .pilihanBox input[type = text]{
     margin-right: auto;
+    
+    
 }
 
 .jawapanBox{
