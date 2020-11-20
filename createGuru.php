@@ -1,6 +1,6 @@
 <!--remember include php file here-->
 <?php 
-    
+    require_once 'registerKuiz.php';
 ?>
 
 <script>
@@ -361,6 +361,10 @@
 
                 <!-- when clicked then add create quiz form below -->
                 <a name="add-question-button" onclick="tambahSoalan()"> Tambah (+) </a><br>
+                <br>
+                <br>
+                <br>
+                <a name="delete-question-button" onclick="deleteSoalan()"> Hapus (-) </a><br>
                 <br>
                 <br>
                 <br>
