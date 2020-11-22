@@ -1,6 +1,6 @@
-<!--remember include php file here-->
+
 <?php 
-    require_once 'registerKuiz.php';
+    
 ?>
 
 <script>
@@ -21,12 +21,12 @@
             <hr>
             <br>
             <div class="createGuruContainer">
-                <form id="soalanForm" action="createGuru.php" method ="POST">
+                <form id="soalanForm" action="registerKuiz.php" method ="POST">
                     <br>
                     <div class="tajukBox">
                         <label for="subTopik"> Sub Topik :</label>
-                        <input type="text" placeholder="sub topik" name="subTopik" list="subTopik" required>
-                        <datalist id="subTopik">
+                        <input type="text" placeholder="sub topik" name="subTopik" id="subTopik" list="subTopik" required>
+                        <datalist>
                             <option value="1.1"></option>
                             <option value="2.1"></option>
                             <option value="3.1"></option>
@@ -49,8 +49,8 @@
                         </datalist>
                         <br>
                         <label for="tajuk"> Tajuk :</label>
-                        <input type="text" placeholder="Tajuk" name="tajuk" list="tajuk" required>
-                        <datalist id="tajuk">
+                        <input type="text" placeholder="Tajuk" name="tajuk" id="tajuk" list="tajuk" required>
+                        <datalist>
                             <option value="Quadratic Function and Equations"></option>
                             <option value="Number Base"></option>
                             <option value="Statements"></option>

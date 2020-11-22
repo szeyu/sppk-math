@@ -61,10 +61,10 @@
 
 
                         if($row['peranan'] == 'murid'){        // if peranan is murid, it will login as murid
-                            header('Location: ./indexMurid.php');
+                            header('Location: ./indexMurid.php',TRUE,301);
                         }
                         else if ($row['peranan'] == 'guru'){            // if peranan is guru, it will login as guru
-                            header('Location: ./indexGuru.php');
+                            header('Location: ./indexGuru.php',TRUE,301);
                         }
                     }
                     else{
