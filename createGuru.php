@@ -25,8 +25,8 @@
                     <br>
                     <div class="tajukBox">
                         <label for="subTopik"> Sub Topik :</label>
-                        <input type="text" placeholder="sub topik" name="subTopik" id="subTopik" list="subTopik" required>
-                        <datalist>
+                        <input type="text" placeholder="sub topik" name="subTopik" id="subTopik" list="subTopiks" required>
+                        <datalist id="subTopiks">
                             <option value="1.1"></option>
                             <option value="2.1"></option>
                             <option value="3.1"></option>
@@ -49,8 +49,8 @@
                         </datalist>
                         <br>
                         <label for="tajuk"> Tajuk :</label>
-                        <input type="text" placeholder="Tajuk" name="tajuk" id="tajuk" list="tajuk" required>
-                        <datalist>
+                        <input type="text" placeholder="Tajuk" name="tajuk" id="tajuk" list="tajuks" required>
+                        <datalist id="tajuks">
                             <option value="Quadratic Function and Equations"></option>
                             <option value="Number Base"></option>
                             <option value="Statements"></option>

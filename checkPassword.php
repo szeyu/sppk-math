@@ -36,23 +36,7 @@
                 if(mysqli_num_rows($result) == 1){   //if got show result and the only one
 
                     if($row = mysqli_fetch_assoc($result)){
-
-                        /*
-                        //find nama with NoTel(Kunci Primer)
-                        $findNamaSQL = "SELECT * FROM TELEFON WHERE NoTel = '".$row['NoTel']."'LIMIT 1";
-                        $resultInTelefon = mysqli_query($con,$findNamaSQL);    // query
-
-                        if(mysqli_num_rows($resultInTelefon) == 1){      //if only one result 
-                            if($rowInTelefon = mysqli_fetch_assoc($resultInTelefon)){
-                                $_SESSION['nama'] = $rowInTelefon['nama'];   //set global variable
-                            }
-                        }else{
-                            echo "Pls check your database, database not atomic";  //cannot no telefon in table if like that db crash
-                        }
-                        */
-
-
-                        
+             
                         //set global variable
                         $_SESSION['NoIC'] = $row['NoIC'];
                         $_SESSION['peranan'] = $row['peranan'];

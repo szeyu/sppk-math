@@ -248,3 +248,17 @@
                         deletePilhanC.parentNode.removeChild(deletePilihanC);
                         deletePilhanD.parentNode.removeChild(deletePilihanD);
                         */
+
+/*
+                        //find nama with NoTel(Kunci Primer)
+                        $findNamaSQL = "SELECT * FROM TELEFON WHERE NoTel = '".$row['NoTel']."'LIMIT 1";
+                        $resultInTelefon = mysqli_query($con,$findNamaSQL);    // query
+
+                        if(mysqli_num_rows($resultInTelefon) == 1){      //if only one result 
+                            if($rowInTelefon = mysqli_fetch_assoc($resultInTelefon)){
+                                $_SESSION['nama'] = $rowInTelefon['nama'];   //set global variable
+                            }
+                        }else{
+                            echo "Pls check your database, database not atomic";  //cannot no telefon in table if like that db crash
+                        }
+                        */
