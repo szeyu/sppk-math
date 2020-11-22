@@ -40,7 +40,8 @@
                 //add data to TOPIK SQL
                 $addDataToTopik = "INSERT INTO TOPIK (IdTopik, tajuk, subTopik) VALUES ('".$IdTopik."','".$tajuk."','".$subTopik."')";
 
-                
+                // add some query code here
+                //////////////////////////////////////////////////////////////////////
 
 
                 //to determine what is the last digit of latest IdTopik
