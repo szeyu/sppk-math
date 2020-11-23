@@ -63,19 +63,19 @@
 
         <script>
             function homeGuru(){
-                $("#contentGuru").load("homeGuru.php")
+                $("#contentGuru").load("homeGuru.php");
             }
 
             function createGuru(){
-                $("#contentGuru").load("createGuru.php")
+                $("#contentGuru").load("createGuru.php");
             }
 
             function collectionGuru(){
-                $("#contentGuru").load("collectionGuru.php")
+                $("#contentGuru").load("collectionGuru.php");
             }
 
             function checkGuru(){
-                $("#contentGuru").load("checkGuru.php")
+                $("#contentGuru").load("checkGuru.php");
             }
         </script>
         
