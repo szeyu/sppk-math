@@ -25,7 +25,7 @@
                     <br>
                     <div class="tajukBox">
                         <label for="subTopik"> Sub Topik :</label>
-                        <input type="text" placeholder="sub topik" name="subTopik" id="subTopik" list="subTopiks" required>
+                        <input type="text" placeholder="sub topik" name="subTopik" id="subTopik" list="subTopiks" spellcheck="false" required>
                         <datalist id="subTopiks">
                             <option value="1.1"></option>
                             <option value="2.1"></option>
@@ -49,7 +49,7 @@
                         </datalist>
                         <br>
                         <label for="tajuk"> Tajuk :</label>
-                        <input type="text" placeholder="Tajuk" name="tajuk" id="tajuk" list="tajuks" required>
+                        <input type="text" placeholder="Tajuk" name="tajuk" id="tajuk" list="tajuks" spellcheck="false" required>
                         <datalist id="tajuks">
                             <option value="Quadratic Function and Equations"></option>
                             <option value="Number Base"></option>
@@ -77,7 +77,7 @@
                     <hr>
                     <br>
                     <label for="soalan"> Soalan 1 :</label>
-                    <input type="text" placeholder="Soalan 1" id="soalan1" name="soalan1" required><br>
+                    <input type="text" placeholder="Soalan 1" id="soalan1" name="soalan1" spellcheck="false" required><br>
                     <br>
                     <div class="jawapanBox">
                         <label for="jawapan"> Jawapan :</label>
@@ -99,25 +99,25 @@
                         <label for="pilihanA" style="float: left;"> pilihan A :</label>
                         </div>
                         <div>
-                        <input type="text" placeholder="Pilihan A Soalan 1" id="pilihanA1" name="pilihanA1" required>
+                        <input type="text" placeholder="Pilihan A Soalan 1" id="pilihanA1" name="pilihanA1" spellcheck="false" required>
                         </div>
                         <div>
                         <label for="pilihanB" style="float: left;"> pilihan B :</label>
                         </div>
                         <div>
-                        <input type="text" placeholder="Pilihan B Soalan 1" id="pilihanB1" name="pilihanB1" required>
+                        <input type="text" placeholder="Pilihan B Soalan 1" id="pilihanB1" name="pilihanB1" spellcheck="false" required>
                         </div>
                         <div>
                         <label for="pilihanC" style="float: left;"> pilihan C :</label>
                         </div>
                         <div>
-                        <input type="text" placeholder="Pilihan C Soalan 1" id="pilihanC1" name="pilihanC1" required>
+                        <input type="text" placeholder="Pilihan C Soalan 1" id="pilihanC1" name="pilihanC1" spellcheck="false" required>
                         </div>
                         <div>
                         <label for="pilihanD" style="float: left;"> pilihan D :</label>
                         </div>
                         <div>
-                        <input type="text" placeholder="Pilihan D Soalan 1" id="pilihanD1" name="pilihanD1" required>
+                        <input type="text" placeholder="Pilihan D Soalan 1" id="pilihanD1" name="pilihanD1" spellcheck="false" required>
                         </div>
                         <br>
                     </div>
@@ -152,7 +152,7 @@
                         noSoalanCounter++;
 
                         var divForm = document.createElement('div');
-                        divForm.innerHTML += "<div id= 'soalanForm" + noSoalanCounter +"'><br><br><br><hr><br><label for='soalan'> Soalan " +noSoalanCounter+" :</label><input type='text' placeholder='Soalan " +noSoalanCounter+"' id='soalan" +noSoalanCounter+"' name='soalan" +noSoalanCounter+"' required><br><br><div class='jawapanBox'><label for='jawapan'> Jawapan :</label><select name='jawapan" +noSoalanCounter+"' id='jawapan" +noSoalanCounter+"'><option value='A'> A </option><option value='B'> B </option><option value='C'> C </option><option value='D'> D </option></select> </div><br><br><br><br><br><div class='pilihanBox'><div><label for='pilihanA' style=float: left;> pilihan A :</label></div><div><input type='text' placeholder='Pilihan A Soalan " +noSoalanCounter+"' id='pilihanA" +noSoalanCounter+"' name='pilihanA" +noSoalanCounter+"' required></div><div><label for='pilihanB' style=float: left;> pilihan B :</label></div><div><input type='text' placeholder='Pilihan B Soalan " +noSoalanCounter+"' id='pilihanB" +noSoalanCounter+"' name='pilihanB" +noSoalanCounter+"' required></div><div><label for='pilihanC' style=float: left;> pilihan C :</label></div><div><input type='text' placeholder='Pilihan C Soalan " +noSoalanCounter+"' id='pilihanC" +noSoalanCounter+"' name='pilihanC" +noSoalanCounter+"' required></div><div><label for='pilihanD' style=float: left;> pilihan D :</label></div><div><input type='text' placeholder='Pilihan D Soalan " +noSoalanCounter+"' id='pilihanD" +noSoalanCounter+"' name='pilihanD" +noSoalanCounter+"' required></div><br></div>";
+                        divForm.innerHTML += "<div id= 'soalanForm" + noSoalanCounter +"'><br><br><br><hr><br><label for='soalan'> Soalan " +noSoalanCounter+" :</label><input type='text' placeholder='Soalan " +noSoalanCounter+"' id='soalan" +noSoalanCounter+"' name='soalan" +noSoalanCounter+"' spellcheck='false' required><br><br><div class='jawapanBox'><label for='jawapan'> Jawapan :</label><select name='jawapan" +noSoalanCounter+"' id='jawapan" +noSoalanCounter+"'><option value='A'> A </option><option value='B'> B </option><option value='C'> C </option><option value='D'> D </option></select> </div><br><br><br><br><br><div class='pilihanBox'><div><label for='pilihanA' style=float: left;> pilihan A :</label></div><div><input type='text' placeholder='Pilihan A Soalan " +noSoalanCounter+"' id='pilihanA" +noSoalanCounter+"' name='pilihanA" +noSoalanCounter+"' spellcheck='false' required></div><div><label for='pilihanB' style=float: left;> pilihan B :</label></div><div><input type='text' placeholder='Pilihan B Soalan " +noSoalanCounter+"' id='pilihanB" +noSoalanCounter+"' name='pilihanB" +noSoalanCounter+"' spellcheck='false' required></div><div><label for='pilihanC' style=float: left;> pilihan C :</label></div><div><input type='text' placeholder='Pilihan C Soalan " +noSoalanCounter+"' id='pilihanC" +noSoalanCounter+"' name='pilihanC" +noSoalanCounter+"' spellcheck='false' required></div><div><label for='pilihanD' style=float: left;> pilihan D :</label></div><div><input type='text' placeholder='Pilihan D Soalan " +noSoalanCounter+"' id='pilihanD" +noSoalanCounter+"' name='pilihanD" +noSoalanCounter+"' spellcheck='false' required></div><br></div>";
                         document.getElementById('soalanDitambah').appendChild(divForm);
 
     
