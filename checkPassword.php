@@ -57,7 +57,7 @@
                     exit();
                 }
                 else{
-                    //echo '<script> alert("Salah, sila masukkan NoIC dan kata laluan lagi.") </script>';
+                    
                     header('Location: ./login.php?error=NoIC atau KataLaluan salah');       // ask user to type again
 
                     exit();

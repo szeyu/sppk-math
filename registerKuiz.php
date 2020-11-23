@@ -224,11 +224,9 @@
                 } 
                 
 
-
-
-
-                //echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
+                echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
                 header('Location: ./indexGuru.php');       // direct user to home page
+                exit();
             }
             
             //mysqli_close($con);        //disconnect

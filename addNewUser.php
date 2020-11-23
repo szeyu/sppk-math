@@ -65,6 +65,9 @@
                     }
                     */       
                         
+                    //////////////////////////////////////////
+                    //          this alert box also not working
+                    /////////////////////////////////////////
                     echo '<script> alert("Berjaya didaftarkan!"); </script>';
                     header('Location: ./login.php');       // direct user to login page to login
 
