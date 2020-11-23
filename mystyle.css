@@ -555,5 +555,5 @@ div.logOut a:hover{                /*thumbnail*/
 
 .gridContainerTable{
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 70% 15% 15%;
 }

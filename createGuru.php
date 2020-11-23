@@ -1,7 +1,4 @@
 
-<?php 
-    
-?>
 
 <script>
     //set up global variable
@@ -188,7 +185,9 @@
                 
                 <p style="color: white;">.</P>
                 <br>
+                <br>
             </div>
+            <br>
         </div>
     </body>
 </html>

@@ -89,7 +89,14 @@
                     </div>
                     <div>
                         <?php
-                            require "connectPHP.php";
+                            //require "connectPHP.php";
+
+                            echo "<p> hello </p>"
+                        ?>
+                    </div>
+                    <div>
+                        <?php
+                            //require "connectPHP.php";
 
                             echo "<p> hello </p>"
                         ?>
