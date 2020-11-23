@@ -12,16 +12,21 @@
                 // run add the subTajuk and tajuk SQL code to get the IdTopik first 
                 $subTopik = $_POST['subTopik'];
                 $tajuk = $_POST['tajuk'];
-                $IdTopik = "T";       // note that the T later will concatenate with last number + 1
+                $IdTopik;       // note that the T later will concatenate with last number + 1
                 $intSoalan;
                 $intPilihan;
+                $jawapanA;
+                $jawapanB;
+                $jawapanC;
+                $jawapanD;
+                
                 
 
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //                                   IdTopik
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //to determine what is the last digit of latest IdTopik
-                $getLastDataTopik = "SELECT IdTopik FROM TOPIK ORDER BY IdTopik DESC LIMIT 1";
+                $getLastDataTopik = "SELECT IdTopik FROM TOPIK ORDER BY LENGTH(IdTopik) DESC,IdTopik DESC LIMIT 1";
                 $resultTopik = mysqli_query($con ,$getLastDataTopik);
                 //echo "helo";
                 //echo($resultTopik);
@@ -38,7 +43,7 @@
                         $intTopik++;                 // to add new IdTopik that is unique
                         //echo $intTopik;
 
-                        $IdTopik = $IdTopik.$intTopik; 
+                        $IdTopik = "T".$intTopik; 
                         //echo $IdTopik;
                     }             
                 }
@@ -47,6 +52,7 @@
 
                 // add some query code here
                 //////////// QUERY CODE /////////////////
+                mysqli_query($con, $addDataToTopik);
 
 
 
@@ -54,10 +60,10 @@
                 //                                    IdSoalan
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //to determine what is the last digit of latest IdSoalan
-                $getLastDataSoalan = "SELECT IdSoalan FROM SOALAN ORDER BY IdSoalan DESC LIMIT 1";
+                $getLastDataSoalan = "SELECT IdSoalan FROM SOALAN ORDER BY LENGTH(IdSoalan) DESC, IdSoalan DESC LIMIT 1";
                 $resultSoalan = mysqli_query($con ,$getLastDataSoalan);
                 if(mysqli_num_rows($resultSoalan) == 0){
-                    $intSoalan = 1;     // to make it become S1 which is our fisrt Id for SOALAN
+                    $intSoalan = 0;     // to make it become S1 which is our fisrt Id for SOALAN
                 } else{
                     if($rowSoalan = mysqli_fetch_assoc($resultSoalan)){
                         //echo ($rowSoalan['IdSoalan']);
@@ -75,15 +81,15 @@
                 //                                   IdPilihan
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //to determine what is the last digit of latest IdSPilihan
-                $getLastDataPilihan = "SELECT IdPilihan FROM PILIHAN ORDER BY IdPilihan DESC LIMIT 1";
+                $getLastDataPilihan = "SELECT IdPilihan FROM PILIHAN ORDER BY LENGTH(IdPilihan) DESC, IdPilihan DESC LIMIT 1";
                 $resultPilihan = mysqli_query($con ,$getLastDataPilihan);
                 if(mysqli_num_rows($resultPilihan) == 0){
-                    $intPilihan = 1;     // to make it become P1 which is our fisrt Id for PILIHAN
+                    $intPilihan = 0;     // to make it become P1 which is our fisrt Id for PILIHAN
                 } else{
                     if($rowPilihan = mysqli_fetch_assoc($resultPilihan)){
                         //echo ($rowPilihan['IdPilihan']);
                         $strPilihan = $rowPilihan['IdPilihan'];
-                        $strPilihan = ltrim ($strPilhan, 'P');     // to remove the P so that only number.
+                        $strPilihan = ltrim ($strPilihan, 'P');     // to remove the P so that only number.
                         //echo $strPilihan;
                         $intPilihan = (int)$strPilihan;       // covert string to integer
                         //echo $intPilihan;
@@ -117,39 +123,121 @@
                     $pilihanD = $_POST["pilihanD$i"];
 
 
-                    //add some code to get the IdSoalan
-                    $intSoalan++;                 // to add new IdSoalan that is unique
-                    $IdSoalan = "S".$intSoalan;       // note that the S will concatenate with last number + 1
+                    // determine which jawapan = 1
+                    if ($jawapan == "A"){ 
+                        $jawapanA = 1;
+                    }else {
+                        $jawapanA = 0;
+                    }
 
+                    if ($jawapan == "B"){ 
+                        $jawapanB = 1;
+                    }else {
+                        $jawapanB = 0;
+                    }
 
-                    // add SQL here because this is loop
-                    // add data to SOALAN SQL
-                    $addDataToSoalan = "INSERT INTO SOALAN (IdSoalan, NoSoalan, soalan, IdTopik) VALUES ('".$IdSoalan."','".$i."','".$soalan."','".$IdTopik."')";
-                    
-                    //add query code here
-                    /////////// QUERY CODE //////////////
+                    if ($jawapan == "C"){ 
+                        $jawapanC = 1;
+                    }else {
+                        $jawapanC = 0;
+                    }
+
+                    if ($jawapan == "D"){ 
+                        $jawapanD = 1;
+                    }else {
+                        $jawapanD = 0;
+                    }
 
 
                     ///////////////////////////////////////////////////
                     //          at the same time, need add data to PILIHAN
                     ///////////////////////////////////////////////////
 
-                    //add some code to get the IdPilihan
+
+                    // add SQL here because this is loop
+                    // add data to SOALAN SQL              --- 4 times ---
+                    //add some code to get the IdSoalan
                     $intSoalan++;                 // to add new IdSoalan that is unique
                     $IdSoalan = "S".$intSoalan;       // note that the S will concatenate with last number + 1
+                    $addDataToSoalan = "INSERT INTO SOALAN (IdSoalan, NoSoalan, soalan, IdTopik) VALUES ('".$IdSoalan."','".$i."','".$soalan."','".$IdTopik."')";
+                    mysqli_query($con, $addDataToSoalan);
 
+                    // add data to PILIHAN SQL
+                    //pilihan A
+                    $intPilihan++;                 // to add new IdPilihan that is unique
+                    $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
+                    $addPilihanAToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanA."','".$pilihanA."','".$IdSoalan."')";
+                    //add query code here
+                    /////////// QUERY CODE //////////////
+                    mysqli_query($con, $addPilihanAToPilihan);
+
+                    
+                    
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    //add some code to get the IdSoalan
+                    $intSoalan++;                 // to add new IdSoalan that is unique
+                    $IdSoalan = "S".$intSoalan;       // note that the S will concatenate with last number + 1
+                    $addDataToSoalan = "INSERT INTO SOALAN (IdSoalan, NoSoalan, soalan, IdTopik) VALUES ('".$IdSoalan."','".$i."','".$soalan."','".$IdTopik."')";
+                    mysqli_query($con, $addDataToSoalan);
+
+                    //pilihan B
+                    $intPilihan++;                 // to add new IdPilihan that is unique
+                    $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
+                    $addPilihanBToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanB."','".$pilihanB."','".$IdSoalan."')";
+                    //add query code here
+                    /////////// QUERY CODE //////////////
+                    mysqli_query($con, $addPilihanBToPilihan);
+                    
+                    
+
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    //add some code to get the IdSoalan
+                    $intSoalan++;                 // to add new IdSoalan that is unique
+                    $IdSoalan = "S".$intSoalan;       // note that the S will concatenate with last number + 1
+                    $addDataToSoalan = "INSERT INTO SOALAN (IdSoalan, NoSoalan, soalan, IdTopik) VALUES ('".$IdSoalan."','".$i."','".$soalan."','".$IdTopik."')";
+                    mysqli_query($con, $addDataToSoalan);
+
+                    //pilihan C
+                    $intPilihan++;                 // to add new IdPilihan that is unique
+                    $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
+                    $addPilihanCToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanC."','".$pilihanC."','".$IdSoalan."')";
+                    //add query code here
+                    /////////// QUERY CODE //////////////
+                    mysqli_query($con, $addPilihanCToPilihan);
+
+
+
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    //add some code to get the IdSoalan
+                    $intSoalan++;                 // to add new IdSoalan that is unique
+                    $IdSoalan = "S".$intSoalan;       // note that the S will concatenate with last number + 1
+                    $addDataToSoalan = "INSERT INTO SOALAN (IdSoalan, NoSoalan, soalan, IdTopik) VALUES ('".$IdSoalan."','".$i."','".$soalan."','".$IdTopik."')";
+                    mysqli_query($con, $addDataToSoalan);
+
+                    //pilihan D
+                    $intPilihan++;                 // to add new IdPilihan that is unique
+                    $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
+                    $addPilihanDToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanD."','".$pilihanD."','".$IdSoalan."')";
+                    //add query code here
+                    /////////// QUERY CODE //////////////
+                    mysqli_query($con, $addPilihanDToPilihan);
                 } 
                 
 
 
 
 
-                echo ('<script> alert("Soalan berjaya dimuat naik!"); </script>');
-                header('Location: ./indexGuru.php');       // direct user to login page to login
+                //echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
+                header('Location: ./indexGuru.php');       // direct user to home page
             }
             
             //mysqli_close($con);        //disconnect
-
+            mysqli_free_result($IdTopik);        //clear the memory
+            mysqli_free_result($IdSoalan);        
+            mysqli_free_result($IdPilihan);     
+            mysqli_free_result($intTopik);        
+            mysqli_free_result($intSoalan);        
+            mysqli_free_result($intPilihan); 
 
         ?>
     </body>

@@ -136,7 +136,7 @@
                     <br>
                     <br>
                     <br>
-                    <button type="submit" name="register-quiz-button"> Muat Naik </button>
+                    <button type="submit" name="register-quiz-button" onclick="alertBox()"> Muat Naik </button>
 
                 </form>
                 
@@ -172,6 +172,16 @@
 
                         return false;
                         
+                    }
+
+                    ////////////////////////////////////////////
+                    //          have a problem here
+                    ///////////////////////////////////////////
+                    function alertBox(){
+
+                        alert("Soalan berjaya dimuat naik!");
+                        return false;
+
                     }
                 </script>
 
