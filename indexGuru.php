@@ -29,7 +29,7 @@
             
         </div>
 
-        <!--Top navigation bar with index murid active-->
+        <!--Top navigation bar-->
         <div id="topnav" class="topnav">
             <a class="active-button" onclick="homeGuru()">Laman Utama</a>
             <a class="active-button" onclick="createGuru()">Sedia Kuiz</a>     
@@ -78,6 +78,8 @@
                 $("#contentGuru").load("checkGuru.php");
             }
         </script>
+
+        
         
     </head>
 
