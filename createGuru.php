@@ -10,6 +10,8 @@
         <title> Create Quiz </title>
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
     </head>
     <body>
         <h1 style="margin-left: 5.5%;"> Sediakan Kuiz </h1>

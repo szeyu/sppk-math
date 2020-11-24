@@ -229,20 +229,12 @@
                 } 
                 
 
-                echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
-                echo '<script> $("#contentCollection").load("createGuru.php"); </script>';
-                //header('Location: ./indexGuru.php');       // direct user to home page
+                //echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
+                header('Location: ./indexGuru.php?registeredKuiz=Kuiz bejaya dimuat naik!');       // direct user to home page
                 exit();
             }
             
-            //mysqli_close($con);        //disconnect
-            mysqli_free_result($IdTopik);        //clear the memory
-            mysqli_free_result($IdSoalan);        
-            mysqli_free_result($IdPilihan);     
-            mysqli_free_result($intTopik);        
-            mysqli_free_result($intSoalan);        
-            mysqli_free_result($intPilihan); 
-
+            
         ?>
     </body>
 </html>

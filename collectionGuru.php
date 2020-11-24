@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
     
+
+        
     </head>
 
     
@@ -102,11 +104,11 @@
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
                                     <!-- echo "<td><button type='button' class='changeButton' name='change-button' id=".$U_position."> Ubah Soalan </button></td>"; -->
-                                    <a href="index.php?change=<?php echo $row['IdTopik']; ?>"
+                                    <a href="indexGuru.php?change=<?php echo $row['IdTopik']; ?>"
                                         class="changeButton"> Ubah </a>
                             
                                     <!-- echo "<td><button type='button' class='deleteButton' name='delete-button' id=".$D_position."> Padamkan </button></td>"; -->
-                                    <a href="index.php?delete=<?php echo $row['IdTopik']; ?>"
+                                    <a href="indexGuru.php?delete=<?php echo $row['IdTopik']; ?>"
                                         class="deleteButton"> Padamkan </a>
                                 </td>
                                 

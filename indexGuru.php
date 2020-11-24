@@ -1,5 +1,7 @@
 <?php
     session_start();
+    //require "collectionGuru.php";
+    //require "registerKuiz.php";
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +81,37 @@
             }
         </script>
 
+        
+        <?php
+        // after register then direct to that page
+        // from url
+        if (isset($_GET['registeredKuiz'])){   ?>    
+
+            <script>alert(<?php echo $_GET['registeredKuiz'];?>);</script>
+            
+            <script> createGuru(); </script>
+           
+        <?php } ?>
+        
+        <?php
+        // after delete then direct to that page
+        // from url
+        if (isset($_GET['delete'])){   ?>    
+            <script>alert(<?php echo $_GET['delete'];?>);</script>
+            
+            <script> collectionGuru(); </script>
+           
+        <?php } ?>
+
+        <?php
+        // after change then direct to that page
+        // from url
+        if (isset($_GET['change'])){   ?>    
+            <script>alert(<?php echo $_GET['change'];?>);</script>
+            
+            <script> collectionGuru(); </script>
+           
+        <?php } ?>
         
         
     </head>
