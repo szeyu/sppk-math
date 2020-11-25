@@ -105,13 +105,13 @@
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
-                                    <?php echo "<button type='button' class='changeButton' name='change-button' id=".$row['IdTopik']."> Ubah </button>";
+                                    <?php echo "<button type='button' class='changeButton' name='change-button'> Ubah </button>";
                                     ?>
                                     
                                     <!-- <a href="indexGuru.php?change=<?php //echo $row['IdTopik']; ?>"
                                         class="changeButton"> Ubah </a> -->
-                            
-                                    <?php echo "<button type='button' class='deleteButton' name='delete-button' id=".$row['IdTopik']." onclick='deleteTopik(".$row['IdTopik'].")'> Padamkan </button>";
+                                                                                                                                                
+                                    <?php echo "<button type='button' class='deleteButton' name='delete-button' onclick='deleteTopik('".$row['IdTopik']."')'> Padamkan </button>";
                                     ?>
                                     <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
                                         class="deleteButton"> Padamkan </a> -->
@@ -154,10 +154,12 @@
                 </script>
 
                 <script>
-                    // add the console log and remove here
-                    function deleteTopik (position){
-                        var deleteElement = document.getElementById(position);
-                        deleteElement.parentNode.removeChild(deleteElement);
+                    function deleteTopik(id) {
+                        if(confirm("Adakah anda pasti hendak memadamkan rekod ini?")) {
+                            window.location = 'deleteTopik.php?IdTopik=' + id;
+                        } else {
+                            //do nothing
+                        }
                     }
                 </script>
 

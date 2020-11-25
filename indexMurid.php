@@ -70,6 +70,25 @@
             function checkMurid(){
                 $("#contentMurid").load("checkMurid.php")
             }
+            window.onload = function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const content = urlParams.get('content');
+
+                switch(content) {
+                    case "homeMurid":
+                        $("#contentMurid").load("homeMurid.php");
+                        break;
+                    case "collectionMurid":
+                        $("#contentMurid").load("collectionMurid.php");
+                        break;
+                    case "checkMurid":
+                        $("#contentMurid").load("checkMurid.php");
+                        break;
+                    default:
+                        break;
+                    
+                }
+            };
         </script>
         
     </head>

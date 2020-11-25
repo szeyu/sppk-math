@@ -234,7 +234,7 @@
                 //$_SESSION['registerQuizMessage'] = "Soalan berjaya dimuat naik!";
 
                 echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
-                header('Location: ./indexGuru.php');       // direct user to home page
+                header('Location: ./indexGuru.php?content=createGuru');       // direct user to home page
                 exit();
             }
             

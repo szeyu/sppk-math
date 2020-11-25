@@ -13,10 +13,3 @@ for the removal step of soalan pls follow these steps
 3) delete topik
 
 
-------------------------------------------------------------------
-i just realise i can also load my content in loaded content.
-----------------------------------------------------------------
-
-
-
-i need to learn console .log to remove the tag inside and at the same time remove in sql
