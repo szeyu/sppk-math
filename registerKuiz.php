@@ -7,6 +7,8 @@
 
         <?php
             require "connectPHP.php";
+
+            //session_start();
         
             
             if(isset($_POST['register-quiz-button'])){
@@ -228,9 +230,11 @@
                     mysqli_query($con, $addPilihanDToPilihan);
                 } 
                 
+                // here add session message
+                //$_SESSION['registerQuizMessage'] = "Soalan berjaya dimuat naik!";
 
-                //echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
-                header('Location: ./indexGuru.php?registeredKuiz=Kuiz bejaya dimuat naik!');       // direct user to home page
+                echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
+                header('Location: ./indexGuru.php');       // direct user to home page
                 exit();
             }
             

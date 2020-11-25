@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 
     <?php 
+        // require "process.php";
         require "connectPHP.php";
 
         $counter = "SELECT COUNT(IdTopik) FROM TOPIK";
@@ -90,9 +91,9 @@
                     <table id='topikTable'>
                         <tr class='tableHeader'>
                             <th style='width:10%;'>IdTopik</th>
-                            <th style='width:15%'>Sub topik</th>
-                            <th style='witdh:55%'>Tajuk</th>
-                            <th style='witdh:20%'>Tindakan</th>
+                            <th style='width:15%;'>Sub topik</th>
+                            <th style='witdh:70%;'>Tajuk</th>
+                            <th style='witdh:5%;'>Tindakan</th>
                             
                         </tr>
                                 
@@ -103,13 +104,15 @@
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
-                                    <!-- echo "<td><button type='button' class='changeButton' name='change-button' id=".$U_position."> Ubah Soalan </button></td>"; -->
-                                    <a href="indexGuru.php?change=<?php echo $row['IdTopik']; ?>"
-                                        class="changeButton"> Ubah </a>
+                                    <?php echo "<button type='button' class='changeButton' name='change-button' id=".$row['IdTopik']."> Ubah </button>";
+                                    ?>
+                                    <!-- <a href="indexGuru.php?change=<?php //echo $row['IdTopik']; ?>"
+                                        class="changeButton"> Ubah </a> -->
                             
-                                    <!-- echo "<td><button type='button' class='deleteButton' name='delete-button' id=".$D_position."> Padamkan </button></td>"; -->
-                                    <a href="indexGuru.php?delete=<?php echo $row['IdTopik']; ?>"
-                                        class="deleteButton"> Padamkan </a>
+                                    <?php echo "<button type='button' class='deleteButton' name='delete-button' id=".$row['IdTopik']."> Padamkan </button>";
+                                    ?>
+                                    <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
+                                        class="deleteButton"> Padamkan </a> -->
                                 </td>
                                 
                             </tr>
@@ -146,6 +149,11 @@
                     }
 
                             
+                </script>
+
+                <script>
+                    // add the console log remove here
+                
                 </script>
 
                 <br>

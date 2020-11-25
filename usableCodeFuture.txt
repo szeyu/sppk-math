@@ -262,3 +262,78 @@
                             echo "Pls check your database, database not atomic";  //cannot no telefon in table if like that db crash
                         }
                         */
+
+
+
+
+
+                         <?php
+
+        // after click then direct to that page
+        // from url
+        if (isset($_GET['homeGuru'])){   ?>    
+
+            <script> $("#contentGuru").load("homeGuru.php"); </script>
+           
+        <?php } ?>
+
+        <?php
+
+        // after clcik then direct to that page
+        // from url
+        if (isset($_GET['checkGuru'])){   ?>    
+
+            <script> $("#contentGuru").load("checkGuru.php"); </script>
+           
+        <?php } ?>
+
+        <?php
+
+        // after register then direct to that page
+        // from url
+        if (isset($_GET['registeredKuiz'])){   ?>    
+
+            <script>alert(<?php echo $_GET['registeredKuiz'];?>);</script>
+            
+            <script> $("#contentGuru").load("createGuru.php"); </script>
+           
+        <?php } ?>
+
+        <?php
+        // after  then direct to that page
+        // from url
+        if (isset($_GET['collection'])){   ?>    
+            <script>alert(<?php echo $_GET['collection'];?>);</script>
+            
+            <script> $("#contentGuru").load("collectionGuru.php"); </script>
+           
+        <?php } ?>
+        
+        <?php
+        // after delete then direct to that page
+        // from url
+        if (isset($_GET['delete'])){   ?>    
+            <script>alert(<?php echo $_GET['delete'];?>);</script>
+            
+            <script> $("#contentGuru").load("collectionGuru.php"); </script>
+           
+        <?php } ?>
+
+        <?php
+        // after change then direct to that page
+        // from url
+        if (isset($_GET['change'])){   ?>    
+            <script>alert(<?php echo $_GET['change'];?>);</script>
+            
+            <script> $("#contentGuru").load("collectionGuru.php"); </script>
+           
+        <?php } ?>
+
+
+
+
+        <!-- here unset the session message -->
+        <script>alert(<?php echo $_SESSION['registerQuizMessage'];?>);</script>
+        <?php $_SESSION['registerQuizMessage'] = ""; ?>
+            
+            
