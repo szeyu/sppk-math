@@ -96,20 +96,22 @@
                             <th style='witdh:5%;'>Tindakan</th>
                             
                         </tr>
-                                
+
+                         
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
-                            <tr>
+                            <tr id="<?php echo $row['IdTopik']?>">
                                 <td><?php echo $row['IdTopik']; ?></td>
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
                                     <?php echo "<button type='button' class='changeButton' name='change-button' id=".$row['IdTopik']."> Ubah </button>";
                                     ?>
+                                    
                                     <!-- <a href="indexGuru.php?change=<?php //echo $row['IdTopik']; ?>"
                                         class="changeButton"> Ubah </a> -->
                             
-                                    <?php echo "<button type='button' class='deleteButton' name='delete-button' id=".$row['IdTopik']."> Padamkan </button>";
+                                    <?php echo "<button type='button' class='deleteButton' name='delete-button' id=".$row['IdTopik']." onclick='deleteTopik(".$row['IdTopik'].")'> Padamkan </button>";
                                     ?>
                                     <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
                                         class="deleteButton"> Padamkan </a> -->
@@ -152,8 +154,11 @@
                 </script>
 
                 <script>
-                    // add the console log remove here
-                
+                    // add the console log and remove here
+                    function deleteTopik (position){
+                        var deleteElement = document.getElementById(position);
+                        deleteElement.parentNode.removeChild(deleteElement);
+                    }
                 </script>
 
                 <br>
