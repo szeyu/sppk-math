@@ -100,7 +100,7 @@
                          
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
-                            <tr id="<?php echo $row['IdTopik']?>">
+                            <tr>
                                 <td><?php echo $row['IdTopik']; ?></td>
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
@@ -109,9 +109,8 @@
                                     ?>
                                     
                                     <!-- <a href="indexGuru.php?change=<?php //echo $row['IdTopik']; ?>"
-                                        class="changeButton"> Ubah </a> -->
-                                                                                                                                                
-                                    <?php echo "<button type='button' class='deleteButton' name='delete-button' onclick='deleteTopik('".$row['IdTopik']."')'> Padamkan </button>";
+                                        class="changeButton"> Ubah </a> -->                        
+                                    <?php echo '<button type="button" class="deleteButton" name="delete-button" onclick="deleteTopik(\'' . $row['IdTopik'] . '\')"> Padamkan </button>';
                                     ?>
                                     <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
                                         class="deleteButton"> Padamkan </a> -->
