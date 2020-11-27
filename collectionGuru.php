@@ -18,8 +18,6 @@
         <title> Koleksi Soalan </title>
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
-    
-
         
     </head>
 
@@ -105,7 +103,7 @@
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
-                                    <?php echo "<button type='button' class='changeButton' name='change-button'> Ubah </button>";
+                                    <?php echo '<button type="button" class="changeButton" name="change-button" onclick="updateTopik(\'' . $row['IdTopik'] . '\')"> Ubah </button>';
                                     ?>
                                     
                                     <!-- <a href="indexGuru.php?change=<?php //echo $row['IdTopik']; ?>"
@@ -160,6 +158,11 @@
                             //do nothing
                         }
                     }
+
+                    function updateTopik(id) {
+                        window.location = 'updateTopik.php?IdTopik=' + id;
+                    }
+                    
                 </script>
 
                 <br>

@@ -5,12 +5,8 @@
        
             require "connectPHP.php";
             
-            session_start(); //set up global variable
-
             if(isset($_GET['IdTopik'])){
-                $IdTopik = $_GET['IdTopik'];
-                //echo $IdTopik;
-
+                
                 // for the removal step of soalan pls follow these steps
                 // 1) delete pilihan
                 // 2) delete soalan
@@ -25,44 +21,42 @@
 
  
                 // select all IdSoalan with that IdTopik
-                $checkIdSoalanSQL = "SELECT IdSoalan FROM TOPIK WHERE IdTopik = '".$IdTopik."'";
+                $checkIdSoalanSQL = "SELECT IdSoalan FROM SOALAN WHERE IdTopik = '".$IdTopik."'";
                 $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
-                $rowSoalan = mysqli_fetch_assoc($resultSoalan);      
-                $IdSoalan = $rowTopik['IdSoalan'];
-
+               
                 // keep all data in array first
                 $resultSetSoalan = array();
                 while ($rowSoalan = mysqli_fetch_assoc($resultSoalan)) {
-                    $resultSetSoalan[] = $rowSoalan;
+                    $resultSetSoalan[] = $rowSoalan['IdSoalan'];
                 }
 
 
                 foreach ($resultSetSoalan as $IdSoalan){
-                    $checkIdPilihanSQL = "SELECT IdPilihan FROM TOPIK WHERE IdSoalan = '".$IdSoalan."'";
+                    $checkIdPilihanSQL = "SELECT IdPilihan FROM PILIHAN WHERE IdSoalan = '".$IdSoalan."'";
                     $resultPilihan = mysqli_query($con,$checkIdPilihanSQL);         // query
                     $rowPilihan = mysqli_fetch_assoc($resultPilihan);
                     $IdPilihan = $rowPilihan['IdPilihan'];
-                    echo $IdSoalan;
-                    echo $IdPilihan;
+                    // echo $IdSoalan;
+                    // echo $IdPilihan;
 
                     // // delete pilihan data
-                    // $deletePilihanSQL = "DELETE FROM PILIHAN WHERE IdPilihan = '".$IdPilihan."'";
-                    // mysqli_query($con,$deletePilihanSQL);         // query
+                    $deletePilihanSQL = "DELETE FROM PILIHAN WHERE IdPilihan = '".$IdPilihan."'";
+                    mysqli_query($con,$deletePilihanSQL);         // query
 
                     // // delete soalan data
-                    // $deleteSoalanSQL = "DELETE FROM SOALAN WHERE IdSoalan = '".$IdSoalan."'";
-                    // mysqli_query($con,$deleteSoalanSQL);         // query
+                    $deleteSoalanSQL = "DELETE FROM SOALAN WHERE IdSoalan = '".$IdSoalan."'";
+                    mysqli_query($con,$deleteSoalanSQL);         // query
                 }
 
                 echo $IdTopik;
                 // //delete topik data
-                // $deleteTopikSQL = "DELETE FROM TOPIK WHERE IdTopik = '".$IdTopik."'";
-                // mysqli_query($con,$deleteTopikSQL);         // query
+                $deleteTopikSQL = "DELETE FROM TOPIK WHERE IdTopik = '".$IdTopik."'";
+                mysqli_query($con,$deleteTopikSQL);         // query
                 
                 
 
-                // header('Location: ./indexGuru.php?content=collectionGuru');
-                // exit();
+                header('Location: ./indexGuru.php?content=collectionGuru');
+                exit();
             }
                 
         ?>

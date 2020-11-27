@@ -100,7 +100,7 @@ header {
     box-sizing: border-box;
     border: 1px solid rgba(83, 82, 82, 0.527);
     margin: 5px auto;
-    border-radius: 5px;
+    border-radius: 90px;
 
 }
 
@@ -193,7 +193,7 @@ header {
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid rgba(83, 82, 82, 0.527);
-    border-radius: 5px;
+    border-radius: 90px;
 
 }
 
@@ -595,3 +595,6 @@ div.logOut a:hover{                /*thumbnail*/
 .changeButton:hover{
     opacity: 0.75;
 }
+
+/*/////////////////// updateTopik //////////////////*/
+
