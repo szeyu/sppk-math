@@ -134,11 +134,17 @@
                         $checkIdPilihanSQL = "SELECT * FROM PILIHAN WHERE IdSoalan = '".$resultSetIdSoalan[$j]."'";
                         $resultPilihan = mysqli_query($con,$checkIdPilihanSQL);         // query
                         $rowPilihan = mysqli_fetch_assoc($resultPilihan);
-                        $resultSetIdPilihan = $rowPilihan['IdPilihan'];
-                        $resultSetJawapan = $rowPilihan['jawapan'];
-                        $resultSetPilihan = $rowPilihan['pilihan'];
+                        $resultSetIdPilihan[] = $rowPilihan['IdPilihan'];
+                        $resultSetJawapan[] = $rowPilihan['jawapan'];
+                        $resultSetPilihan[] = $rowPilihan['pilihan'];
+
+                        // echo($rowPilihan['jawapan']);
+                        // echo($rowPilihan['pilihan']);
                         
                     }
+                    //print_r($resultSetJawapan);
+                    //echo($resultSetPilihan[0]);
+
 
                     $soalan = $rowSoalan['soalan'];  // then only we get the soalan
 
@@ -203,14 +209,10 @@
                                 <input type='text' placeholder=\"'Pilihan D Soalan '.$i\" id=\"'pilihanD'.$i\" name=\"'pilihanD'.$i\" spellcheck='false' required value='$resultSetPilihan[3]'>
                                 </div>
                                 <br>
-                            </div>
-                            <br>
-                            
-                            
+                            </div>                     
 
                         </form>
                     
-                        <p style=color: white;'>.</P>
                         
                     ";
                     
@@ -231,6 +233,9 @@
                         <br>
                         <br>
                         <button type='submit' name='update-quiz-button'> Ubah </button>
+                        <br>
+                        <br>
+                        <p style=color: white;'>.</P>
                     <div>";
 
                 echo "<script>     
