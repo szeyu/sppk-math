@@ -54,6 +54,8 @@
                 
                
                 echo "
+                    <h1 style=\"margin-left: 5.5%;\"> Ubah Kuiz </h1>
+                    <div class=\"createGuru\">
                     <br>
                     <div class='createGuruContainer'>
                         <form id=soalanForm' action='ubahSoalan.php' method ='POST'>
@@ -171,7 +173,7 @@
                             <br>
                             <div class='jawapanBox'>
                                 <label for='jawapan'> Jawapan :</label>
-                                <select name=\"'jawapan'.$i\" id=\"'jawapan'.$i\" value='$answer'>
+                                <select name=\"'jawapan'.$i\" id=\"'jawapan'.$i\">
                                     <option value='A'> A </option>
                                     <option value='B'> B </option>
                                     <option value='C'> C </option>
@@ -209,13 +211,16 @@
                                 <input type='text' placeholder=\"'Pilihan D Soalan '.$i\" id=\"'pilihanD'.$i\" name=\"'pilihanD'.$i\" spellcheck='false' required value='$resultSetPilihan[3]'>
                                 </div>
                                 <br>
-                            </div>                     
-
-                        </form>
-                    
-                        
+                            </div>
+                            <br>
                     ";
-                    
+                            // after the end of the display no need to display hr alr cause the tambah part will do
+                            if ($i != $totalNumberOfSoalan){
+                                echo"
+                                <hr>    
+                                <br>  
+                                ";       
+                            }  
                 }
 
                 echo "
@@ -232,10 +237,12 @@
                         <br>
                         <br>
                         <br>
-                        <button type='submit' name='update-quiz-button'> Ubah </button>
+                        <button type='submit' name='update-quiz-button' onclick='updateSoalan()'> Ubah </button>
+                        </form>
                         <br>
                         <br>
                         <p style=color: white;'>.</P>
+                    <div>
                     <div>";
 
                 echo "<script>     

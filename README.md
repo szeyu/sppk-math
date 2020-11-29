@@ -52,3 +52,8 @@ first thing to do is we must output the subtopik and tajuk first
 then we must add echo in loop 
 
 after output when user press ubah then need to identify wheter soalan got increase or decrease.
+
+------------------------------------------------------------------------
+
+there is a BIG issue, i cannot remove the existed soalan 2,3...
+so i need to do an if statement to add DIV element so that i can remove it
