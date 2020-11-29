@@ -5,6 +5,26 @@
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
         
+
+        <div class="banner">
+            <div style="background-color:  rgb(194, 247, 240);">
+                <p style="color: rgb(194, 247, 240);">.</p>
+                <h1 style="background-color:  rgb(194, 247, 240);"> Ilmu Di Hujung Jari </h1>
+                <h2 style="background-color:  rgb(194, 247, 240);"> Matematik Tingkatan 4 (DLP) </h2>
+                <!--log out button-->
+                <div class="logOut">
+                    <a href="login.php"> Log Keluar </a>   
+                </div> 
+                <p style="color: rgb(194, 247, 240);">.</p>
+                <br>
+            </div>
+            <div class="updateBalik">
+                <a href="indexGuru.php?content=collectionGuru"> Balik </a>   
+            </div> 
+            <br>
+            <br>
+            <br>
+        </div>
     </head>
 
     <body>
@@ -31,9 +51,69 @@
                 $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
                 $numberOfRow = mysqli_num_rows($resultSoalan);       
                 $totalNumberOfSoalan = $numberOfRow / 4;        // need to divide by 4 to find the total number of soalan
-
-               
                 
+               
+                echo "
+                    <br>
+                    <div class='createGuruContainer'>
+                        <form id=soalanForm' action='ubahSoalan.php' method ='POST'>
+                            <br>
+                            <div class='tajukBox'>
+                                <label for='subTopik'> Sub Topik :</label>
+                                <input type='text' placeholder='sub topik' name='subTopik' id='subTopik' list='subTopiks' spellcheck='false' required value='$subTopik'>
+                                <datalist id='subTopiks'>
+                                    <option value='1.1'></option>
+                                    <option value='2.1'></option>
+                                    <option value='3.1'></option>
+                                    <option value='3.2'></option>
+                                    <option value='4.1'></option>
+                                    <option value='4.2'></option>
+                                    <option value='4.3'></option>
+                                    <option value='5.1'></option>
+                                    <option value='6.1'></option>
+                                    <option value='7.1'></option>
+                                    <option value='7.2'></option>
+                                    <option value='8.1'></option>
+                                    <option value='8.2'></option>
+                                    <option value='9.1'></option>
+                                    <option value='9.2'></option>
+                                    <option value='9.3'></option>
+                                    <option value='9.4'></option>
+                                    <option value='10.1'></option>
+                                    <option value='revision'></option>
+                                </datalist>
+                                <br>
+                                <label for='tajuk'> Tajuk :</label>
+                                <input type='text' placeholder='Tajuk' name='tajuk' id='tajuk' list='tajuks' spellcheck='false' required value='$tajuk'>
+                                <datalist id='tajuks'>
+                                    <option value='Quadratic Function and Equations'></option>
+                                    <option value='Number Base'></option>
+                                    <option value='Statements'></option>
+                                    <option value='Arguments'></option>
+                                    <option value='Intersection of Sets'></option>
+                                    <option value='Union of Sets'></option>
+                                    <option value='Combined Operation on Sets'></option>
+                                    <option value='Network'></option>
+                                    <option value='Linear Inequalities in Two Variables'></option>
+                                    <option value='Systems of Linear Inequalities in Two Variables'></option>
+                                    <option value='Distance-Time Graphs'></option>
+                                    <option value='Dispersion'></option>
+                                    <option value='Measure of Dispersion'></option>
+                                    <option value='Combined Event'></option>
+                                    <option value='Dependent Events and Independent Events'></option>
+                                    <option value='Mutually Exclusive Events and Non-Mutually Exclusive Events'></option>
+                                    <option value='Application of Probability of Combined Events'></option>
+                                    <option value='Financial Planning of combined Events'></option>
+                                </datalist>
+                            
+                            </div>
+                            <br>
+                            <br>
+                            <hr>
+                            <br>
+                ";
+
+
 
                 for ($i=1; $i <= $totalNumberOfSoalan; $i++){       // to loop till the end of question
                     //every loop use new array
@@ -47,7 +127,7 @@
                     $answer; //ABCD
 
                     for($j=0; $j < 4; $j++){   // loop four times
-                        $rowSoalan = mysqli_fetch_assoc($resultSoalan)
+                        $rowSoalan = mysqli_fetch_assoc($resultSoalan);
                         $resultSetIdSoalan[] = $rowSoalan['IdSoalan'];
                         
                         
@@ -79,50 +159,119 @@
                     
                     ////////// Display data ////////////////////
 
+                    echo "
+                            <label for='soalan'> Soalan $i  :</label>
+                            <input type='text' placeholder=\"'Soalan '. $i\" id=\"'soalan'.$i\" name=\"'soalan'.$i\"s spellcheck='false' required value='$soalan'><br>
+                            <br>
+                            <div class='jawapanBox'>
+                                <label for='jawapan'> Jawapan :</label>
+                                <select name=\"'jawapan'.$i\" id=\"'jawapan'.$i\" value='$answer'>
+                                    <option value='A'> A </option>
+                                    <option value='B'> B </option>
+                                    <option value='C'> C </option>
+                                    <option value='D'> D </option>
+                                </select> 
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class='pilihanBox'>
+                                <div>
+                                <label for='pilihanA' style='float: left;'> pilihan A :</label>
+                                </div>
+                                <div>
+                                <input type='text' placeholder=\"'Pilihan A Soalan '.$i\" id=\"'pilihanA'.$i\" name=\"'pilihanA'.$i\" spellcheck='false' required value='$resultSetPilihan[0]'>
+                                </div>
+                                <div>
+                                <label for='pilihanB' style='float: left;'> pilihan B :</label>
+                                </div>
+                                <div>
+                                <input type='text' placeholder=\"'Pilihan B Soalan '.$i\" id=\"'pilihanB'.$i\" name=\"'pilihanB'.$i\" spellcheck='false' required value='$resultSetPilihan[1]'>
+                                </div>
+                                <div>
+                                <label for='pilihanC' style='float: left;'> pilihan C :</label>
+                                </div>
+                                <div>
+                                <input type='text' placeholder=\"'Pilihan C Soalan '.$i\" id=\"'pilihanC'.$i\" name=\"'pilihanC'.$i\" spellcheck='false' required value='$resultSetPilihan[2]'>
+                                </div>
+                                <div>
+                                <label for='pilihanD' style='float: left;'> pilihan D :</label>
+                                </div>
+                                <div>
+                                <input type='text' placeholder=\"'Pilihan D Soalan '.$i\" id=\"'pilihanD'.$i\" name=\"'pilihanD'.$i\" spellcheck='false' required value='$resultSetPilihan[3]'>
+                                </div>
+                                <br>
+                            </div>
+                            <br>
+                            
+                            
 
+                        </form>
                     
-
+                        <p style=color: white;'>.</P>
+                        
+                    ";
+                    
                 }
 
+                echo "
+                        <!-- add new soalan here -->
+                        <div id='soalanDitambah'></div>
+                        <br>
 
-                while ($rowSoalan = mysqli_fetch_assoc($resultSoalan)) {
-                    $resultSetIdSoalan[] = $rowSoalan['IdSoalan'];
-                    $resultSetSoalan[] = $rowSoalan['soalan'];
+                        <!-- when clicked then add create quiz form below -->
+                        <a name='add-question-button' onclick='tambahSoalan()'> Tambah (+) </a><br>
+                        <br>
+                        <br>
+                        <br>
+                        <a name='delete-question-button' onclick='deleteSoalan()'> Hapus (-) </a><br>
+                        <br>
+                        <br>
+                        <br>
+                        <button type='submit' name='update-quiz-button'> Ubah </button>
+                    <div>";
+
+                echo "<script>     
+                var noSoalanCounter = '$totalNumberOfSoalan';
+                var noSoalan = 'soalan' + noSoalanCounter;
+                var down = document.getElementById('soalanDitambah');
+
+                // create <br> element
+                var br =document.createElement('br');
+
+                function tambahSoalan(){
+                    noSoalanCounter++;
+
+                    var divForm = document.createElement('div');
+                    divForm.innerHTML += \"<div id= 'soalanForm\" + noSoalanCounter +\"'><br><br><br><hr><br><label for='soalan'> Soalan \" +noSoalanCounter+\" :</label><input type='text' placeholder='Soalan \" +noSoalanCounter+\"' id='soalan\" +noSoalanCounter+\"' name='soalan\" +noSoalanCounter+\"' spellcheck='false' required><br><br><div class='jawapanBox'><label for='jawapan'> Jawapan :</label><select name='jawapan\" +noSoalanCounter+\"' id='jawapan\" +noSoalanCounter+\"'><option value='A'> A </option><option value='B'> B </option><option value='C'> C </option><option value='D'> D </option></select> </div><br><br><br><br><br><div class='pilihanBox'><div><label for='pilihanA' style=float: left;> pilihan A :</label></div><div><input type='text' placeholder='Pilihan A Soalan \" +noSoalanCounter+\"' id='pilihanA\" +noSoalanCounter+\"' name='pilihanA\" +noSoalanCounter+\"' spellcheck='false' required></div><div><label for='pilihanB' style=float: left;> pilihan B :</label></div><div><input type='text' placeholder='Pilihan B Soalan \" +noSoalanCounter+\"' id='pilihanB\" +noSoalanCounter+\"' name='pilihanB\" +noSoalanCounter+\"' spellcheck='false' required></div><div><label for='pilihanC' style=float: left;> pilihan C :</label></div><div><input type='text' placeholder='Pilihan C Soalan \" +noSoalanCounter+\"' id='pilihanC\" +noSoalanCounter+\"' name='pilihanC\" +noSoalanCounter+\"' spellcheck='false' required></div><div><label for='pilihanD' style=float: left;> pilihan D :</label></div><div><input type='text' placeholder='Pilihan D Soalan \" +noSoalanCounter+\"' id='pilihanD\" +noSoalanCounter+\"' name='pilihanD\" +noSoalanCounter+\"' spellcheck='false' required></div><br></div>\";
+                    document.getElementById('soalanDitambah').appendChild(divForm);
+
+
+                    return false;
                 }
 
+                function deleteSoalan(){
 
-                $resultSetIdPilihan = array();
-                $resultSetJawapan = array();
-                $resultSetPilihan = array();
-                $result
+                    var deleteElement = document.getElementById('soalanForm' + noSoalanCounter);
+                    deleteElement.parentNode.removeChild(deleteElement);
 
-                for ($i=0; $i < count($resultSetIdSoalan); $i++){
-                    $IdSoalan = $resultSetIdSoalan[i];
-                    $checkIdPilihanSQL = "SELECT * FROM PILIHAN WHERE IdSoalan = '".$IdSoalan."'";
-                    $resultPilihan = mysqli_query($con,$checkIdPilihanSQL);         // query
-                    $rowPilihan = mysqli_fetch_assoc($resultPilihan);
-                    $IdPilihan = $rowPilihan['IdPilihan'];
-                    // echo $IdSoalan;
-                    // echo $IdPilihan;
+                    //last step is to subtract noSoalanCounter by 1
+                    if (noSoalanCounter > 1){
+                        noSoalanCounter--; 
+                    }
 
-                    // // delete pilihan data
-                    $deletePilihanSQL = "DELETE FROM PILIHAN WHERE IdPilihan = '".$IdPilihan."'";
-                    mysqli_query($con,$deletePilihanSQL);         // query
-
-                    // // delete soalan data
-                    $deleteSoalanSQL = "DELETE FROM SOALAN WHERE IdSoalan = '".$IdSoalan."'";
-                    mysqli_query($con,$deleteSoalanSQL);         // query
+                    return false;
+                    
                 }
+                </script>";
 
-                echo $IdTopik;
-                // //delete topik data
-                $deleteTopikSQL = "DELETE FROM TOPIK WHERE IdTopik = '".$IdTopik."'";
-                mysqli_query($con,$deleteTopikSQL);         // query
+
                 
-                
 
-                header('Location: ./indexGuru.php?content=collectionGuru');
-                exit();
+                // header('Location: ./indexGuru.php?content=collectionGuru');
+                // exit();
             }
                 
         ?>

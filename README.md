@@ -42,3 +42,13 @@ then output then loop again
 [0,0,0,1] then answer is D
 [102,34,23,105] for the each pilihan then output from array no need to make variable
 
+
+ok for output part leh a bit hard
+need to know got any question added or deleted and need to get the lateszt id to add
+if got deleted then need to remove the id
+
+first thing to do is we must output the subtopik and tajuk first
+
+then we must add echo in loop 
+
+after output when user press ubah then need to identify wheter soalan got increase or decrease.
