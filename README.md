@@ -57,3 +57,7 @@ after output when user press ubah then need to identify wheter soalan got increa
 
 there is a BIG issue, i cannot remove the existed soalan 2,3...
 so i need to do an if statement to add DIV element so that i can remove it
+
+updateTopik.php?IdTopik=T6:229 Uncaught TypeError: Cannot read property 'parentNode' of null
+    at deleteSoalan (updateTopik.php?IdTopik=T6:229)
+    at HTMLAnchorElement.onclick (updateTopik.php?IdTopik=T6:197)

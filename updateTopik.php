@@ -1,5 +1,6 @@
 
 <html>
+
     <head>
         <title> Update Topik </title>
         <link rel="stylesheet" href="mystyle.css">
@@ -51,7 +52,11 @@
                 $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
                 $numberOfRow = mysqli_num_rows($resultSoalan);       
                 $totalNumberOfSoalan = $numberOfRow / 4;        // need to divide by 4 to find the total number of soalan
-                
+                echo "
+                <script>
+                    var noSoalanCounter = $totalNumberOfSoalan;
+                </script>
+                ";
                
                 echo "
                     <h1 style=\"margin-left: 5.5%;\"> Ubah Kuiz </h1>
@@ -164,21 +169,32 @@
                         $answer = 'D';
                     }
 
+                    //need to build option in array, so that can make the comparison
+                    $options = [
+                        'A'=> 'A',
+                        'B'=> 'B',
+                        'C'=> 'C',
+                        'D'=> 'D'
+                    ];
+                    
+                    //build option html
+                    $html_options = '';
+                    foreach($options as $value => $label){
+                        $selected = ($value == $answer) ? 'selected' : '';
+                        $html_options .= "<option value='$value' $selected>$label</option>";
+                    }
                     
                     ////////// Display data ////////////////////
 
                     echo "
+                        <div id = \"'soalanForm'. $i\">
                             <label for='soalan'> Soalan $i  :</label>
                             <input type='text' placeholder=\"'Soalan '. $i\" id=\"'soalan'.$i\" name=\"'soalan'.$i\"s spellcheck='false' required value='$soalan'><br>
                             <br>
                             <div class='jawapanBox'>
-                                <label for='jawapan'> Jawapan :</label>
-                                <select name=\"'jawapan'.$i\" id=\"'jawapan'.$i\">
-                                    <option value='A'> A </option>
-                                    <option value='B'> B </option>
-                                    <option value='C'> C </option>
-                                    <option value='D'> D </option>
-                                </select> 
+                                <label for='jawapan'> Jawapan :</label>                            
+                                <select name=\"'jawapan'.$i\" id=\"'jawapan'.$i\">$html_options</select> 
+                            
                             </div>
                             <br>
                             <br>
@@ -213,6 +229,7 @@
                                 <br>
                             </div>
                             <br>
+                        </div>
                     ";
                             // after the end of the display no need to display hr alr cause the tambah part will do
                             if ($i != $totalNumberOfSoalan){
@@ -246,7 +263,7 @@
                     <div>";
 
                 echo "<script>     
-                var noSoalanCounter = '$totalNumberOfSoalan';
+                
                 var noSoalan = 'soalan' + noSoalanCounter;
                 var down = document.getElementById('soalanDitambah');
 
@@ -269,6 +286,7 @@
                     var deleteElement = document.getElementById('soalanForm' + noSoalanCounter);
                     deleteElement.parentNode.removeChild(deleteElement);
 
+                    //alert (noSoalanCounter);
                     //last step is to subtract noSoalanCounter by 1
                     if (noSoalanCounter > 1){
                         noSoalanCounter--; 
