@@ -68,13 +68,22 @@ updateTopik.php?IdTopik=T6:229 Uncaught TypeError: Cannot read property 'parentN
 
 --------------------------------------------------------------------------------------------------
 //////////////////////////////////////////////
-///////
+///////         SOLVED
 /////////////////////////////////////////////
 
-why the hell it remove question 1.  [   ]
+why the hell it remove question 1.  [  SOLVED ]
 
 and why there is a line that interupt the structure of the interface   [ SOLVED  ]
 
+
+--------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////
+////            SOLVED
+////////////////////////////////////////////////
+
+i want to transfer the Id Topik to ubahSoalanDB.php
+there is a few solution one is it is use session global variable.
+and i dun want to use session
 
 --------------------------------------------------------------------------------------------------
 
