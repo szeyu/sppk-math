@@ -100,3 +100,8 @@ if yes then use the delete topik method to do
 
 do the check extra and check deleted first then execute them
 then only do the update just replace whatever user type with that only 
+
+
+i can use echo output at that place because after header(...)
+then my all echo will gone
+plus echo can let me see the process
