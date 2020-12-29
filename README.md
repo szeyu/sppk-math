@@ -54,6 +54,9 @@ then we must add echo in loop
 after output when user press ubah then need to identify wheter soalan got increase or decrease.
 
 ------------------------------------------------------------------------
+///////////////////////////////////////
+/////////          SOLVED
+///////////////////////////////////////
 
 there is a BIG issue, i cannot remove the existed soalan 2,3...
 so i need to do an if statement to add DIV element so that i can remove it
@@ -61,3 +64,30 @@ so i need to do an if statement to add DIV element so that i can remove it
 updateTopik.php?IdTopik=T6:229 Uncaught TypeError: Cannot read property 'parentNode' of null
     at deleteSoalan (updateTopik.php?IdTopik=T6:229)
     at HTMLAnchorElement.onclick (updateTopik.php?IdTopik=T6:197)
+
+
+--------------------------------------------------------------------------------------------------
+//////////////////////////////////////////////
+///////
+/////////////////////////////////////////////
+
+why the hell it remove question 1.  [   ]
+
+and why there is a line that interupt the structure of the interface   [ SOLVED  ]
+
+
+--------------------------------------------------------------------------------------------------
+
+for the ubahSoalanDB.php hor is combination of many function
+1) delete 
+2) change
+3) add
+
+need to check if there is any extra question added or not,
+if yes then use the register quiz method to do
+
+need to check if there is any deleted question,
+if yes then use the delete topik method to do
+
+do the check extra and check deleted first then execute them
+then only do the update just replace whatever user type with that only 

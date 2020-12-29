@@ -161,11 +161,10 @@
 
                     function deleteSoalan(){
 
-                        var deleteElement = document.getElementById("soalanForm" + noSoalanCounter);
-                        deleteElement.parentNode.removeChild(deleteElement);
-
                         //last step is to subtract noSoalanCounter by 1
                         if (noSoalanCounter > 1){
+                            var deleteElement = document.getElementById("soalanForm" + noSoalanCounter);
+                            deleteElement.parentNode.removeChild(deleteElement);
                             noSoalanCounter--; 
                         }
 

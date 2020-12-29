@@ -116,8 +116,6 @@
                             </div>
                             <br>
                             <br>
-                            <hr>
-                            <br>
                 ";
 
 
@@ -187,13 +185,16 @@
                     ////////// Display data ////////////////////
 
                     echo "
-                        <div id = \"'soalanForm'. $i\">
+                        <div id = 'soalanForm$i'>
+                            <hr>
+                            <br>
+
                             <label for='soalan'> Soalan $i  :</label>
-                            <input type='text' placeholder=\"'Soalan '. $i\" id=\"'soalan'.$i\" name=\"'soalan'.$i\"s spellcheck='false' required value='$soalan'><br>
+                            <input type='text' placeholder='Soalan $i' id='soalan$i' name='soalan$i' spellcheck='false' required value='$soalan'><br>
                             <br>
                             <div class='jawapanBox'>
                                 <label for='jawapan'> Jawapan :</label>                            
-                                <select name=\"'jawapan'.$i\" id=\"'jawapan'.$i\">$html_options</select> 
+                                <select name='jawapan$i' id='jawapan$i'>$html_options</select> 
                             
                             </div>
                             <br>
@@ -206,38 +207,32 @@
                                 <label for='pilihanA' style='float: left;'> pilihan A :</label>
                                 </div>
                                 <div>
-                                <input type='text' placeholder=\"'Pilihan A Soalan '.$i\" id=\"'pilihanA'.$i\" name=\"'pilihanA'.$i\" spellcheck='false' required value='$resultSetPilihan[0]'>
+                                <input type='text' placeholder='Pilihan A Soalan $i' id='pilihanA$i' name='pilihanA$i' spellcheck='false' required value='$resultSetPilihan[0]'>
                                 </div>
                                 <div>
                                 <label for='pilihanB' style='float: left;'> pilihan B :</label>
                                 </div>
                                 <div>
-                                <input type='text' placeholder=\"'Pilihan B Soalan '.$i\" id=\"'pilihanB'.$i\" name=\"'pilihanB'.$i\" spellcheck='false' required value='$resultSetPilihan[1]'>
+                                <input type='text' placeholder='Pilihan B Soalan $i' id='pilihanB$i' name='pilihanB$i' spellcheck='false' required value='$resultSetPilihan[1]'>
                                 </div>
                                 <div>
                                 <label for='pilihanC' style='float: left;'> pilihan C :</label>
                                 </div>
                                 <div>
-                                <input type='text' placeholder=\"'Pilihan C Soalan '.$i\" id=\"'pilihanC'.$i\" name=\"'pilihanC'.$i\" spellcheck='false' required value='$resultSetPilihan[2]'>
+                                <input type='text' placeholder='Pilihan C Soalan $i' id='pilihanC$i' name='pilihanC$i' spellcheck='false' required value='$resultSetPilihan[2]'>
                                 </div>
                                 <div>
                                 <label for='pilihanD' style='float: left;'> pilihan D :</label>
                                 </div>
                                 <div>
-                                <input type='text' placeholder=\"'Pilihan D Soalan '.$i\" id=\"'pilihanD'.$i\" name=\"'pilihanD'.$i\" spellcheck='false' required value='$resultSetPilihan[3]'>
+                                <input type='text' placeholder='Pilihan D Soalan $i' id='pilihanD$i' name='pilihanD$i' spellcheck='false' required value='$resultSetPilihan[3]'>
                                 </div>
                                 <br>
                             </div>
                             <br>
                         </div>
                     ";
-                            // after the end of the display no need to display hr alr cause the tambah part will do
-                            if ($i != $totalNumberOfSoalan){
-                                echo"
-                                <hr>    
-                                <br>  
-                                ";       
-                            }  
+                            
                 }
 
                 echo "
@@ -283,22 +278,23 @@
 
                 function deleteSoalan(){
 
-                    var deleteElement = document.getElementById('soalanForm' + noSoalanCounter);
-                    deleteElement.parentNode.removeChild(deleteElement);
-
                     //alert (noSoalanCounter);
                     //last step is to subtract noSoalanCounter by 1
                     if (noSoalanCounter > 1){
+                        var deleteElement = document.getElementById('soalanForm' + noSoalanCounter);
+                        var aux = deleteElement.parentNode;
+                        aux.removeChild(deleteElement);
                         noSoalanCounter--; 
                     }
 
                     return false;
                     
                 }
-                </script>";
-
 
                 
+
+                </script>";
+         
 
                 // header('Location: ./indexGuru.php?content=collectionGuru');
                 // exit();
