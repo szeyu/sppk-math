@@ -11,10 +11,13 @@
             }
             
             if(isset($_POST['update-quiz-button'])){
-                      
+                
+                // delete the old record
                 require "deleteTopik.php";
-                //require "addDataToDB.php";   // this cannot work
-                  
+
+                // create new record
+                //require "addDataToDB.php"; 
+                
 
                 echo '<script> alert("Soalan berjaya diubah!"); </script>';
                 header('Location: ./indexGuru.php?content=collectionGuru');       // direct user to home page

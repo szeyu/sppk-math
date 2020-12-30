@@ -125,4 +125,7 @@ so need to create seperate file then include them
 remove the get latest id in addDataToDB.php
 then the get id function only be included if need it
 
+cheh just now forgot to use sql code
+
+
 --------------------------------------------------------------------------------------------
