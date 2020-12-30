@@ -16,7 +16,7 @@
                 require "deleteTopik.php";
 
                 // create new record
-                //require "addDataToDB.php"; 
+                //require "addDataToDB.php";   // this cannot work 
                 
 
                 echo '<script> alert("Soalan berjaya diubah!"); </script>';
