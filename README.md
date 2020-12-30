@@ -1,19 +1,18 @@
 # sppk-math
 Sistem Pengurusan Penilaian Kuiz, Ilmu Di Hujung Jari, Matematik Tingkatan 4 (DLP)
 
-
-
 pls refer to szeyu branch
 
+-----------------------------------------------------------
 
-
-for the removal step of soalan pls follow these steps
+## for the removal step of soalan pls follow these steps
 1) delete pilihan
 2) delete soalan
 3) delete topik
 
+-----------------------------------------------------------------
 
-in the updateTopik":
+## in the updateTopik":
 
 first store idTopik \
 then store tajuk     > these are constant
@@ -86,6 +85,7 @@ there is a few solution one is it is use session global variable.
 and i dun want to use session
 
 --------------------------------------------------------------------------------------------------
+## ubah soalan DB
 
 for the ubahSoalanDB.php hor is combination of many function
 1) delete 
@@ -105,3 +105,24 @@ then only do the update just replace whatever user type with that only
 i can use echo output at that place because after header(...)
 then my all echo will gone
 plus echo can let me see the process
+
+
+        OR
+
+
+i can just delete old one then add the ubah soalan as new soalan
+and this need to MANTAIN IdTopik kunci primer
+
+then id soalan dan id pilihan just create a new one using the same method in registerQuiz.php
+
+--------------------------------------------------------------------------------------------
+
+the add data to data base php will renew my IdTopik so not good
+cause the IdTopik must still the same
+
+so need to create seperate file then include them 
+
+remove the get latest id in addDataToDB.php
+then the get id function only be included if need it
+
+--------------------------------------------------------------------------------------------
