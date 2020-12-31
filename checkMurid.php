@@ -103,7 +103,7 @@
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
-                                    <?php echo '<button type="button" class="doButton" name="doButton" onclick="buatKuiz(\'' . $row['IdTopik'] . '\')"> Buat dan Hantar </button>';
+                                    <?php echo '<button type="button" class="doButton" name="doButton" onclick="buatKuiz(\'' . $row['IdTopik'] . '\')"> Lihat jawapan </button>';
                                     ?>
                                     
                                 </td>

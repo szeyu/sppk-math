@@ -335,5 +335,27 @@
         <!-- here unset the session message -->
         <script>alert(<?php echo $_SESSION['registerQuizMessage'];?>);</script>
         <?php $_SESSION['registerQuizMessage'] = ""; ?>
+
+
+
+
+        <div>
+        <input type='radio' id='pilihanA$i' name='pilihanA$i' required value='A'>
+        <label for='pilihanA' style='float: left;'> (A)   $resultSetPilihan[0]</label> <br><br><br>
+        </div>
+        <div>
+        <input type='radio' id='pilihanB$i' name='pilihanB$i' required value='B'>
+        <label for='pilihanB' style='float: left;'> (B)   $resultSetPilihan[1] </label> <br><br><br>
+        </div>
+        <div>
+        <input type='radio' id='pilihanC$i' name='pilihanC$i' required value='C'>
+        <label for='pilihanC' style='float: left;'> (C)   $resultSetPilihan[2] </label> <br><br><br>
+        
+        </div>
+        <div>
+        <input type='radio' id='pilihanD$i' name='pilihanD$i' required value='D'>
+        <label for='pilihanD' style='float: left;'> (D)   $resultSetPilihan[3] </label> <br><br>
+        
+        </div>
             
             
