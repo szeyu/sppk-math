@@ -20,7 +20,7 @@
             <hr>
             <br>
             <div class="createGuruContainer">
-                <form id="soalanForm" action="registerKuiz.php" method ="POST" onsubmit="return confirm('Anda hendak muat naik kuiz yang anda buat?');">
+                <form id="soalanForm" action="registerKuiz.php" method ="POST" onsubmit="return confirm('Adakah anda pasti hendak muat naik kuiz yang anda buat?');">
                     <br>
                     <div class="tajukBox">
                         <label for="subTopik"> Sub Topik :</label>
