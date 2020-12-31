@@ -63,7 +63,7 @@
                     <div class=\"createGuru\">
                     <br>
                     <div class='createGuruContainer'>
-                        <form id=soalanForm' action='ubahSoalanDB.php?IdTopik=$IdTopik' method ='POST'>
+                        <form id=soalanForm' action='ubahSoalanDB.php?IdTopik=$IdTopik' method ='POST' onsubmit='return confirm(\"Ubah Soalan?\");'>
                             <br>
                             <div class='tajukBox'>
                                 <label for='subTopik'> Sub Topik :</label>

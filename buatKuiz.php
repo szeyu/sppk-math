@@ -63,7 +63,7 @@
                 <div class=\"buatKuiz\">
                     <br>
                     <div class='buatKuizContainer'>
-                        <form id=jawapanMurid' action='semakJawapan.php?IdTopik=$IdTopik' method ='POST'>
+                        <form id=jawapanMurid' action='semakJawapan.php?IdTopik=$IdTopik' method ='POST' onsubmit='return confirm(\"Anda hendak hantar kuiz yang dibuat?\");'>
                             <br>
                             <div class='tajukBox'>
                                 <label for='subTopik'> Sub Topik :  $subTopik</label>
@@ -178,7 +178,7 @@
 
                         <!-- when clicked then hantar quiz form -->
                         <br>
-                        <button type='submit' name='hantar-kuiz-button' onclick='hantarKuiz()' class='buatKuizContainer'> Hantar </button>
+                        <button type='submit' name='hantar-kuiz-button' class='buatKuizContainer'> Hantar </button>
                         </form>
                         <br>
                         <br>
@@ -186,19 +186,7 @@
                     <div>
                 <div>";
 
-            
-            
-            echo "<script>     
-            
-            function hantarKuiz(){
 
-                confirm('Adakah anda hendak hantar kuiz yang dibuat?');
-                return false;
-                
-            } 
-
-            </script>";
-            
 
             // header('Location: ./indexGuru.php?content=collectionGuru');
             // exit();

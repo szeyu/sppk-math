@@ -20,7 +20,7 @@
             <hr>
             <br>
             <div class="createGuruContainer">
-                <form id="soalanForm" action="registerKuiz.php" method ="POST">
+                <form id="soalanForm" action="registerKuiz.php" method ="POST" onsubmit="return confirm('Anda hendak muat naik kuiz yang anda buat?');">
                     <br>
                     <div class="tajukBox">
                         <label for="subTopik"> Sub Topik :</label>
@@ -172,15 +172,7 @@
                         
                     }
 
-                    ////////////////////////////////////////////
-                    //          have a problem here
-                    ///////////////////////////////////////////
-                    // function alertBox(){
-
-                    //     alert("Soalan berjaya dimuat naik!");
-                    //     return false;
-
-                    // }
+                    
                 </script>
 
                 
