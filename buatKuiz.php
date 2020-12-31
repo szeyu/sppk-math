@@ -143,22 +143,22 @@
                     <div class='pilihanBox'>
                         <div>
                             <label class='container'>-- (A)   <?php echo $resultSetPilihan[0];?>
-                                <input type='radio' name='radio' required value='A'>
+                                <input type='radio' name='radio<?php echo $i; ?>' required value='A'>
                                 <span class='checkmark'></span>
                             </label><br><br><br>
                             <label class='container'>-- (B)   <?php echo $resultSetPilihan[1];?>
-                                <input type='radio' name='radio' required value='B'>
+                                <input type='radio' name='radio<?php echo $i; ?>' required value='B'>
                                 <span class='checkmark'></span>
                             </label><br><br><br>
                         </div>
 
                         <div>
                             <label class='container'>-- (C)   <?php echo $resultSetPilihan[2];?>
-                                <input type='radio' name='radio' required value='C'>
+                                <input type='radio' name='radio<?php echo $i; ?>' required value='C'>
                                 <span class='checkmark'></span>
                             </label><br><br><br>
                             <label class='container'>-- (D)   <?php echo $resultSetPilihan[3];?>
-                                <input type='radio' name='radio' required value='D'>
+                                <input type='radio' name='radio<?php echo $i; ?>' required value='D'>
                                 <span class='checkmark'></span>
                             </label><br>
                         </div>
