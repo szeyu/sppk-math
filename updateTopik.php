@@ -14,7 +14,7 @@
                 <h2 style="background-color:  rgb(194, 247, 240);"> Matematik Tingkatan 4 (DLP) </h2>
                 <!--log out button-->
                 <div class="logOut">
-                    <a href="login.php"> Log Keluar </a>   
+                    <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
                 </div> 
                 <p style="color: rgb(194, 247, 240);">.</p>
                 <br>
