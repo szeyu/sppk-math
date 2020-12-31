@@ -127,5 +127,33 @@ then the get id function only be included if need it
 
 cheh just now forgot to use sql code
 
+--------------------------------------------------------------------------------------------
+# Student part
+## algorithm
+
+### koleksi murid
+check if there is any IdTopik that have been done in perekodan
+if no than display the IdTopik table in haven't done table
+    there is button beside the table, "buat dan hantar"
+    then if click the display all the data and the objective in radio button
+
+    after done can click button to submit then it will back to the page
+    then display result in perekodan 
+
+
+if yes than display perekodan in done table    [ I think put in prestasi murid better ]
+
+### prestasi murid
+
+display graph first  [ can put standard deviation or statistics ]
+
+put search bar
+then display the latest perekodan at top  [HINT : can use date time to elavuate]
+
 
 --------------------------------------------------------------------------------------------
+
+# IMPORTANT NOTICE
+I can replace the delete function with showing how many student haven't done then display some perekodan table
+
+after done do quiz page only can continue the check murid page bacause perekodan haven't got sample
