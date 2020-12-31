@@ -48,7 +48,7 @@
 
 
             // select all IdSoalan with that IdTopik
-            $checkIdSoalanSQL = "SELECT * FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) ASC";
+            $checkIdSoalanSQL = "SELECT * FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) DESC, IdSoalan ASC";
             $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
             $numberOfRow = mysqli_num_rows($resultSoalan);       
             $totalNumberOfSoalan = $numberOfRow / 4;        // need to divide by 4 to find the total number of soalan
@@ -76,9 +76,9 @@
                             <br>
                             <br>
             ";
+    ?>
 
-
-
+            <?php
             for ($i=1; $i <= $totalNumberOfSoalan; $i++){       // to loop till the end of question
                 //every loop use new array
                 // keep all data in array first
@@ -125,49 +125,54 @@
                 else if ($resultSetJawapan[3] == 1){
                     $answer = 'D';
                 }
-
+            ?>
                
                 
-                ////////// Display data ////////////////////
+                 <!-- Display data  -->
 
-                echo "
-                    <fieldset id = 'soalanForm$i'>
-                        <hr>
-                        <br>
+                
+                <fieldset id = 'form<?php echo $i;?>'>
+                    <hr>
+                    <br>
 
-                        <legend> Soalan $i</legend>
-                        <h3> $soalan </h3>
+                    <legend> Soalan <?php  echo $i; ?></legend>
+                    <h3> <?php echo $soalan;?> </h3>
 
-                        <br><br><br><br>
+                    <br><br><br><br>
 
-                        <div class='pilihanBox'>
-                        <pre>
-                            <label class='container'>(A)   $resultSetPilihan[0]
+                    <div class='pilihanBox'>
+                        <div>
+                            <label class='container'>-- (A)   <?php echo $resultSetPilihan[0];?>
                                 <input type='radio' name='radio' required value='A'>
                                 <span class='checkmark'></span>
-                            </label><br>
-                            <label class='container'>(B)   $resultSetPilihan[1]
+                            </label><br><br><br>
+                            <label class='container'>-- (B)   <?php echo $resultSetPilihan[1];?>
                                 <input type='radio' name='radio' required value='B'>
                                 <span class='checkmark'></span>
-                            </label><br>
-                            <label class='container'>(C)   $resultSetPilihan[2]
+                            </label><br><br><br>
+                        </div>
+
+                        <div>
+                            <label class='container'>-- (C)   <?php echo $resultSetPilihan[2];?>
                                 <input type='radio' name='radio' required value='C'>
                                 <span class='checkmark'></span>
-                            </label><br>
-                            <label class='container'>(D)   $resultSetPilihan[3]
+                            </label><br><br><br>
+                            <label class='container'>-- (D)   <?php echo $resultSetPilihan[3];?>
                                 <input type='radio' name='radio' required value='D'>
                                 <span class='checkmark'></span>
                             </label><br>
-                        </pre>
-                            
-                            <br>
                         </div>
-                        <br>
-                    </fieldset>
-                ";
-                        
-            }
 
+                        <br>
+                    </div>
+                    <br>
+                </fieldset>
+                
+            <?php            
+            }
+            ?>
+
+            <?php
             echo "
                         <br>
 

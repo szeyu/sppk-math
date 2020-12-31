@@ -581,3 +581,12 @@ div.logOut a:hover{                /*thumbnail*/
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.pilihanBox {
+    width: 86%;
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+
+.pilihanBox > div {
+    float: left;
+}
