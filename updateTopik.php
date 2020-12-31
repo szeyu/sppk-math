@@ -48,7 +48,7 @@
 
  
                 // select all IdSoalan with that IdTopik
-                $checkIdSoalanSQL = "SELECT * FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) ASC";
+                $checkIdSoalanSQL = "SELECT * FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) DESC, IdSoalan ASC";
                 $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
                 $numberOfRow = mysqli_num_rows($resultSoalan);       
                 $totalNumberOfSoalan = $numberOfRow / 4;        // need to divide by 4 to find the total number of soalan
@@ -152,6 +152,7 @@
 
 
                     $soalan = $rowSoalan['soalan'];  // then only we get the soalan
+                    //echo $soalan;
 
                     // determine the answer
                     if ($resultSetJawapan[0] == 1){
