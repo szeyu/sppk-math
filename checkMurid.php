@@ -103,7 +103,7 @@
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
-                                    <?php echo '<button type="button" class="doButton" name="doButton" onclick="buatKuiz(\'' . $row['IdTopik'] . '\')"> Lihat jawapan </button>';
+                                    <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdTopik'] . '\')"> Semak jawapan </button>';
                                     ?>
                                     
                                 </td>
@@ -145,8 +145,8 @@
                 </script>
 
                 <script>
-                    function buatKuiz(id) {
-                        window.location = 'buatKuiz.php?IdTopik=' + id;
+                    function semakJawapan(id) {
+                        window.location = 'semakJawapan.php?IdRekod=' + id;
                     }
                     
                 </script>

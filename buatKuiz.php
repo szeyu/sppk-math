@@ -20,7 +20,7 @@
             <br>
         </div>
         <div class="buatKuizBalik">
-            <a href="indexMurid.php?content=collectionMurid"> Balik </a>   
+            <a href="indexMurid.php?content=collectionMurid" onclick="return confirm('Adakah anda pasti hendak balik? Soalan yang dijawab akan tidak dikira.')"> Balik </a>   
         </div> 
         <br>
         <br>
@@ -186,10 +186,6 @@
                     <div>
                 <div>";
 
-
-
-            // header('Location: ./indexGuru.php?content=collectionGuru');
-            // exit();
         }
             
     ?>

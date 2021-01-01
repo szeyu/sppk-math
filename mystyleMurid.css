@@ -590,3 +590,26 @@ div.logOut a:hover{                /*thumbnail*/
 .pilihanBox > div {
     float: left;
 }
+
+
+
+/*//////////////////// Semak Jawapan ///////////////////////*/
+.semakJawapan button{
+    background-color: rgb(54, 116, 179);            /*button style*/
+    color: #f2f2f2;
+    padding: 14px 25px;
+    margin: 6px 4px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    border-radius: 5px;
+    float: left;
+    margin-left: 2%;
+    text-align: center;
+    font-size: medium;
+    transition: all 0.5s;
+}
+
+.semakJawapan button:hover{                /*thumbnail*/
+    opacity: 0.8;
+}

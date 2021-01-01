@@ -196,6 +196,7 @@ then store the murid jawapan in the form of "ADCDB"
 #### semakJawapan
 it is just a simple page with one button and display error only
 when click ok it will back to checkMurid.php
+get IdRekod in URL
 
 --betul---------
 ----------------

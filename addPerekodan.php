@@ -180,13 +180,14 @@
                 //////////////////////////////////////////////////////////////
                 //                  add data to PEREKODAN
                 //////////////////////////////////////////////////////////////
-                
+                $addDataToPerekodan = "INSERT INTO PEREKODAN (IdRekod, markah, tarikh, jawapanMurid, NoIC, IdTopik) VALUES ('".$IdRekod."','".$markah."','".$tarikh."','".$jawapanMuridDB."','".$NoIC."','".$IdTopik."')";
+                mysqli_query($con, $addDataToPerekodan);
 
 
 
 
-                // header('Location: ./indexMurid.php?content=checkMurid');       // direct user to checkMurid page
-                // exit();
+                header('Location: ./semakJawapan.php?IdRekod='.$IdRekod);       // direct user to checkMurid page
+                exit();
             }
             
             
