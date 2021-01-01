@@ -157,3 +157,79 @@ then display the latest perekodan at top  [HINT : can use date time to elavuate]
 I can replace the delete function with showing how many student haven't done then display some perekodan table
 
 after done do quiz page only can continue the check murid page bacause perekodan haven't got sample
+
+-------------------------------------------------------------------------------------------------
+
+## addPerekodan and semakJawapan
+
+addPerekodan get data from buat Kuiz then link to semak jawapan
+
+semak jawapan get input from URL
+so that it is more universal
+
+add perekodan only get called by buatKuiz and 
+semak jawapan get called by add perekodan and prestasi sendiri button
+
+semak jawapan will display in green when correct and red when wrong then the answer is written below
+
+
+
+#### add perekodan
+1) get IdTopik from url
+2) get data from radio form in buatKuiz
+3) get date time from system  (1/1/21)
+4) get the IC of the murid from session variable (GLOBAL variable)
+5) then need to use the ultimate method to get the latest IdRekod then make sure it is not duplicate
+
+7) then check with IdPilihan see correct or not
+6) then get calculate the score
+total correct / total question x 100%   =  score
+
+then store the murid jawapan in the form of "ADCDB"
+
+
+
+
+
+
+
+#### semakJawapan
+it is just a simple page with one button and display error only
+when click ok it will back to checkMurid.php
+
+--betul---------
+----------------
+--salah--------- 
+correct answer = 60
+----------------
+            ok
+
+--------------------------------------------------------------------------------------------
+
+## formula converter
+
+convert and return the position of jawapanMurid in 00100001
+use formula: 
+i = 1
+1 x 4 = 4
+lets say if jawapan murid is C then we convert them to 3
+4 - 3 = 1
+4 - 1 = 3
+3-1 = 2
+
+i = 2
+2 x 4 = 8
+lets say if jawapan murid is D then we convert them to 4
+4 - 4 = 0
+8 - 0 = 8
+8-1 = 7
+
+general formula = 4i - (4 - jawapanMurid) - 1
+                = 4i - 4 + jawapanMurid - 1
+                = 4i + jawapanMurid - 5
+
+
+
+
+
+-------------------------------------------------------------------------------------------

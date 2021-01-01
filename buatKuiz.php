@@ -63,7 +63,7 @@
                 <div class=\"buatKuiz\">
                     <br>
                     <div class='buatKuizContainer'>
-                        <form id=jawapanMurid' action='semakJawapan.php?IdTopik=$IdTopik' method ='POST' onsubmit='return confirm(\"Adakah anda pasti hendak hantar kuiz yang dibuat?\");'>
+                        <form id=jawapanMurid' action='addPerekodan.php?IdTopik=$IdTopik' method ='POST' onsubmit='return confirm(\"Adakah anda pasti hendak hantar kuiz yang dibuat?\");'>
                             <br>
                             <div class='tajukBox'>
                                 <label for='subTopik'> Sub Topik :  $subTopik</label>

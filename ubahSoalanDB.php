@@ -271,7 +271,7 @@
                 
 
                 echo '<script> alert("Soalan berjaya diubah!"); </script>';
-                header('Location: ./indexGuru.php?content=collectionGuru');       // direct user to home page
+                header('Location: ./indexGuru.php?content=collectionGuru');       // direct user to collectionGuru page
                 exit();
             }
             
