@@ -4,8 +4,13 @@
         <?php
             require "connectPHP.php";
 
-            session_start();    // to get NoIC
-            $NoIC = $_SESSION(['NoIC']);
+
+            ////////////////////////////////////////////////////////////////
+            //                     NoIC
+            ////////////////////////////////////////////////////////////////
+            session_start();  
+            $NoIC = $_SESSION['NoIC'];
+            echo "NoIC ".$NoIC."<br>";
             
             if(isset($_POST['hantar-kuiz-button'])){
                 
@@ -74,7 +79,7 @@
                 }
                 $intRekod++;                 // to add new IdRekod that is unique
                 $IdRekod = "R".$intRekod;       // note that the R will concatenate with last number + 1
-
+                echo "IdRekod ".$IdRekod."<br>";
                 
 
 
@@ -100,7 +105,7 @@
                     $alphabeticNum;
                     $position;
                     $jawapanMurid = $_POST["radio$i"];
-                    echo $jawapanMurid."<br>";
+                    // echo $jawapanMurid."<br>";
 
                     $jawapanMuridDB = $jawapanMuridDB.$jawapanMurid;
 
@@ -164,13 +169,18 @@
                 echo "Markah :".$markah."<br>";
 
 
-                
+                //////////////////////////////////////////////////////////////
+                //                      tarikh
+                //////////////////////////////////////////////////////////////
+                $tarikh = date("dmy");
+                echo "tarikh ".$tarikh."<br>";
+
                
 
                 //////////////////////////////////////////////////////////////
                 //                  add data to PEREKODAN
                 //////////////////////////////////////////////////////////////
-
+                
 
 
 
