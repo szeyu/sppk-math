@@ -85,6 +85,11 @@
                          
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
+
+
+                            <!--  need add function to control if the topik have done -->
+                            
+
                             <tr>
                                 <td><?php echo $row['IdTopik']; ?></td>
                                 <td><?php echo $row['subTopik']; ?></td>
