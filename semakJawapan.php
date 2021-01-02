@@ -98,7 +98,7 @@
                 <h2> IdTopik: $IdTopik </h2>
                 <h2> subTopik: $subTopik </h2>
                 <h2> tajuk: $tajuk </h2>
-                <div clas='semakJawapanContainer'>
+                <div class='semakJawapanContainer'>
             ";
 
 

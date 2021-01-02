@@ -615,9 +615,14 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 
+
 .semakJawapan {
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: rgba(85, 196, 161, 0.377);
     align-items: center;
+}
+
+.semakJawapan h2{
+    margin-left: 5%;
 }
 
 .semakJawapanContainer{
@@ -633,4 +638,28 @@ div.logOut a:hover{                /*thumbnail*/
     text-align: left;
 }
 
+/*
+.correct fieldset {
+    border:2px solid rgb(57, 173, 53);
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
 
+.wrong fieldset {
+    border:2px solid rgb(179, 55, 55);
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+
+.correct legend {
+    margin-right: 85%;
+    font-size: 180%;
+}
+
+.wrong legend {
+    margin-right: 85%;
+    font-size: 180%;
+}
+*/
