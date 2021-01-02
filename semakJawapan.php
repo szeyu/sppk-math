@@ -9,14 +9,14 @@
 
     <div class="banner">
         <div style="background-color:  rgb(194, 247, 240);">
-            <p style="color: rgb(194, 247, 240);">.</p>
+            <p style="opacity: 0;">.</p>
             <h1 style="background-color:  rgb(194, 247, 240);"> Ilmu Di Hujung Jari </h1>
             <h2 style="background-color:  rgb(194, 247, 240);"> Matematik Tingkatan 4 (DLP) </h2>
             <!--log out button-->
             <div class="logOut">
                 <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
             </div> 
-            <p style="color: rgb(194, 247, 240);">.</p>
+            <p style="opacity: 0;">.</p>
             <br>
         </div>
         <div class="semakJawapanOK">
@@ -90,14 +90,28 @@
             $subTopik = $rowTopik['subTopik'];
 
 
+            echo"
+            <p style='opacity: 0';>.</p>
+            <div class='infoSemak'>
+                <p style='opacity: 0';>.</p>
+                <h1> Info:  </h1>
+                <div class='infoSemakContainer'>
+                    <p style='opacity: 0';>.</p>
+                    <h2> IdRekod: $IdRekod </h2>
+                    <h2> IdTopik: $IdTopik </h2>
+                    <h2> subTopik: $subTopik </h2>
+                    <h2> tajuk: $tajuk </h2>
+                    <p style='opacity: 0';>.</p>
+                </div>
+                <p style='opacity: 0';>.</p>
+            </div>
+            ";
 
 
             echo"
             <div class='semakJawapan'>
-                <h2> IdRekod: $IdRekod </h2>
-                <h2> IdTopik: $IdTopik </h2>
-                <h2> subTopik: $subTopik </h2>
-                <h2> tajuk: $tajuk </h2>
+            <p style='opacity: 0';>.</p>
+            <h1> Soalan:  </h1>
                 <div class='semakJawapanContainer'>
             ";
 
@@ -171,7 +185,7 @@
                             <hr>
                             <br>
         
-                            <h3> Soalan $i</h3>
+                            <h2> Soalan $i</h2>
                             <h3> $soalan </h3>
         
                             <br><br><br><br>
@@ -199,9 +213,13 @@
                                     </label><br>
                                 </div>
         
+                                <script>
+                                    
+                                </script>
+
                                 <br>
                             </div>
-                            <p> correct </p>
+                            <!-- <p> correct </p>  -->
                         </div>
                     ";
 
@@ -214,7 +232,7 @@
                         <hr>
                         <br>
 
-                        <h3> Soalan $i</h3>
+                        <h2> Soalan $i</h2>
                         <h3> $soalan </h3>
 
                         <br><br><br><br>
@@ -242,9 +260,13 @@
                                 </label><br>
                             </div>
 
+                            <script>
+
+                            </script>
+
                             <br>
                         </div>
-                        <p> wrong </p>
+                        <!-- <p> wrong </p> -->
                     </div>
                     ";
 
@@ -255,6 +277,7 @@
 
             echo "
                 </div>
+                <p style='opacity: 0';>.</p>
             </div>";
             
         }
