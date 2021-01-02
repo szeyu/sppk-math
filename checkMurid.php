@@ -82,15 +82,18 @@
 
                         require "connectPHP.php";
 
-                        $selectDataFromTopik = "SELECT * FROM TOPIK ORDER BY LENGTH(IdTopik), IdTopik";
-                        $result = mysqli_query($con,$selectDataFromTopik);         // query
+                        $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod), IdRekod DESC";
+                        $result = mysqli_query($con,$selectDataFromRekod);         // query
                     ?>
                     
                     <table id='topikTable'>
                         <tr class='tableHeader'>
-                            <th style='width:10%;'>IdTopik</th>
-                            <th style='width:15%;'>Sub topik</th>
-                            <th style='witdh:65%;'>Tajuk</th>
+                            <th style='width:8%;'>IdRekod</th>
+                            <th style='width:8%;'>markah</th>
+                            <th style='witdh:8%;'>tarikh</th>
+                            <th style='witdh:8%;'>IdTopik</th>
+                            <th style='witdh:8%;'>subTopik</th>
+                            <th style='witdh:50%;'>tajuk</th>
                             <th style='witdh:10%;'>Tindakan</th>
                             
                         </tr>
@@ -98,12 +101,20 @@
                          
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
+                            <?php 
+                                $selectDataFromTopik = "SELECT * FROM TOPIK WHERE IdTopik = '".$row['IdTopik']."'";
+                                $resultTopik = mysqli_query($con,$selectDataFromTopik);         // query
+                                $rowTopik = mysqli_fetch_array($resultTopik);
+                            ?>
                             <tr>
+                                <td><?php echo $row['IdRekod']; ?></td>
+                                <td><?php echo $row['markah']; ?></td>
+                                <td><?php echo $row['tarikh']; ?></td>
                                 <td><?php echo $row['IdTopik']; ?></td>
-                                <td><?php echo $row['subTopik']; ?></td>
-                                <td><?php echo $row['tajuk']; ?></td>
+                                <td><?php echo $rowTopik['subTopik']; ?></td>
+                                <td><?php echo $rowTopik['tajuk']; ?></td>
                                 <td>
-                                    <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdTopik'] . '\')"> Semak jawapan </button>';
+                                    <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdRekod'] . '\')"> Semak jawapan </button>';
                                     ?>
                                     
                                 </td>

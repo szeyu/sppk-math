@@ -34,6 +34,10 @@
         require "connectPHP.php";
        
         if(isset($_GET['IdRekod'])){
+
+            
+
+
             // need IdRekod to find all the IdTopik
             // need IdTopik to find sub topik and tajuk
             // need IdTopik to find IdSoalan
@@ -55,9 +59,29 @@
             // pilihan
             // jawapan
 
+
+            $correct = 0;
+            $markah;
+
+            /////////////////////////////////////////////////////////
+            //                        IdRekod
+            /////////////////////////////////////////////////////////
+            $IdRekod = $_GET['IdRekod'];               // get the value from URL
+            $checkIdRekodSQL = "SELECT * FROM PEREKODAN WHERE IdRekod = '".$IdRekod."'";
+            $resultRekod = mysqli_query($con,$checkIdRekodSQL);         // query
+            $rowRekod = mysqli_fetch_assoc($resultRekod);
+
+            $jawapanMurid = $rowRekod['jawapanMurid'];
+            $markah = $rowRekod['markah'];
+
             
-            // this is IdTopik
-            $IdTopik = $_GET['IdTopik'];               // get the value from URL
+
+
+
+            ////////////////////////////////////////////////////////
+            //                      IdTopik
+            ////////////////////////////////////////////////////////
+            $IdTopik = $rowRekod['IdTopik'];         // get from perekodan 
             $checkIdTopikSQL = "SELECT * FROM TOPIK WHERE IdTopik = '".$IdTopik."'";
             $resultTopik = mysqli_query($con,$checkIdTopikSQL);         // query
             $rowTopik = mysqli_fetch_assoc($resultTopik);
@@ -66,38 +90,31 @@
             $subTopik = $rowTopik['subTopik'];
 
 
+
+
+            echo"
+            <div class='semakJawapan'>
+                <h2> IdRekod: $IdRekod </h2>
+                <h2> IdTopik: $IdTopik </h2>
+                <h2> subTopik: $subTopik </h2>
+                <h2> tajuk: $tajuk </h2>
+                <div clas='semakJawapanContainer'>
+            ";
+
+
+
+
+
+            ////////////////////////////////////////////////////////
+            //                      IdSoalan
+            ////////////////////////////////////////////////////////
             // select all IdSoalan with that IdTopik
             $checkIdSoalanSQL = "SELECT * FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) DESC, IdSoalan ASC";
             $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
             $numberOfRow = mysqli_num_rows($resultSoalan);       
             $totalNumberOfSoalan = $numberOfRow / 4;        // need to divide by 4 to find the total number of soalan
-            echo "
-            <script>
-                var noSoalanCounter = $totalNumberOfSoalan;
-            </script>
-            ";
-           
-            echo "
-                <h1 style=\"margin-left: 5.5%;\"> Buat Kuiz </h1>
-                <div class=\"buatKuiz\">
-                    <br>
-                    <div class='buatKuizContainer'>
-                        <form id=jawapanMurid' action='addPerekodan.php?IdTopik=$IdTopik' method ='POST' onsubmit='return confirm(\"Adakah anda pasti hendak hantar kuiz yang dibuat?\");'>
-                            <br>
-                            <div class='tajukBox'>
-                                <label for='subTopik'> Sub Topik :  $subTopik</label>
-                
-                                <br><br><br>
 
-                                <label for='tajuk'> Tajuk :  $tajuk</label><br>
-                                
-                            </div>
-                            <br>
-                            <br>
-            ";
-    ?>
-
-            <?php
+            
             for ($i=1; $i <= $totalNumberOfSoalan; $i++){       // to loop till the end of question
                 //every loop use new array
                 // keep all data in array first
@@ -144,67 +161,102 @@
                 else if ($resultSetJawapan[3] == 1){
                     $answer = 'D';
                 }
-            ?>
-               
-                
-                 <!-- Display data  -->
 
-                
-                <fieldset id = 'form<?php echo $i;?>'>
-                    <hr>
-                    <br>
+                if ($jawapanMurid[$i-1] == $answer){
+                    $correct += 1;
 
-                    <legend> Soalan <?php  echo $i; ?></legend>
-                    <h3> <?php echo $soalan;?> </h3>
-
-                    <br><br><br><br>
-
-                    <div class='pilihanBox'>
-                        <div>
-                            <label class='container'>-- (A)   <?php echo $resultSetPilihan[0];?>
-                                <input type='radio' name='radio<?php echo $i; ?>' required value='A'>
-                                <span class='checkmark'></span>
-                            </label><br><br><br>
-                            <label class='container'>-- (B)   <?php echo $resultSetPilihan[1];?>
-                                <input type='radio' name='radio<?php echo $i; ?>' required value='B'>
-                                <span class='checkmark'></span>
-                            </label><br><br><br>
+                    //display question and student answer in green
+                    echo "
+                        <div class='correct'>
+                            <hr>
+                            <br>
+        
+                            <legend> Soalan $i</legend>
+                            <h3> $soalan </h3>
+        
+                            <br><br><br><br>
+        
+                            <div class='pilihanBox'>
+                                <div>
+                                    <label class='container'>-- (A)   $resultSetPilihan[0]
+                                        <input type='radio' name='radio$i' id='radioA$i' value='A' disabled='disabled'>
+                                        <span class='checkmark'></span>
+                                    </label><br><br><br>
+                                    <label class='container'>-- (B)   $resultSetPilihan[1]
+                                        <input type='radio' name='radio$i' id='radioB$i' value='B' disabled='disabled'>
+                                        <span class='checkmark'></span>
+                                    </label><br><br><br>
+                                </div>
+        
+                                <div>
+                                    <label class='container'>-- (C)   $resultSetPilihan[2]
+                                        <input type='radio' name='radio$i' id='radioC$i' value='C' disabled='disabled'>
+                                        <span class='checkmark'></span>
+                                    </label><br><br><br>
+                                    <label class='container'>-- (D)   $resultSetPilihan[3]
+                                        <input type='radio' name='radio$i' id='radioD$i' value='D' disabled='disabled'>
+                                        <span class='checkmark'></span>
+                                    </label><br>
+                                </div>
+        
+                                <br>
+                            </div>
+                            <p> correct </p>
                         </div>
+                    ";
 
-                        <div>
-                            <label class='container'>-- (C)   <?php echo $resultSetPilihan[2];?>
-                                <input type='radio' name='radio<?php echo $i; ?>' required value='C'>
-                                <span class='checkmark'></span>
-                            </label><br><br><br>
-                            <label class='container'>-- (D)   <?php echo $resultSetPilihan[3];?>
-                                <input type='radio' name='radio<?php echo $i; ?>' required value='D'>
-                                <span class='checkmark'></span>
-                            </label><br>
-                        </div>
 
+                } 
+                else if ($jawapanMurid[$i-1] != $answer){
+                    //display question and student answer in red   plus display correct answer below
+                    echo "
+                    <div class='wrong'>
+                        <hr>
                         <br>
+
+                        <legend> Soalan $i</legend>
+                        <h3> $soalan </h3>
+
+                        <br><br><br><br>
+
+                        <div class='pilihanBox'>
+                            <div>
+                                <label class='container'>-- (A)   $resultSetPilihan[0]
+                                    <input type='radio' name='radio$i' id='radioA$i' value='A' disabled='disabled'>
+                                    <span class='checkmark'></span>
+                                </label><br><br><br>
+                                <label class='container'>-- (B)   $resultSetPilihan[1]
+                                    <input type='radio' name='radio$i' id='radioB$i' value='B' disabled='disabled'>
+                                    <span class='checkmark'></span>
+                                </label><br><br><br>
+                            </div>
+
+                            <div>
+                                <label class='container'>-- (C)   $resultSetPilihan[2]
+                                    <input type='radio' name='radio$i' id='radioC$i' value='C' disabled='disabled'>
+                                    <span class='checkmark'></span>
+                                </label><br><br><br>
+                                <label class='container'>-- (D)   $resultSetPilihan[3]
+                                    <input type='radio' name='radio$i' id='radioD$i' value='D' disabled='disabled'>
+                                    <span class='checkmark'></span>
+                                </label><br>
+                            </div>
+
+                            <br>
+                        </div>
+                        <p> wrong </p>
                     </div>
-                    <br>
-                </fieldset>
-                
-            <?php            
+                    ";
+
+
+                }
+            
             }
-            ?>
 
-            <?php
             echo "
-                        <br>
-
-                        <!-- when clicked then hantar quiz form -->
-                        <br>
-                        <button type='submit' name='hantar-kuiz-button' class='buatKuizContainer'> Hantar </button>
-                        </form>
-                        <br>
-                        <br>
-                        <p style=color: white;'>.</P>
-                    <div>
-                <div>";
-
+                </div>
+            </div>";
+            
         }
             
     ?>

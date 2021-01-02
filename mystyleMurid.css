@@ -336,7 +336,7 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 
-.doButton{
+.perekodanMuridContainer button{
     background-color: rgb(54, 116, 179);            /*button style*/
     color: #f2f2f2;
     padding: 12px 25px;
@@ -344,13 +344,13 @@ div.logOut a:hover{                /*thumbnail*/
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.4s;
-    width: 40%;
+    width: 60%;
     font-size: medium;
     float: left;
     margin-right: 2%;
 }
 
-.doButton:hover{
+.perekodanMuridContainer button :hover{
     opacity: 0.75;
 }
 
@@ -592,24 +592,45 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 
+/*///////////////// Semak jawapan //////////////////////*/
+.semakJawapanOK{
+    float: right;
+}
 
-/*//////////////////// Semak Jawapan ///////////////////////*/
-.semakJawapan button{
-    background-color: rgb(54, 116, 179);            /*button style*/
+
+.semakJawapanOK a:hover{                /*thumbnail*/
+    opacity: 0.8;
+}
+
+.semakJawapanOK a{
+    background-color: rgb(36, 104, 173);   /*button style*/
     color: #f2f2f2;
-    padding: 14px 25px;
-    margin: 6px 4px;
+    padding: 14px 46px;
+    margin: auto;
     border: none;
     cursor: pointer;
-    width: 15%;
-    border-radius: 5px;
-    float: left;
-    margin-left: 2%;
-    text-align: center;
-    font-size: medium;
+    border-radius: 10px;
+    margin-right: 10px;
     transition: all 0.5s;
 }
 
-.semakJawapan button:hover{                /*thumbnail*/
-    opacity: 0.8;
+
+.semakJawapan {
+    background-color: rgba(85, 196, 161, 0.596);
+    align-items: center;
 }
+
+.semakJawapanContainer{
+    background-color: white;
+    align-items: center;
+    width: 93%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+
