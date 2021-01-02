@@ -171,7 +171,7 @@
                             <hr>
                             <br>
         
-                            <legend> Soalan $i</legend>
+                            <h3> Soalan $i</h3>
                             <h3> $soalan </h3>
         
                             <br><br><br><br>
@@ -214,7 +214,7 @@
                         <hr>
                         <br>
 
-                        <legend> Soalan $i</legend>
+                        <h3> Soalan $i</h3>
                         <h3> $soalan </h3>
 
                         <br><br><br><br>
