@@ -16,7 +16,37 @@
             
             <div class = "graphMuridContainer">
                 <h1 style="margin-left: 4.5%;"> Prestasi sendiri </h1>
-                <h2> display graph </h2>
+                <!-- <h2> display graph </h2> -->
+                <script>
+                window.onload = function () {
+
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2",
+                    title:{
+                        text: "Average Marks and Own Marks"
+                    },
+                    data: [{        
+                        type: "line",
+                        indexLabelFontSize: 16,
+                        dataPoints: [
+                            { y: 50 }
+                            
+                        ]
+                    }]
+                });
+                chart.render();
+
+                }
+                </script>
+                
+                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js">
+                    document.cookie = "SameSite=None; Secure";
+                    alert( document.cookie );
+                </script>
+
                 <br>
                 <br>
             </div>

@@ -238,3 +238,12 @@ general formula = 4i - (4 - jawapanMurid) - 1
 need control in collectionmurid
 
 ------------------------------------------------------------------------------------------
+
+## Okiee cannot in library import another library 
+
+so in order to solve that i need to do a seperate file for index Murid or Guru and  check Murid or Guru
+
+so to link them together need href or header()
+and not using Jquery library
+
+------------------------------------------------------------------------------------------
