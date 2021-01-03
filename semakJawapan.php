@@ -176,8 +176,11 @@
                     $answer = 'D';
                 }
 
-                if ($jawapanMurid[$i-1] == $answer){
+                $tempJawapanMurid = $jawapanMurid[$i-1];
+                // echo $tempJawapanMurid;
+                if ($tempJawapanMurid == $answer){
                     $correct += 1;
+                    
 
                     //display question and student answer in green
                     echo "
@@ -192,29 +195,46 @@
         
                             <div class='pilihanBox'>
                                 <div>
-                                    <label class='container'>-- (A)   $resultSetPilihan[0]
-                                        <input type='radio' name='radio$i' id='radioA$i' value='A' disabled='disabled'>
+                                    <label class='container'>- (A)   $resultSetPilihan[0]
+                                        <input type='radio' name='radio$i' id='radioA$i' value='A'>
                                         <span class='checkmark'></span>
                                     </label><br><br><br>
-                                    <label class='container'>-- (B)   $resultSetPilihan[1]
-                                        <input type='radio' name='radio$i' id='radioB$i' value='B' disabled='disabled'>
+                                    <label class='container'>- (B)   $resultSetPilihan[1]
+                                        <input type='radio' name='radio$i' id='radioB$i' value='B'>
                                         <span class='checkmark'></span>
                                     </label><br><br><br>
                                 </div>
         
                                 <div>
-                                    <label class='container'>-- (C)   $resultSetPilihan[2]
-                                        <input type='radio' name='radio$i' id='radioC$i' value='C' disabled='disabled'>
+                                    <label class='container'>- (C)   $resultSetPilihan[2]
+                                        <input type='radio' name='radio$i' id='radioC$i' value='C'>
                                         <span class='checkmark'></span>
                                     </label><br><br><br>
-                                    <label class='container'>-- (D)   $resultSetPilihan[3]
-                                        <input type='radio' name='radio$i' id='radioD$i' value='D' disabled='disabled'>
+                                    <label class='container'>- (D)   $resultSetPilihan[3]
+                                        <input type='radio' name='radio$i' id='radioD$i' value='D'>
                                         <span class='checkmark'></span>
                                     </label><br>
                                 </div>
         
                                 <script>
-                                    
+                                    if ('$tempJawapanMurid'=='A'){
+                                        document.getElementById('radioA$i').checked = true;
+                                    }
+                                    else if ('$tempJawapanMurid'=='B'){
+                                        document.getElementById('radioB$i').checked = true;
+                                    }
+                                    else if ('$tempJawapanMurid'=='C'){
+                                        document.getElementById('radioC$i').checked = true;
+                                    }
+                                    else if ('$tempJawapanMurid'=='D'){
+                                        document.getElementById('radioD$i').checked = true;
+                                    }
+
+                                    document.getElementById('radioA$i').disabled = true;
+                                    document.getElementById('radioB$i').disabled = true;
+                                    document.getElementById('radioC$i').disabled = true;
+                                    document.getElementById('radioD$i').disabled = true;
+
                                 </script>
 
                                 <br>
@@ -225,7 +245,7 @@
 
 
                 } 
-                else if ($jawapanMurid[$i-1] != $answer){
+                else if ($tempJawapanMurid != $answer){
                     //display question and student answer in red   plus display correct answer below
                     echo "
                     <div class='wrong'>
@@ -239,28 +259,45 @@
 
                         <div class='pilihanBox'>
                             <div>
-                                <label class='container'>-- (A)   $resultSetPilihan[0]
-                                    <input type='radio' name='radio$i' id='radioA$i' value='A' disabled='disabled'>
+                                <label class='container'>- (A)   $resultSetPilihan[0]
+                                    <input type='radio' name='radio$i' id='radioA$i' value='A'>
                                     <span class='checkmark'></span>
                                 </label><br><br><br>
-                                <label class='container'>-- (B)   $resultSetPilihan[1]
-                                    <input type='radio' name='radio$i' id='radioB$i' value='B' disabled='disabled'>
+                                <label class='container'>- (B)   $resultSetPilihan[1]
+                                    <input type='radio' name='radio$i' id='radioB$i' value='B'>
                                     <span class='checkmark'></span>
                                 </label><br><br><br>
                             </div>
 
                             <div>
-                                <label class='container'>-- (C)   $resultSetPilihan[2]
-                                    <input type='radio' name='radio$i' id='radioC$i' value='C' disabled='disabled'>
+                                <label class='container'>- (C)   $resultSetPilihan[2]
+                                    <input type='radio' name='radio$i' id='radioC$i' value='C'>
                                     <span class='checkmark'></span>
                                 </label><br><br><br>
-                                <label class='container'>-- (D)   $resultSetPilihan[3]
-                                    <input type='radio' name='radio$i' id='radioD$i' value='D' disabled='disabled'>
+                                <label class='container'>- (D)   $resultSetPilihan[3]
+                                    <input type='radio' name='radio$i' id='radioD$i' value='D'>
                                     <span class='checkmark'></span>
                                 </label><br>
                             </div>
 
                             <script>
+                                if ('$tempJawapanMurid'=='A'){
+                                    document.getElementById('radioA$i').checked = true;
+                                }
+                                else if ('$tempJawapanMurid'=='B'){
+                                    document.getElementById('radioB$i').checked = true;
+                                }
+                                else if ('$tempJawapanMurid'=='C'){
+                                    document.getElementById('radioC$i').checked = true;
+                                }
+                                else if ('$tempJawapanMurid'=='D'){
+                                    document.getElementById('radioD$i').checked = true;
+                                }
+
+                                document.getElementById('radioA$i').disabled = true;
+                                document.getElementById('radioB$i').disabled = true;
+                                document.getElementById('radioC$i').disabled = true;
+                                document.getElementById('radioD$i').disabled = true;
 
                             </script>
 
@@ -279,6 +316,11 @@
                 </div>
                 <p style='opacity: 0';>.</p>
             </div>";
+
+
+            ////////////////////////////////////////////////////////////////
+            //              recalculate the mark to ensure no error 
+            ///////////////////////////////////////////////////////////////
             
         }
             
