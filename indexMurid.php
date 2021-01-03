@@ -34,7 +34,6 @@
         <div id="topnav" class="topnav">
             <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
             <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
-            <a class="active-button" onclick="checkMurid()">Prestasi Sendiri</a>
         </div>
 
 
