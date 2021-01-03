@@ -610,7 +610,7 @@ div.logOut a:hover{                /*thumbnail*/
     margin: auto;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-right: 10px;
     transition: all 0.5s;
     bottom: 10%;
@@ -636,7 +636,7 @@ div.logOut a:hover{                /*thumbnail*/
     background-color: white;
     align-items: center;
     width: 93%;
-    border: solid 2px #ccc;
+    border: solid 5px rgb(184, 184, 184);
     border-radius: 20px;
     margin-left: auto;
     margin-top: auto;
@@ -663,5 +663,13 @@ div.logOut a:hover{                /*thumbnail*/
     text-align: left;
 }
 
+
+.correct {
+    background-color: #ccffcc;
+}
+
+.wrong {
+    background-color: #ffcccc;
+}
 
 

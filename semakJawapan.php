@@ -139,6 +139,7 @@
                 $resultSetPilihan = array();
                 $soalan;
                 $answer; //ABCD
+                $jawapanBetul;
 
                 for($j=0; $j < 4; $j++){   // loop four times
                     $rowSoalan = mysqli_fetch_assoc($resultSoalan);
@@ -165,15 +166,19 @@
                 // determine the answer
                 if ($resultSetJawapan[0] == 1){
                     $answer = 'A';
+                    $jawapanBetul = $resultSetPilihan[0];
                 }
                 else if ($resultSetJawapan[1] == 1){
                     $answer = 'B';
+                    $jawapanBetul = $resultSetPilihan[1];
                 }
                 else if ($resultSetJawapan[2] == 1){
                     $answer = 'C';
+                    $jawapanBetul = $resultSetPilihan[2];
                 }
                 else if ($resultSetJawapan[3] == 1){
                     $answer = 'D';
+                    $jawapanBetul = $resultSetPilihan[3];
                 }
 
                 $tempJawapanMurid = $jawapanMurid[$i-1];
@@ -305,6 +310,7 @@
                         </div>
                         <!-- <p> wrong </p> -->
                     </div>
+                    <h3> Jawapan betul: ($answer) $jawapanBetul </h3>
                     ";
 
 
