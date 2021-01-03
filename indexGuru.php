@@ -65,23 +65,20 @@
 
         <script>
             function homeGuru(){
-                //window.location.replace("../sppk-math/indexGuru.php?content=homeGuru");
                 $("#contentGuru").load("homeGuru.php");
             }
 
             function createGuru(){
-                //window.location.replace("../sppk-math/indexGuru.php?content=createGuru");
                 $("#contentGuru").load("createGuru.php");
             }
 
             function collectionGuru(){
-                //window.location.replace("../sppk-math/indexGuru.php?content=collectionGuru");
                 $("#contentGuru").load("collectionGuru.php");
             }
 
             function checkGuru(){
-                //window.location.replace("../sppk-math/indexGuru.php?content=checkGuru");
-                $("#contentGuru").load("checkGuru.php");
+                window.location = 'checkGuru.php';
+                // $("#contentGuru").load("checkGuru.php");
             }
 
             window.onload = function() {
@@ -99,7 +96,8 @@
                         $("#contentGuru").load("collectionGuru.php");
                         break;
                     case "checkGuru":
-                        $("#contentGuru").load("checkGuru.php");
+                        // $("#contentGuru").load("checkGuru.php");
+                        window.location = 'checkGuru.php';
                         break;
                     default:
                         break;
