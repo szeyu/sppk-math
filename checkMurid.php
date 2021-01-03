@@ -12,15 +12,7 @@
 
     // get own markah  and its details and it is in ascending order
     $selectMarkahFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdTopik), IdTopik ";
-    $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query
-
-    // get all markah and its details for calculating purata in an ascending order
-    // need its IdRekod to calculate each IdRekod Purata
-    $selectMarkahFromRekodPurata = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdTopik), IdTopik ";
-    $resultMarkahPurata = mysqli_query($con,$selectMarkahFromRekodPurata);         // query
-
-
-    
+    $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query    
 
 ?>
 
@@ -83,7 +75,7 @@
                     animationEnabled: true,
                     exportEnabled: true,
                     title:{
-                        text: "Average Marks and Own Marks"             
+                        text: "Average Marks    and    Own Marks"             
                     }, 
                     axisY:{
                         title: "Marks"
@@ -124,45 +116,30 @@
                                 /////////////////////////////////////
                                 //         get every purata
                                 /////////////////////////////////////
-                                // $everyRekodPurata = array();
+                                // get all IdTopik and its details for calculating purata in an ascending order
+                                // need its IdRekod to calculate each IdRekod Purata
+                                // return T3
+                                //        T4
+                                $selectIdTopikFromRekodTemp = "SELECT IdTopik FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdTopik), IdTopik ";
+                                $resultIdTopikTemp = mysqli_query($con,$selectIdTopikFromRekodTemp);         // query
 
-
-                                // $purata;
-                                // $jumlah = 0;
-                                // $ct = 0;
-
-                                // $rowPurata = mysqli_fetch_array($resultMarkahPurata);
-                                // $temp = $rowPurata['IdRekod'];
-                                // $jumlah += $rowPurata['markah'];
-                                // $ct += 1;
-
-                                // while($rowPurata = mysqli_fetch_array($resultMarkahPurata)){
-                                //     if ($temp == $rowPurata['IdRekod']){
-                                //         $jumlah += $rowPurata['markah'];
-                                //         $ct += 1;
-                                //     }
-                                //     else{
-                                //         // add data to array and refresh
-                                //         $purata = $jumlah/$ct;
-                                //         // $everyRekodPurata[] = $purata;
-                                //         $jumlah = 0;
-                                //         $ct = 0;
-
-                                //         //output
-                                //         echo "{ label: $temp , y: $purata},";
-
-                                //         $temp = $rowPurata['IdRekod'];
-                                //         $jumlah += $rowPurata['markah'];
-                                //         $ct += 1;
-
-                                //     }
-                                // }    
+                                while($rowTemp = mysqli_fetch_array($resultIdTopikTemp)){
+                                    $IdTopikTemp = $rowTemp['IdTopik'];
+                                    $selectMarkahFromRekodPurata = "SELECT AVG(markah) FROM PEREKODAN WHERE IdTopik='".$IdTopikTemp."'";
+                                    $averageValue = mysqli_query($con,$selectMarkahFromRekodPurata);         // query
+                                    $purataRow = mysqli_fetch_array($averageValue);
+                                    $purata = $purataRow[0];
+                                    // echo $IdTopikTemp." ".$purata;
+                                    echo "{ label: '$IdTopikTemp'  , y: $purata},";
+                                }
                             ?>
 
 
-                            // { label: "T1" , y: 20 },     
-                            // { label: "T2" , y: 50 },     
+                            // { label: "T1" , y: 20 }, 
+                            // { label: "T2" , y: 20 },    
                             // { label: "T3" , y: 50 },     
+                            // { label: "T4" , y: 50 }, 
+                                
                             
                         ]
                     }]
