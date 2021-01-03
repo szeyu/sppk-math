@@ -10,8 +10,8 @@
     $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
     $result = mysqli_query($con,$selectDataFromRekod);         // query
 
-    // get markah and it is in ascending order
-    $selectMarkahFromRekod = "SELECT markah FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod), IdRekod ";
+    // get markah  and its details and it is in ascending order
+    $selectMarkahFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod), IdRekod ";
     $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query
 ?>
 
@@ -66,42 +66,69 @@
             <div class = "graphMuridContainer">
                 <h1 style="margin-left: 4.5%;"> Prestasi sendiri </h1>
                 <!-- <h2> display graph </h2> -->
+                
                 <script>
                 window.onload = function () {
 
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
-                    theme: "light2",
+                    exportEnabled: true,
                     title:{
-                        text: "Average Marks and Own Marks"
+                        text: "Average Marks and Own Marks"             
+                    }, 
+                    axisY:{
+                        title: "Marks"
+                    },
+                    toolTip: {
+                        shared: true
+                    },
+                    legend:{
+                        cursor:"pointer",
+                        itemclick: toggleDataSeries
                     },
                     data: [{        
-                        type: "line",
-                        indexLabelFontSize: 16,
+                        type: "spline",  
+                        name: "Own Marks",        
+                        showInLegend: true,
                         dataPoints: [
-                            <?php 
-                            while($rowMarkah = mysqli_fetch_array($resultMarkah)){ 
-                                $markahGraph = $rowMarkah['markah'];
-                                echo "{ y: $markahGraph},";
-                            }
-                            ?>
-
-                            // { y: 50 }
+                            { label: "R1" , y: 44 },     
+                            { label: "R2" , y: 37 },     
+                            
+                        ]
+                    }, 
+                    
+                    {        
+                        type: "spline",  
+                        name: "Average Marks",        
+                        showInLegend: true,
+                        dataPoints: [
+                            { label: "R1" , y: 20 },     
+                            { label: "R2" , y: 50 },     
                             
                         ]
                     }]
                 });
+
                 chart.render();
+
+                function toggleDataSeries(e) {
+                    if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                        e.dataSeries.visible = false;
+                    }
+                    else {
+                        e.dataSeries.visible = true;            
+                    }
+                    chart.render();
+                }
 
                 }
                 </script>
-                
+                </head>
+                <body>
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                
                 
-                <script src="https://canvasjs.com/assets/script/canvasjs.min.js">
-                    document.cookie = "SameSite=None; Secure";
-                    alert( document.cookie );
-                </script>
 
                 <br>
                 <br>
