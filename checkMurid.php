@@ -88,7 +88,7 @@
                         itemclick: toggleDataSeries
                     },
                     data: [{        
-                        type: "spline",  
+                        type: "line",  
                         name: "Own Marks",        
                         showInLegend: true,
                         dataPoints: [
@@ -108,7 +108,7 @@
                     }, 
                     
                     {        
-                        type: "spline",  
+                        type: "line",  
                         name: "Average Marks",        
                         showInLegend: true,
                         dataPoints: [
