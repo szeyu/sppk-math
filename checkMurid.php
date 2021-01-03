@@ -10,9 +10,18 @@
     $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
     $result = mysqli_query($con,$selectDataFromRekod);         // query
 
-    // get markah  and its details and it is in ascending order
+    // get own markah  and its details and it is in ascending order
     $selectMarkahFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod), IdRekod ";
     $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query
+
+    // get all markah and its details for calculating purata in an ascending order
+    // need its IdRekod to calculate each IdRekod Purata
+    $selectMarkahFromRekodPurata = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod), IdRekod ";
+    $resultMarkahPurata = mysqli_query($con,$selectMarkahFromRekodPurata);         // query
+
+
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -91,8 +100,17 @@
                         name: "Own Marks",        
                         showInLegend: true,
                         dataPoints: [
-                            { label: "R1" , y: 44 },     
-                            { label: "R2" , y: 37 },     
+                            <?php 
+                            // can work
+                            while($rowMarkah = mysqli_fetch_array($resultMarkah)){ 
+                                $IdRekod = $rowMarkah['IdRekod'];
+                                $markahGraph = $rowMarkah['markah'];
+                                echo "{ label: '$IdRekod' , y: $markahGraph},";
+                            }
+                            ?>
+
+                            // { label: "R1" , y: 44 },     
+                            // { label: "R2" , y: 37 },     
                             
                         ]
                     }, 
@@ -102,6 +120,46 @@
                         name: "Average Marks",        
                         showInLegend: true,
                         dataPoints: [
+                            <?php
+                                /////////////////////////////////////
+                                //         get every purata
+                                /////////////////////////////////////
+                                // $everyRekodPurata = array();
+
+
+                                // $purata;
+                                // $jumlah = 0;
+                                // $ct = 0;
+
+                                // $rowPurata = mysqli_fetch_array($resultMarkahPurata);
+                                // $temp = $rowPurata['IdRekod'];
+                                // $jumlah += $rowPurata['markah'];
+                                // $ct += 1;
+
+                                // while($rowPurata = mysqli_fetch_array($resultMarkahPurata)){
+                                //     if ($temp == $rowPurata['IdRekod']){
+                                //         $jumlah += $rowPurata['markah'];
+                                //         $ct += 1;
+                                //     }
+                                //     else{
+                                //         // add data to array and refresh
+                                //         $purata = $jumlah/$ct;
+                                //         // $everyRekodPurata[] = $purata;
+                                //         $jumlah = 0;
+                                //         $ct = 0;
+
+                                //         //output
+                                //         echo "{ label: $temp , y: $purata},";
+
+                                //         $temp = $rowPurata['IdRekod'];
+                                //         $jumlah += $rowPurata['markah'];
+                                //         $ct += 1;
+
+                                //     }
+                                // }    
+                            ?>
+
+
                             { label: "R1" , y: 20 },     
                             { label: "R2" , y: 50 },     
                             
