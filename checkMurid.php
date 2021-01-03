@@ -11,12 +11,12 @@
     $result = mysqli_query($con,$selectDataFromRekod);         // query
 
     // get own markah  and its details and it is in ascending order
-    $selectMarkahFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod), IdRekod ";
+    $selectMarkahFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdTopik), IdTopik ";
     $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query
 
     // get all markah and its details for calculating purata in an ascending order
     // need its IdRekod to calculate each IdRekod Purata
-    $selectMarkahFromRekodPurata = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod), IdRekod ";
+    $selectMarkahFromRekodPurata = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdTopik), IdTopik ";
     $resultMarkahPurata = mysqli_query($con,$selectMarkahFromRekodPurata);         // query
 
 
@@ -103,9 +103,9 @@
                             <?php 
                             // can work
                             while($rowMarkah = mysqli_fetch_array($resultMarkah)){ 
-                                $IdRekod = $rowMarkah['IdRekod'];
+                                $IdTopik = $rowMarkah['IdTopik'];
                                 $markahGraph = $rowMarkah['markah'];
-                                echo "{ label: '$IdRekod' , y: $markahGraph},";
+                                echo "{ label: '$IdTopik' , y: $markahGraph},";
                             }
                             ?>
 
@@ -160,8 +160,9 @@
                             ?>
 
 
-                            { label: "R1" , y: 20 },     
-                            { label: "R2" , y: 50 },     
+                            // { label: "T1" , y: 20 },     
+                            // { label: "T2" , y: 50 },     
+                            // { label: "T3" , y: 50 },     
                             
                         ]
                     }]
