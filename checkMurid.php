@@ -3,6 +3,18 @@
     session_start();
 ?>
 
+<?php
+
+    require "connectPHP.php";
+    // get perekodan rekod that is from the same user[IC] and in descending order because need latest on the top
+    $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
+    $result = mysqli_query($con,$selectDataFromRekod);         // query
+
+    // get markah and it is in ascending order
+    $selectMarkahFromRekod = "SELECT markah FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod), IdRekod ";
+    $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query
+?>
+
 <!DOCTYPE html>
     
     <head>
@@ -67,7 +79,14 @@
                         type: "line",
                         indexLabelFontSize: 16,
                         dataPoints: [
-                            { y: 50 }
+                            <?php 
+                            while($rowMarkah = mysqli_fetch_array($resultMarkah)){ 
+                                $markahGraph = $rowMarkah['markah'];
+                                echo "{ y: $markahGraph},";
+                            }
+                            ?>
+
+                            // { y: 50 }
                             
                         ]
                     }]
@@ -145,13 +164,7 @@
                 <br>
                 <h1 style="margin-left: 4.5%;"> Perekodan </h1>
                 <div>
-                    <?php
-
-                        require "connectPHP.php";
-
-                        $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
-                        $result = mysqli_query($con,$selectDataFromRekod);         // query
-                    ?>
+                    
                     
                     <table id='topikTable'>
                         <tr class='tableHeader'>
