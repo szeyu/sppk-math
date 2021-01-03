@@ -8,6 +8,39 @@
 
     </head>
 
+    <!--Banner-->
+    <div class="banner">
+        <div style="background-color:  rgb(194, 247, 240);">
+            <p style="color: rgb(194, 247, 240);">.</p>
+            <h1> Ilmu Di Hujung Jari </h1>
+            <h2> Matematik Tingkatan 4 (DLP) </h2>
+            <!--log out button-->
+            <div class="logOut">
+                <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
+            </div> 
+            <p style="color: rgb(194, 247, 240);">.</p>
+        </div>
+    </div>
+    
+    
+
+    <!--Top navigation bar with index murid active-->
+    <div id="topnav" class="topnav">
+        <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
+        <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
+        <a class="active">Prestasi Sendiri</a>
+    </div>
+
+    <script>
+        function homeMurid(){
+            window.location = 'indexMurid.php?content=homeMurid';
+        }
+
+        function collectionMurid(){
+            window.location = 'indexMurid.php?content=collectionMurid';
+        }
+    </script>
+
     <body class="checkMurid">
 
         <!-- here display graph or statistic like standard deviation -->

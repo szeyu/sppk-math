@@ -20,7 +20,7 @@
             <br>
         </div>
         <div class="semakJawapanOK">
-            <a href="indexMurid.php?content=checkMurid"> OK </a>   
+            <a href="checkMurid.php"> OK </a>   
         </div> 
         <br>
         <br>

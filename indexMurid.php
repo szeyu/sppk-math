@@ -28,12 +28,13 @@
             </div>
         </div>
         
-        <!-- testing 123 -->
+        
 
         <!--Top navigation bar with index murid active-->
         <div id="topnav" class="topnav">
             <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
             <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
+            <a class="active-button" onclick="checkMurid()">Prestasi Sendiri</a>
         </div>
 
 
@@ -67,7 +68,7 @@
             }
 
             function checkMurid(){
-                $("#contentMurid").load("checkMurid.php")
+                window.location = 'checkMurid.php';
             }
             window.onload = function() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -81,7 +82,7 @@
                         $("#contentMurid").load("collectionMurid.php");
                         break;
                     case "checkMurid":
-                        $("#contentMurid").load("checkMurid.php");
+                        window.location = 'checkMurid.php';
                         break;
                     default:
                         break;
