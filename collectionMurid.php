@@ -88,19 +88,27 @@
 
 
                             <!--  need add function to control if the topik have done -->
-                            
+                            <?php 
+                                $IdTopik = $row['IdTopik'];
+                                $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE IdTopik =  '".$IdTopik."'";
+                                $resultRekod = mysqli_query($con,$selectDataFromRekod);         // query
 
-                            <tr>
-                                <td><?php echo $row['IdTopik']; ?></td>
-                                <td><?php echo $row['subTopik']; ?></td>
-                                <td><?php echo $row['tajuk']; ?></td>
-                                <td>
-                                    <?php echo '<button type="button" class="doButton" name="doButton" onclick="buatKuiz(\'' . $row['IdTopik'] . '\')"> Buat dan Hantar </button>';
-                                    ?>
+                            ?>
+
+                            <?php if (mysqli_num_rows($resultRekod) == 0) { ?>
+
+                                <tr>
+                                    <td><?php echo $row['IdTopik']; ?></td>
+                                    <td><?php echo $row['subTopik']; ?></td>
+                                    <td><?php echo $row['tajuk']; ?></td>
+                                    <td>
+                                        <?php echo '<button type="button" class="doButton" name="doButton" onclick="buatKuiz(\'' . $row['IdTopik'] . '\')"> Buat dan Hantar </button>';
+                                        ?>
+                                        
+                                    </td>
                                     
-                                </td>
-                                
-                            </tr>
+                                </tr>
+                            <?php } ?>
                     <?php } ?>
 
                     </table>

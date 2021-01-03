@@ -186,7 +186,7 @@
 
 
 
-                header('Location: ./semakJawapan.php?IdRekod='.$IdRekod);       // direct user to checkMurid page
+                header('Location: ./semakJawapan.php?IdRekod='.$IdRekod);       // direct user to semakJawapan page
                 exit();
             }
             
