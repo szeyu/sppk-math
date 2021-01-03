@@ -1,4 +1,8 @@
 
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
     
     <head>
@@ -145,7 +149,7 @@
 
                         require "connectPHP.php";
 
-                        $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
+                        $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$_SESSION['NoIC']."' ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
                         $result = mysqli_query($con,$selectDataFromRekod);         // query
                     ?>
                     

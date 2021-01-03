@@ -251,3 +251,6 @@ so to link them together need href or header()
 and not using Jquery library
 
 ------------------------------------------------------------------------------------------
+## perekodan table problem
+the perekodan table in murid will show other student perekodan so need to solved
+and then other student can help other to do one test so need seperate

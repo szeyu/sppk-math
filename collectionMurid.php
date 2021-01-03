@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
     
@@ -90,7 +93,7 @@
                             <!--  need add function to control if the topik have done -->
                             <?php 
                                 $IdTopik = $row['IdTopik'];
-                                $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE IdTopik =  '".$IdTopik."'";
+                                $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE IdTopik =  '".$IdTopik."' AND NoIC = '".$_SESSION['NoIC']."'";
                                 $resultRekod = mysqli_query($con,$selectDataFromRekod);         // query
 
                             ?>
