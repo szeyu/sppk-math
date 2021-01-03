@@ -62,6 +62,7 @@
 
             $correct = 0;
             $markah;
+            $markahDB;
 
             /////////////////////////////////////////////////////////
             //                        IdRekod
@@ -72,7 +73,7 @@
             $rowRekod = mysqli_fetch_assoc($resultRekod);
 
             $jawapanMurid = $rowRekod['jawapanMurid'];
-            $markah = $rowRekod['markah'];
+            $markahDB = $rowRekod['markah'];
 
             
 
@@ -97,10 +98,11 @@
                 <h1> Info:  </h1>
                 <div class='infoSemakContainer'>
                     <p style='opacity: 0';>.</p>
-                    <h2> IdRekod: $IdRekod </h2>
-                    <h2> IdTopik: $IdTopik </h2>
-                    <h2> subTopik: $subTopik </h2>
-                    <h2> tajuk: $tajuk </h2>
+                    <h2> IdRekod : $IdRekod </h2>
+                    <h2> IdTopik : $IdTopik </h2>
+                    <h2> subTopik : $subTopik </h2>
+                    <h2> tajuk : $tajuk </h2>
+                    <h2> markah : $markahDB %</h2>
                     <p style='opacity: 0';>.</p>
                 </div>
                 <p style='opacity: 0';>.</p>
@@ -327,7 +329,13 @@
             ////////////////////////////////////////////////////////////////
             //              recalculate the mark to ensure no error 
             ///////////////////////////////////////////////////////////////
-            
+            $markah = ($correct/$totalNumberOfSoalan) * 100;
+
+            if ($markah != $markahDB){
+                $updateMarkahDB = "UPDATE PEREKODAN SET markah ='".$markah."' WHERE IdRekod = '".$IdRekod."'";
+                mysqli_query($con,$updateMarkahDB);         // query
+            }
+
         }
             
     ?>

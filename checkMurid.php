@@ -82,7 +82,7 @@
 
                         require "connectPHP.php";
 
-                        $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod), IdRekod DESC";
+                        $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
                         $result = mysqli_query($con,$selectDataFromRekod);         // query
                     ?>
                     

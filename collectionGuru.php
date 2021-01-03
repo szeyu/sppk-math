@@ -82,7 +82,7 @@
 
                         require "connectPHP.php";
 
-                        $selectDataFromTopik = "SELECT * FROM TOPIK ORDER BY LENGTH(IdTopik), IdTopik";
+                        $selectDataFromTopik = "SELECT * FROM TOPIK ORDER BY LENGTH(IdTopik) DESC, IdTopik DESC";
                         $result = mysqli_query($con,$selectDataFromTopik);         // query
                     ?>
                     
