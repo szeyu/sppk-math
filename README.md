@@ -131,7 +131,7 @@ cheh just now forgot to use sql code
 # Student part
 ## algorithm
 
-### koleksi murid
+### koleksi murid 
 check if there is any IdTopik that have been done in perekodan
 if no than display the IdTopik table in haven't done table
     there is button beside the table, "buat dan hantar"
@@ -174,7 +174,7 @@ semak jawapan will display in green when correct and red when wrong then the ans
 
 
 
-#### add perekodan
+#### add perekodan  [done]
 1) get IdTopik from url
 2) get data from radio form in buatKuiz
 3) get date time from system  (1/1/21)
@@ -194,6 +194,7 @@ then store the murid jawapan in the form of "ADCDB"
 
 
 #### semakJawapan
+
 it is just a simple page with one button and display error only
 when click ok it will back to checkMurid.php
 get IdRekod in URL
@@ -205,9 +206,12 @@ correct answer = 60
 ----------------
             ok
 
+
+can use check peranan before go to another so here can put onclick then js determine which way to go   [IMPORTANT]
+
 --------------------------------------------------------------------------------------------
 
-## formula converter
+## formula converter  
 
 convert and return the position of jawapanMurid in 00100001
 use formula: 
@@ -239,7 +243,7 @@ need control in collectionmurid
 
 ------------------------------------------------------------------------------------------
 
-## Okiee cannot in library import another library 
+## Okiee cannot in library import another library    [ solved ]
 
 so in order to solve that i need to do a seperate file for index Murid or Guru and  check Murid or Guru
 

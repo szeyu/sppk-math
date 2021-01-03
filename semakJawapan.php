@@ -20,6 +20,7 @@
             <br>
         </div>
         <div class="semakJawapanOK">
+            <!-- can use check peranan before go to another so here can put onclick then js determine which way to go -->
             <a href="checkMurid.php"> OK </a>   
         </div> 
         <br>
