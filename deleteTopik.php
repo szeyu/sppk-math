@@ -8,6 +8,7 @@
             if(isset($_GET['IdTopik'])){
                 
                 // for the removal step of soalan pls follow these steps
+                // 0) delete Perekodan
                 // 1) delete pilihan
                 // 2) delete soalan
                 // 3) delete topik
@@ -18,6 +19,14 @@
 
                 // this is IdTopik
                 $IdTopik = $_GET['IdTopik'];               // get the value from URL
+
+                // delete all Perekodan with that IdTopik
+                $deletePerekodan = "DELETE FROM PEREKODAN WHERE IdTopik = '".$IdTopik."'";
+                mysqli_query($con,$deletePerekodan);         // query
+
+                // select all IdSoalan with that IdTopik
+                $checkIdSoalanSQL = "SELECT IdSoalan FROM SOALAN WHERE IdTopik = '".$IdTopik."'";
+                $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
 
  
                 // select all IdSoalan with that IdTopik

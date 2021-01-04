@@ -88,6 +88,7 @@ and i dun want to use session
 ## ubah soalan DB
 
 for the ubahSoalanDB.php hor is combination of many function
+0) delete Perekodan
 1) delete 
 2) change
 3) add

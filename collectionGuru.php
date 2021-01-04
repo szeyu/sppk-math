@@ -153,11 +153,17 @@
 
                 <script>
                     function deleteTopik(id) {
-                        if(confirm("Adakah anda pasti hendak memadamkan rekod ini?")) {
-                            window.location = 'deleteTopik.php?IdTopik=' + id;
-                        } else {
+                        if(confirm("Adakah anda pasti hendak memadamkan rekod ini?")){
+                            var password = prompt("Sila masukkan kata laluan untuk teruskan tindakan ini");
+                            if(password == "haiya") {
+                                window.location = 'deleteTopik.php?IdTopik=' + id;
+                            } else {
+                                alert("Kata laluan salah!");
+                            }
+                        }else {
                             //do nothing
                         }
+                        
                     }
 
                     function updateTopik(id) {
