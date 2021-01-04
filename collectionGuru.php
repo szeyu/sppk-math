@@ -28,51 +28,52 @@
         <div class="collectionGuru">
             <br>
             <br>
-            
-            <input type="text" name="search" id="searchTopik" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
-            <datalist id="suggestion">
-                <option value="1.1"></option>
-                <option value="2.1"></option>
-                <option value="3.1"></option>
-                <option value="3.2"></option>
-                <option value="4.1"></option>
-                <option value="4.2"></option>
-                <option value="4.3"></option>
-                <option value="5.1"></option>
-                <option value="6.1"></option>
-                <option value="7.1"></option>
-                <option value="7.2"></option>
-                <option value="8.1"></option>
-                <option value="8.2"></option>
-                <option value="9.1"></option>
-                <option value="9.2"></option>
-                <option value="9.3"></option>
-                <option value="9.4"></option>
-                <option value="10.1"></option>
-                <option value="revision"></option>
-                <option value="Quadratic Function and Equations"></option>
-                <option value="Number Base"></option>
-                <option value="Statements"></option>
-                <option value="Arguments"></option>
-                <option value="Intersection of Sets"></option>
-                <option value="Union of Sets"></option>
-                <option value="Combined Operation on Sets"></option>
-                <option value="Network"></option>
-                <option value="Linear Inequalities in Two Variables"></option>
-                <option value="Systems of Linear Inequalities in Two Variables"></option>
-                <option value="Distance-Time Graphs"></option>
-                <option value="Dispersion"></option>
-                <option value="Measure of Dispersion"></option>
-                <option value="Combined Event"></option>
-                <option value="Dependent Events and Independent Events"></option>
-                <option value="Mutually Exclusive Events and Non-Mutually Exclusive Events"></option>
-                <option value="Application of Probability of Combined Events"></option>
-                <option value="Financial Planning of combined Events"></option>
-            </datalist>
-            
-            <!-- <p style = "background-color: white;">.</p> -->
-
             <div class = "collectionGuruContainer">
+
+                <input type="text" name="search" id="searchTopik" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
+                <datalist id="suggestion">
+                    <option value="1.1"></option>
+                    <option value="2.1"></option>
+                    <option value="3.1"></option>
+                    <option value="3.2"></option>
+                    <option value="4.1"></option>
+                    <option value="4.2"></option>
+                    <option value="4.3"></option>
+                    <option value="5.1"></option>
+                    <option value="6.1"></option>
+                    <option value="7.1"></option>
+                    <option value="7.2"></option>
+                    <option value="8.1"></option>
+                    <option value="8.2"></option>
+                    <option value="9.1"></option>
+                    <option value="9.2"></option>
+                    <option value="9.3"></option>
+                    <option value="9.4"></option>
+                    <option value="10.1"></option>
+                    <option value="revision"></option>
+                    <option value="Quadratic Function and Equations"></option>
+                    <option value="Number Base"></option>
+                    <option value="Statements"></option>
+                    <option value="Arguments"></option>
+                    <option value="Intersection of Sets"></option>
+                    <option value="Union of Sets"></option>
+                    <option value="Combined Operation on Sets"></option>
+                    <option value="Network"></option>
+                    <option value="Linear Inequalities in Two Variables"></option>
+                    <option value="Systems of Linear Inequalities in Two Variables"></option>
+                    <option value="Distance-Time Graphs"></option>
+                    <option value="Dispersion"></option>
+                    <option value="Measure of Dispersion"></option>
+                    <option value="Combined Event"></option>
+                    <option value="Dependent Events and Independent Events"></option>
+                    <option value="Mutually Exclusive Events and Non-Mutually Exclusive Events"></option>
+                    <option value="Application of Probability of Combined Events"></option>
+                    <option value="Financial Planning of combined Events"></option>
+                </datalist>
+                
+                <!-- <p style = "background-color: white;">.</p> -->
+
+            
                 <br>
                 <br>
                 <br>

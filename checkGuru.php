@@ -251,7 +251,7 @@
                                 <td><?php echo $rowMurid['NoTel']; ?></td>
                                 
                                 <td>
-                                    <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $rowMurid['NoIC'] . '\')"> Semak jawapan </button>';
+                                    <?php echo '<button type="button" class="pantauPrestasi" name="pantauPrestasi" onclick="pantauPrestasi(\'' . $rowMurid['NoIC'] . '\')"> Pantau Prestasi </button>';
                                     ?>
                                     
                                 </td>
@@ -297,8 +297,8 @@
             </script>
 
             <script>
-                function semakJawapan(id) {
-                    window.location = 'semakJawapan.php?IdRekod=' + id;
+                function pantauPrestasi(id) {
+                    window.location = 'pantauPrestasi.php?NoIC=' + id;
                 }
                 
             </script>
