@@ -3,6 +3,11 @@
     // get perekodan rekod in descending order because need latest on the top
     $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
     $result = mysqli_query($con,$selectDataFromRekod);         // query
+
+
+    // get all murid info
+    $selectMurid = "SELECT * FROM PENGGUNA WHERE peranan = 'murid'";
+    $resultMurid = mysqli_query($con,$selectMurid);         // query
 ?>
 
 
@@ -70,7 +75,7 @@
             <br>
             
             
-            <input type="text" name="search" id="searchTopik" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
+            <input type="text" name="search" id="searchRekod" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
             <datalist id="suggestion">
                 <option value="1.1"></option>
                 <option value="2.1"></option>
@@ -164,13 +169,13 @@
                 </div>
                 <p style="opacity:0;">.</p>
             </div>
-            <p style="opacity:0;">.</p>
                     
             <script>
+                /////////////////////////////   PEREKODAN ////////////////////////////////////////////////
                 // filter function  for perekodan
                 function filterTopik() {
                     var input, filter, table, tr, td, cell, i, j;
-                    input = document.getElementById("searchTopik");
+                    input = document.getElementById("searchRekod");
                     filter = input.value.toUpperCase();
                     table = document.getElementById("rekodTable");
                     tr = table.getElementsByTagName("tr");
@@ -201,12 +206,102 @@
                 
             </script>
             
+        </div>
 
 
 
-            <!-- in search bar suggestion can put all student id that is registered inside [ Recomended ] -->
-            <!-- can put table of murid -->
 
+
+
+                                    <!--   MURID   -->
+
+        <!-- in search bar suggestion can put all student id that is registered inside [ Recomended ] -->
+        <!-- can put table of murid -->
+        <div class="checkMurid">
+            <br>
+            <br>
+            
+            
+            <input type="text" name="search" id="searchMurid" onkeyup="filterMurid()" placeholder="Cari.." spellcheck="false">
+            
+            <div class = "checkMuridContainer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 style="margin-left: 4.5%;"> Murid </h1>
+                <div>
+                    
+                    
+                    <table id='muridTable'>
+                        <tr class='tableHeader'>
+                            <th style='width:20%;'>NoIC</th>
+                            <th style='width:40%;'>nama</th>
+                            <th style='witdh:20%;'>NoTel</th>
+                            <th style='witdh:20%;'>Tindakan</th>
+                            
+                        </tr>
+
+                         
+                    <?php 
+                        while($rowMurid = mysqli_fetch_array($resultMurid)){   //Creates a loop to loop through murid ?>
+                            <tr>
+                                <td><?php echo $rowMurid['NoIC']; ?></td>
+                                <td><?php echo $rowMurid['nama']; ?></td>
+                                <td><?php echo $rowMurid['NoTel']; ?></td>
+                                
+                                <td>
+                                    <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $rowMurid['NoIC'] . '\')"> Semak jawapan </button>';
+                                    ?>
+                                    
+                                </td>
+                                
+                            </tr>
+                    <?php } ?>
+
+                    </table>
+
+                        
+                </div>
+                <p style="opacity:0;">.</p>
+            </div>
+            <p style="opacity:0;">.</p>
+                    
+            <script>
+                ///////////////////////////   MURID   /////////////////////////////////
+                // filter function  for perekodan
+                function filterMurid() {
+                    var input, filter, table, tr, td, cell, i, j;
+                    input = document.getElementById("searchMurid");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("muridTable");
+                    tr = table.getElementsByTagName("tr");
+                    for (i = 1; i < tr.length; i++) {
+                        // Hide the row initially.
+                        tr[i].style.display = "none";
+                    
+                        td = tr[i].getElementsByTagName("td");
+                        for (var j = 0; j < td.length; j++) {
+                            cell = tr[i].getElementsByTagName("td")[j];
+                            if (cell) {
+                                if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                    tr[i].style.display = "";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                        
+            </script>
+
+            <script>
+                function semakJawapan(id) {
+                    window.location = 'semakJawapan.php?IdRekod=' + id;
+                }
+                
+            </script>
 
         <div>
     </body>
