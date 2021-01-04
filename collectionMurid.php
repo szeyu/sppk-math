@@ -78,10 +78,10 @@
                     
                     <table id='topikTable'>
                         <tr class='tableHeader'>
-                            <th style='width:10%;'>IdTopik</th>
-                            <th style='width:15%;'>Sub topik</th>
-                            <th style='witdh:65%;'>Tajuk</th>
-                            <th style='witdh:10%;'>Tindakan</th>
+                            <th>IdTopik</th>
+                            <th>Sub topik</th>
+                            <th>Tajuk</th>
+                            <th>Tindakan</th>
                             
                         </tr>
 

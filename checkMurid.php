@@ -231,13 +231,13 @@
                     
                     <table id='topikTable'>
                         <tr class='tableHeader'>
-                            <th style='width:8%;'>IdRekod</th>
-                            <th style='width:9%;'>markah</th>
-                            <th style='witdh:10%;'>tarikh</th>
-                            <th style='witdh:8%;'>IdTopik</th>
-                            <th style='witdh:10%;'>subTopik</th>
-                            <th style='witdh:50%;'>tajuk</th>
-                            <th style='witdh:5%;'>Tindakan</th>
+                            <th>IdRekod</th>
+                            <th>markah</th>
+                            <th>tarikh</th>
+                            <th>IdTopik</th>
+                            <th>subTopik</th>
+                            <th>tajuk</th>
+                            <th>Tindakan</th>
                             
                         </tr>
 

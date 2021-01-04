@@ -122,19 +122,19 @@
                 <br>
                 <br>
                 <h1 style="margin-left: 4.5%;"> Perekodan </h1>
-                <div>
+                <div style="overflow-x:auto;">
                     
                     
                     <table id='rekodTable'>
                         <tr class='tableHeader'>
-                            <th style='width:8%;'>IdRekod</th>
-                            <th style='width:8%;'>markah</th>
-                            <th style='witdh:8%;'>tarikh</th>
-                            <th style='witdh:8%;'>IdTopik</th>
-                            <th style='witdh:8%;'>subTopik</th>
-                            <th style='witdh:45%;'>tajuk</th>
-                            <th style='witdh:8%;'>NoIC</th>
-                            <th style='witdh:5%;'>Tindakan</th>
+                            <th>IdRekod</th>
+                            <th>markah</th>
+                            <th>tarikh</th>
+                            <th>IdTopik</th>
+                            <th>subTopik</th>
+                            <th>tajuk</th>
+                            <th>NoIC</th>
+                            <th>Tindakan</th>
                             
                         </tr>
 
@@ -230,15 +230,15 @@
                 <br>
                 <br>
                 <h1 style="margin-left: 4.5%;"> Murid </h1>
-                <div>
+                <div style="overflow-x:auto;">
                     
                     
                     <table id='muridTable'>
                         <tr class='tableHeader'>
-                            <th style='width:20%;'>NoIC</th>
-                            <th style='width:40%;'>nama</th>
-                            <th style='witdh:20%;'>NoTel</th>
-                            <th style='witdh:20%;'>Tindakan</th>
+                            <th>NoIC</th>
+                            <th>nama</th>
+                            <th>NoTel</th>
+                            <th>Tindakan</th>
                             
                         </tr>
 
