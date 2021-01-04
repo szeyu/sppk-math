@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
     
 
-    <div class="banner">
+    <div class="banner" style="text-align:center;">
         <div style="background-color:  rgb(194, 247, 240);">
             <p style="opacity: 0;">.</p>
             <h1 style="background-color:  rgb(194, 247, 240);"> Ilmu Di Hujung Jari </h1>

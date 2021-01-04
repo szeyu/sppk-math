@@ -638,7 +638,7 @@ div.updateBalik a:hover{                /*thumbnail*/
 div .updateBalik a{
     background-color: rgb(36, 104, 173);   /*button style*/
     color: #f2f2f2;
-    padding: 14px 46px;
+    padding: 14px 52px;
     margin: auto;
     border: none;
     cursor: pointer;
@@ -719,12 +719,12 @@ div .updateBalik a{
 
 
 
-.checkMurid {
+.pantauMurid {
     background-color: rgba(85, 196, 161, 0.596);
     align-items: center;
 }
 
-.checkMuridContainer{
+.pantauMuridContainer{
     background-color: white;
     align-items: center;
     width: 93%;
@@ -737,7 +737,7 @@ div .updateBalik a{
     text-align: left;
 }
 
-.checkMurid input[type=text] {
+.pantauMurid input[type=text] {
     width: 25%;
     float: right;
     margin-right: 6.2%;
@@ -756,17 +756,17 @@ div .updateBalik a{
     margin-top: 3%;
 }
   
-.checkMurid input[type=text]:focus {
+.pantauMurid input[type=text]:focus {
     width: 45%;
 }
 
-.checkMurid h2{
+.pantauMurid h2{
     margin-left: 5%;
 }
 
 
 
-.checkMuridContainer button{
+.pantauMuridContainer button{
     background-color: rgb(54, 116, 179);            /*button style*/
     color: #f2f2f2;
     padding: 12px 25px;
@@ -780,7 +780,7 @@ div .updateBalik a{
     margin-right: 2%;
 }
 
-.checkMuridContainer button :hover{
+.pantauMuridContainer button :hover{
     opacity: 0.75;
 }
 
@@ -806,3 +806,71 @@ div .updateBalik a{
 #muridTable tr.header, #muridTable tr:hover {
     background-color: #f1f1f1;
 }
+
+
+/*///////////////// pantau prestasi //////////////////////*/
+
+div.pantauPrestasiBalik{
+    float: right;
+}
+
+
+div.pantauPrestasiBalik a:hover{                /*thumbnail*/
+    opacity: 0.8;
+}
+
+div .pantauPrestasiBalik a{
+    background-color: rgb(36, 104, 173);   /*button style*/
+    color: #f2f2f2;
+    padding: 14px 52px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+
+
+.infoPantauMurid {
+    background-color: rgba(105, 223, 185, 0.596);
+    align-items: center;
+}
+
+.infoPantauMuridContainer{
+    background-color: white;
+    align-items: center;
+    width: 93%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.infoPantauMuridContainer h2{  
+    margin-left: 5%;
+}
+
+
+.graphMurid {
+    background-color: rgba(105, 223, 185, 0.596);
+    align-items: center;
+}
+
+.graphMuridContainer{
+    background-color: white;
+    align-items: center;
+    width: 93%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+

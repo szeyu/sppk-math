@@ -217,14 +217,14 @@
 
         <!-- in search bar suggestion can put all student id that is registered inside [ Recomended ] -->
         <!-- can put table of murid -->
-        <div class="checkMurid">
+        <div class="pantauMurid">
             <br>
             <br>
             
             
             <input type="text" name="search" id="searchMurid" onkeyup="filterMurid()" placeholder="Cari.." spellcheck="false">
             
-            <div class = "checkMuridContainer">
+            <div class = "pantauMuridContainer">
                 <br>
                 <br>
                 <br>
