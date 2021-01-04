@@ -42,7 +42,7 @@
                 <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
             </div> <br><br><br>
             <div class="pantauPrestasiBalik">
-                <a href="checkGuru.php"> OK </a>   
+                <a href="checkGuru.php"> Balik </a>   
             </div> 
             <br>
             <p style="opacity:0;">.</p>
