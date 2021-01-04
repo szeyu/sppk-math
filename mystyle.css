@@ -41,6 +41,28 @@ header {
     background-color: #f1f1f1;
 }
 
+#rekodTable {
+    border-collapse: collapse;
+    width: 94.1%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 3%;
+    table-layout: fixed;
+}
+  
+#rekodTable th, #rekodTable td {
+    text-align: left;
+    padding: 1.61%;
+}
+  
+#rekodTable tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#rekodTable tr.header, #rekodTable tr:hover {
+    background-color: #f1f1f1;
+}
+
 
 
 /*///////////////////banner///////////////////////*/

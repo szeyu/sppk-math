@@ -120,7 +120,7 @@
                 <div>
                     
                     
-                    <table id='topikTable'>
+                    <table id='rekodTable'>
                         <tr class='tableHeader'>
                             <th style='width:8%;'>IdRekod</th>
                             <th style='width:8%;'>markah</th>
@@ -172,7 +172,7 @@
                     var input, filter, table, tr, td, cell, i, j;
                     input = document.getElementById("searchTopik");
                     filter = input.value.toUpperCase();
-                    table = document.getElementById("topikTable");
+                    table = document.getElementById("rekodTable");
                     tr = table.getElementsByTagName("tr");
                     for (i = 1; i < tr.length; i++) {
                         // Hide the row initially.
@@ -200,6 +200,7 @@
                 }
                 
             </script>
+            
 
 
 
