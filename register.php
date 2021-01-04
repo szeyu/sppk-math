@@ -45,9 +45,15 @@
                 <br>
                 <label for="KataLaluan"> Kata Laluan: </label> <br>     <!--ask user to input password-->
                 <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan" required><br>
+                <!-- An element to toggle between password visibility -->
+                <input type="checkbox" onclick="showKataLaluan()">Show Password
+                <br>
                 <br>
                 <label for="KataLaluanKesah"> Kesahkan Kata Laluan: </label> <br>     <!--ask user to input password-->
                 <input type="password" placeholder="Kesahkan kata lauan anda" id = "KataLaluanKesah" name="KataLaluanKesah" required><br>
+                <!-- An element to toggle between password visibility -->
+                <input type="checkbox" onclick="showKataLaluanKesah()">Show Password
+                <br>
                 <br>
                 <button type="submit" name="register-button"> Daftar </button>    <!--register button-->
                 <button type="reset" value="reset"> semula </button>     <!--reset the value if type wrong -->
@@ -57,4 +63,27 @@
             <p style="color: white;"> . </p>   <!--to make it space down-->
         </div>
     </body>
+
+
+    <script>
+        function showKataLaluan() {
+            var x = document.getElementById("KataLaluan");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function showKataLaluanKesah() {
+            var x = document.getElementById("KataLaluanKesah");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
+
 </html>

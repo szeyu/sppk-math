@@ -47,6 +47,9 @@
                 <br>
                 <label for="KataLaluan"> Kata Laluan: </label> <br>     <!--ask user to input password-->
                 <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan"><br>
+                <!-- An element to toggle between password visibility -->
+                <input type="checkbox" onclick="showPassword()">Show Password
+                <br>
                 <br>
                 <button type="submit" name="login-button"> Log Masuk </button>    <!--login button-->
                 <button type="reset" value="reset"> semula </button>     <!--reset the value if type wrong -->
@@ -58,6 +61,18 @@
                 <p style="color: rgba(154, 209, 191, 0.863);"> . </p>
             </form>
         </div>
+
+        <script>
+            function showPassword() {
+                var x = document.getElementById("KataLaluan");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+
         
     </body>
 
