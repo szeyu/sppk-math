@@ -14,6 +14,34 @@ header {
     color: black;
 }
 
+#topikTable {
+    border-collapse: collapse;
+    width: 94.1%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 3%;
+    table-layout: fixed;
+}
+  
+#topikTable th, #topikTable td {
+    text-align: left;
+    padding: 1.61%;
+}
+  
+#topikTable tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#topikTable tr.header, #topikTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tableHeader{
+    background-color: #f1f1f1;
+}
+
+
+
 /*///////////////////banner///////////////////////*/
 .banner{
     text-align: center;
@@ -216,31 +244,6 @@ div.logOut a:hover{                /*thumbnail*/
     margin-left: 5%;
 }
 
-#topikTable {
-    border-collapse: collapse;
-    width: 94.1%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-    margin-left: 3%;
-    table-layout: fixed;
-}
-  
-#topikTable th, #topikTable td {
-    text-align: left;
-    padding: 1.61%;
-}
-  
-#topikTable tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#topikTable tr.header, #topikTable tr:hover {
-    background-color: #f1f1f1;
-}
-
-.tableHeader{
-    background-color: #f1f1f1;
-}
 
 
 .doButton{
@@ -309,31 +312,6 @@ div.logOut a:hover{                /*thumbnail*/
     margin-left: 5%;
 }
 
-#topikTable {
-    border-collapse: collapse;
-    width: 94.1%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-    margin-left: 3%;
-    table-layout: fixed;
-}
-  
-#topikTable th, #topikTable td {
-    text-align: left;
-    padding: 1.61%;
-}
-  
-#topikTable tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#topikTable tr.header, #topikTable tr:hover {
-    background-color: #f1f1f1;
-}
-
-.tableHeader{
-    background-color: #f1f1f1;
-}
 
 
 .perekodanMuridContainer button{
@@ -344,7 +322,7 @@ div.logOut a:hover{                /*thumbnail*/
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.4s;
-    width: 60%;
+    width: 70%;
     font-size: medium;
     float: left;
     margin-right: 2%;

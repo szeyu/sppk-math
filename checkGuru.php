@@ -1,3 +1,11 @@
+<?php
+    require "connectPHP.php";
+    // get perekodan rekod in descending order because need latest on the top
+    $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
+    $result = mysqli_query($con,$selectDataFromRekod);         // query
+?>
+
+
 
 <!DOCTYPE html>
     
@@ -52,17 +60,154 @@
 
     <body class="checkGuru">
     
-        <h2> this is pantau Prestasi Murid 777</h2>
+        <h1 style="margin-left: 4.5%;"> Pantau Prestasi Murid </h1>
 
 
         <!-- put search bar for perekodan -->
         <!-- so can put perekodan table here -->
+        <div class="perekodanGuru">
+            <br>
+            <br>
+            
+            
+            <input type="text" name="search" id="searchTopik" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
+            <datalist id="suggestion">
+                <option value="1.1"></option>
+                <option value="2.1"></option>
+                <option value="3.1"></option>
+                <option value="3.2"></option>
+                <option value="4.1"></option>
+                <option value="4.2"></option>
+                <option value="4.3"></option>
+                <option value="5.1"></option>
+                <option value="6.1"></option>
+                <option value="7.1"></option>
+                <option value="7.2"></option>
+                <option value="8.1"></option>
+                <option value="8.2"></option>
+                <option value="9.1"></option>
+                <option value="9.2"></option>
+                <option value="9.3"></option>
+                <option value="9.4"></option>
+                <option value="10.1"></option>
+                <option value="revision"></option>
+                <option value="Quadratic Function and Equations"></option>
+                <option value="Number Base"></option>
+                <option value="Statements"></option>
+                <option value="Arguments"></option>
+                <option value="Intersection of Sets"></option>
+                <option value="Union of Sets"></option>
+                <option value="Combined Operation on Sets"></option>
+                <option value="Network"></option>
+                <option value="Linear Inequalities in Two Variables"></option>
+                <option value="Systems of Linear Inequalities in Two Variables"></option>
+                <option value="Distance-Time Graphs"></option>
+                <option value="Dispersion"></option>
+                <option value="Measure of Dispersion"></option>
+                <option value="Combined Event"></option>
+                <option value="Dependent Events and Independent Events"></option>
+                <option value="Mutually Exclusive Events and Non-Mutually Exclusive Events"></option>
+                <option value="Application of Probability of Combined Events"></option>
+                <option value="Financial Planning of combined Events"></option>
+            </datalist>
+            
+            <div class = "perekodanGuruContainer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 style="margin-left: 4.5%;"> Perekodan </h1>
+                <div>
+                    
+                    
+                    <table id='topikTable'>
+                        <tr class='tableHeader'>
+                            <th style='width:8%;'>IdRekod</th>
+                            <th style='width:8%;'>markah</th>
+                            <th style='witdh:8%;'>tarikh</th>
+                            <th style='witdh:8%;'>IdTopik</th>
+                            <th style='witdh:8%;'>subTopik</th>
+                            <th style='witdh:45%;'>tajuk</th>
+                            <th style='witdh:8%;'>NoIC</th>
+                            <th style='witdh:5%;'>Tindakan</th>
+                            
+                        </tr>
+
+                         
+                    <?php 
+                        while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
+                            <?php 
+                                $selectDataFromTopik = "SELECT * FROM TOPIK WHERE IdTopik = '".$row['IdTopik']."'";
+                                $resultTopik = mysqli_query($con,$selectDataFromTopik);         // query
+                                $rowTopik = mysqli_fetch_array($resultTopik);
+                            ?>
+                            <tr>
+                                <td><?php echo $row['IdRekod']; ?></td>
+                                <td><?php echo $row['markah']; ?></td>
+                                <td><?php echo $row['tarikh']; ?></td>
+                                <td><?php echo $row['IdTopik']; ?></td>
+                                <td><?php echo $rowTopik['subTopik']; ?></td>
+                                <td><?php echo $rowTopik['tajuk']; ?></td>
+                                <td><?php echo $row['NoIC']; ?></td>
+                                <td>
+                                    <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdRekod'] . '\')"> Semak jawapan </button>';
+                                    ?>
+                                    
+                                </td>
+                                
+                            </tr>
+                    <?php } ?>
+
+                    </table>
+
+                        
+                </div>
+                <p style="opacity:0;">.</p>
+            </div>
+            <p style="opacity:0;">.</p>
+                    
+            <script>
+                // filter function  for perekodan
+                function filterTopik() {
+                    var input, filter, table, tr, td, cell, i, j;
+                    input = document.getElementById("searchTopik");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("topikTable");
+                    tr = table.getElementsByTagName("tr");
+                    for (i = 1; i < tr.length; i++) {
+                        // Hide the row initially.
+                        tr[i].style.display = "none";
+                    
+                        td = tr[i].getElementsByTagName("td");
+                        for (var j = 0; j < td.length; j++) {
+                            cell = tr[i].getElementsByTagName("td")[j];
+                            if (cell) {
+                                if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                    tr[i].style.display = "";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                        
+            </script>
+
+            <script>
+                function semakJawapan(id) {
+                    window.location = 'semakJawapan.php?IdRekod=' + id;
+                }
+                
+            </script>
 
 
 
-        <!-- in search bar suggestion can put all student id that is registered inside [ Recomended ] -->
-        <!-- can put table of murid -->
-        
+            <!-- in search bar suggestion can put all student id that is registered inside [ Recomended ] -->
+            <!-- can put table of murid -->
+
+
+        <div>
     </body>
     
 </html>

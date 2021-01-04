@@ -232,12 +232,12 @@
                     <table id='topikTable'>
                         <tr class='tableHeader'>
                             <th style='width:8%;'>IdRekod</th>
-                            <th style='width:8%;'>markah</th>
-                            <th style='witdh:8%;'>tarikh</th>
+                            <th style='width:9%;'>markah</th>
+                            <th style='witdh:10%;'>tarikh</th>
                             <th style='witdh:8%;'>IdTopik</th>
-                            <th style='witdh:8%;'>subTopik</th>
+                            <th style='witdh:10%;'>subTopik</th>
                             <th style='witdh:50%;'>tajuk</th>
-                            <th style='witdh:10%;'>Tindakan</th>
+                            <th style='witdh:5%;'>Tindakan</th>
                             
                         </tr>
 

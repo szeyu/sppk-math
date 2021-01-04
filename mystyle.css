@@ -15,6 +15,34 @@ header {
     color: black;
 }
 
+#topikTable {
+    border-collapse: collapse;
+    width: 94.1%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 3%;
+    table-layout: fixed;
+}
+  
+#topikTable th, #topikTable td {
+    text-align: left;
+    padding: 1.61%;
+}
+  
+#topikTable tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#topikTable tr.header, #topikTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tableHeader{
+    background-color: #f1f1f1;
+}
+
+
+
 /*///////////////////banner///////////////////////*/
 .banner{
     text-align: center;
@@ -530,31 +558,7 @@ div.logOut a:hover{                /*thumbnail*/
     width: 45%;
 }
 
-#topikTable {
-    border-collapse: collapse;
-    width: 94.1%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-    margin-left: 3%;
-    table-layout: fixed;
-}
-  
-#topikTable th, #topikTable td {
-    text-align: left;
-    padding: 1.61%;
-}
-  
-#topikTable tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#topikTable tr.header, #topikTable tr:hover {
-    background-color: #f1f1f1;
-}
 
-.tableHeader{
-    background-color: #f1f1f1;
-}
 
 
 .deleteButton{
@@ -617,4 +621,90 @@ div .updateBalik a{
     border-radius: 10px;
     margin-right: 10px;
     transition: all 0.5s;
+}
+
+
+
+/*///////////////////   Check Guru   ////////////////////////////*/
+.perekodanGuru{
+    background-color: rgba(85, 196, 161, 0.596);
+    align-items: center;
+}
+
+.perekodanGuruContainer{
+    background-color: white;
+    align-items: center;
+    width: 93%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.perekodanGuru input[type=text] {
+    width: 25%;
+    float: right;
+    margin-right: 6.2%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/Image/searchIcon.png');
+    background-size: 100%;
+    background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: 3%;
+}
+  
+.perekodanGuru input[type=text]:focus {
+    width: 45%;
+}
+
+.perekodanGuru h2{
+    margin-left: 5%;
+}
+
+
+
+.perekodanGuruContainer button{
+    background-color: rgb(54, 116, 179);            /*button style*/
+    color: #f2f2f2;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s;
+    width: 75%;
+    font-size: medium;
+    float: left;
+    margin-right: 2%;
+}
+
+.perekodanGuruContainer button :hover{
+    opacity: 0.75;
+}
+
+.checkMurid {
+    background-color: rgba(85, 196, 161, 0.596);
+    align-items: center;
+}
+
+.checkMuridContainer{
+    background-color: white;
+    align-items: center;
+    width: 93%;
+    border: solid 2px #ccc;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    text-align: left;
 }

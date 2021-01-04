@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $peranan = $_SESSION['peranan'];
+?>
+
 
 <html>
 
@@ -21,13 +26,23 @@
         </div>
         <div class="semakJawapanOK">
             <!-- can use check peranan before go to another so here can put onclick then js determine which way to go -->
-            <a href="checkMurid.php"> OK </a>   
+            <a onclick="backToOrigin()"> OK </a>   
         </div> 
         <br>
         <br>
         <br>
     </div>
 </head>
+
+<script> 
+    function backToOrigin(){
+        if ('<?php echo $peranan; ?>' == 'murid'){
+            window.location = 'checkMurid.php';
+        }else {
+            window.location = 'checkGuru.php';
+        }
+    }
+</script>
 
 <body>
     <?php
@@ -92,6 +107,17 @@
             $subTopik = $rowTopik['subTopik'];
 
 
+            ////////////////////////////////////////////////////////
+            //                Nama   and   NoIC
+            ////////////////////////////////////////////////////////
+            $NoIC = $rowRekod['NoIC'];         // get from perekodan 
+            $checkIdNamaSQL = "SELECT nama FROM PENGGUNA WHERE NoIC = '".$NoIC."'";
+            $resultNama = mysqli_query($con,$checkIdNamaSQL);         // query
+            $rowNama = mysqli_fetch_assoc($resultNama);
+
+            $nama = $rowNama['nama'];
+
+
             echo"
             <p style='opacity: 0';>.</p>
             <div class='infoSemak'>
@@ -104,6 +130,9 @@
                     <h2> subTopik : $subTopik </h2>
                     <h2> tajuk : $tajuk </h2>
                     <h2> markah : $markahDB %</h2>
+                    <p style='opacity: 0';>.</p>
+                    <h2> NoIC : $NoIC </h2>
+                    <h2> Nama : $nama </h2>
                     <p style='opacity: 0';>.</p>
                 </div>
                 <p style='opacity: 0';>.</p>
