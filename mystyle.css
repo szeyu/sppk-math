@@ -697,18 +697,71 @@ div.logOut a:hover{                /*thumbnail*/
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    transition: all 0.4s;
-    width: 45%;
+    width: 66%;
     font-size: medium;
     float: left;
     margin-right: 2%;
     margin-top: 2%;
 }
 
-.infoButton:hover{
+/* .infoButton:hover{
+    opacity: 0.75;
+} */
+
+.completedTask{
+    background-color: rgb(54, 179, 110);            /*button style*/
+    color: #f2f2f2;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 90%;
+    font-size: medium;
+    float: left;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.completedTask:hover{
     opacity: 0.75;
 }
 
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.container:hover .overlay {
+    width: 92%;
+}
+
+
+.overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgb(54, 179, 137);
+overflow: hidden;
+width: 0;
+height: 122%;
+transition: .5s ease;
+}
+
+
+
+.text {
+color: white;
+font-size: 30px;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+white-space: nowrap;
+}
 
 /*/////////////////// updateTopik //////////////////*/
 

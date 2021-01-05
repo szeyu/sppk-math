@@ -21,7 +21,7 @@
         
     </head>
 
-    
+
     <body>
         <h1 style="margin-left: 4.5%;"> Koleksi Soalan</h1>
         <br>
@@ -114,8 +114,38 @@
                                     <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
                                         class="deleteButton"> Padamkan </a> -->
 
-                                    <?php echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $row['IdTopik'] . '\')"> Info </button>';
+                                    <?php
+                                    $IdTopik=$row['IdTopik'];
                                     ?>
+
+                                    <?php //echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $IdTopik . '\')"> Info </button>';
+                                    ?>
+
+
+                                    <?php 
+                                        $countCompleted = "SELECT COUNT(IdRekod) FROM PEREKODAN WHERE IdTopik = '".$IdTopik."'";
+                                        $resultNumComplete = mysqli_query($con,$countCompleted);         // query
+                                        $rowNumComplete = mysqli_fetch_array($resultNumComplete);
+                                        $numberOfCompleted = $rowNumComplete[0];
+
+
+                                        $countNumberOfMurid = "SELECT COUNT(NoIC) FROM PENGGUNA WHERE peranan = 'murid'";
+                                        $resultNumMurid = mysqli_query($con,$countNumberOfMurid);         // query
+                                        $rowNumMurid = mysqli_fetch_array($resultNumMurid);
+                                        $numberOfMurid = $rowNumMurid[0];
+
+                                    ?>
+                                    <button class="completedTask"> Murid yang hantar : <?php echo "$numberOfCompleted / $numberOfMurid"; ?> </button> 
+                                    
+                                    
+                                    <p style="opacity:0;">.</p>
+                                    <div class="container">
+                                    <p style="opacity:0;"> PPP </p>
+                                    <div class="overlay">
+                                        <div class="text"><?php echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $IdTopik . '\')"> Info Lanjut</button>';?></div>
+                                    </div>
+                                    </div>
+
                                 </td>
                                 
                             </tr>
