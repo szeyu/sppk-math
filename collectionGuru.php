@@ -113,6 +113,9 @@
                                     ?>
                                     <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
                                         class="deleteButton"> Padamkan </a> -->
+
+                                    <?php echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $row['IdTopik'] . '\')"> Info </button>';
+                                    ?>
                                 </td>
                                 
                             </tr>
@@ -168,6 +171,10 @@
 
                     function updateTopik(id) {
                         window.location = 'updateTopik.php?IdTopik=' + id;
+                    }
+
+                    function infoTopik(id) {
+                        window.location = 'infoTopik.php?IdTopik=' + id;
                     }
                     
                 </script>
