@@ -66,7 +66,7 @@
                 <br>
                 <br>
                 <br>
-                <h2> Belum Buat </h2>
+                <h2 style="margin-left: 5%;"> Belum Buat </h2>
                 <div>
                     <?php
 

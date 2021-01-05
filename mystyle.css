@@ -77,6 +77,33 @@ thead, tbody tr {
 }
 
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        margin-top: 10%;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0%;
+        
+    }
+}
+
+@keyframes fadeInHome {
+    from {
+        opacity: 0;
+        margin-top: 10%;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 2%;
+        
+    }
+}
+
+
 
 
 
@@ -218,6 +245,13 @@ thead, tbody tr {
     box-shadow: 0 0 2px 1px rgba(248, 38, 38, 0.589);
 }
 
+.containerLogin {
+    animation-name:fadeIn;
+    animation-duration:4s;
+    
+}
+
+
 
 
 /*///////////////////// Register ///////////////////////*/
@@ -337,6 +371,12 @@ thead, tbody tr {
     margin: auto;
     padding: 10px;
     
+}
+
+
+.homeGuru {
+    animation-name:fadeInHome;
+    animation-duration:3s;
 }
 
 .containerInfo pre{

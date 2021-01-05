@@ -122,17 +122,17 @@
             <p style='opacity: 0';>.</p>
             <div class='infoSemak'>
                 <p style='opacity: 0';>.</p>
-                <h1> Info:  </h1>
+                <h1 style='margin-left: 5%'> Info:  </h1>
                 <div class='infoSemakContainer'>
                     <p style='opacity: 0';>.</p>
-                    <h2> IdRekod : $IdRekod </h2>
-                    <h2> IdTopik : $IdTopik </h2>
-                    <h2> subTopik : $subTopik </h2>
-                    <h2> tajuk : $tajuk </h2>
-                    <h2> markah : $markahDB %</h2>
+                    <h2 style='margin-left: 5%;'> IdRekod : $IdRekod </h2>
+                    <h2 style='margin-left: 5%;'> IdTopik : $IdTopik </h2>
+                    <h2 style='margin-left: 5%;'> subTopik : $subTopik </h2>
+                    <h2 style='margin-left: 5%;'> tajuk : $tajuk </h2>
+                    <h2 style='margin-left: 5%;'> markah : $markahDB %</h2>
                     <p style='opacity: 0';>.</p>
-                    <h2> NoIC : $NoIC </h2>
-                    <h2> Nama : $nama </h2>
+                    <h2 style='margin-left: 5%;'> NoIC : $NoIC </h2>
+                    <h2 style='margin-left: 5%;'> Nama : $nama </h2>
                     <p style='opacity: 0';>.</p>
                 </div>
                 <p style='opacity: 0';>.</p>
@@ -143,7 +143,7 @@
             echo"
             <div class='semakJawapan'>
             <p style='opacity: 0';>.</p>
-            <h1> Soalan:  </h1>
+            <h1 style='margin-left: 5%;'> Soalan:  </h1>
                 <div class='semakJawapanContainer'>
             ";
 
@@ -225,8 +225,8 @@
                             <hr>
                             <br>
         
-                            <h2> Soalan $i</h2>
-                            <h3> $soalan </h3>
+                            <h2 style='margin-left: 5%;'> Soalan $i</h2>
+                            <h3 style='margin-left: 5%;'> $soalan </h3>
         
                             <br><br><br><br>
         
@@ -289,8 +289,8 @@
                         <hr>
                         <br>
 
-                        <h2> Soalan $i</h2>
-                        <h3> $soalan </h3>
+                        <h2 style='margin-left: 5%;'> Soalan $i</h2>
+                        <h3 style='margin-left: 5%;'> $soalan </h3>
 
                         <br><br><br><br>
 
@@ -342,7 +342,7 @@
                         </div>
                         <!-- <p> wrong </p> -->
                     </div>
-                    <h3> Jawapan betul: ($answer) $jawapanBetul </h3>
+                    <h3 style='margin-left: 5%;'> Jawapan betul: ($answer) $jawapanBetul </h3>
                     ";
 
 
