@@ -142,7 +142,7 @@
 
             echo"
             <div class='semakJawapan'>
-            <p style='opacity: 0';>.</p>
+            <br>
             <h1 style='margin-left: 5%;'> Soalan:  </h1>
                 <div class='semakJawapanContainer'>
             ";
@@ -278,6 +278,7 @@
                             </div>
                             <!-- <p> correct </p>  -->
                         </div>
+                        <br>
                     ";
 
 
@@ -343,6 +344,7 @@
                         <!-- <p> wrong </p> -->
                     </div>
                     <h3 style='margin-left: 5%;'> Jawapan betul: ($answer) $jawapanBetul </h3>
+                    <br>
                     ";
 
 
@@ -353,6 +355,7 @@
             echo "
                 </div>
                 <p style='opacity: 0';>.</p>
+                <br>
             </div>";
 
 

@@ -54,27 +54,7 @@ thead, tbody tr {
     background-color: #f1f1f1;
 }
 
-#rekodTable {
-    border-collapse: collapse;
-    width: 94.1%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-    margin-left: 3%;
-    table-layout: fixed;
-}
-  
-#rekodTable th, #rekodTable td {
-    text-align: left;
-    padding: 1.61%;
-}
-  
-#rekodTable tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#rekodTable tr.header, #rekodTable tr:hover {
-    background-color: #f1f1f1;
-}
+
 
 
 @keyframes fadeIn {
@@ -789,6 +769,30 @@ div .updateBalik a{
 
 
 /*///////////////////   Check Guru   ////////////////////////////*/
+
+#rekodTable {
+    border-collapse: collapse;
+    width: 94.1%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 3%;
+    table-layout: fixed;
+}
+  
+#rekodTable th, #rekodTable td {
+    text-align: left;
+    padding: 1.61%;
+}
+  
+#rekodTable tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#rekodTable tr.header, #rekodTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+
 .perekodanGuru{
     background-color: rgba(85, 196, 161, 0.596);
     align-items: center;
@@ -1124,6 +1128,53 @@ div .pantauPrestasiBalik a{
 }
 
 
+#rekodTable1 {
+    border-collapse: collapse;
+    width: 94.1%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 3%;
+    table-layout: fixed;
+}
+  
+#rekodTable1 th, #rekodTable1 td {
+    text-align: left;
+    padding: 1.61%;
+}
+  
+#rekodTable1 tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#rekodTable1 tr.header, #rekodTable1 tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+#rekodTable2 {
+    border-collapse: collapse;
+    width: 94.1%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    margin-left: 3%;
+    table-layout: fixed;
+}
+  
+#rekodTable2 th, #rekodTable2 td {
+    text-align: left;
+    padding: 1.61%;
+}
+  
+#rekodTable2 tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#rekodTable2 tr.header, #rekodTable2 tr:hover {
+    background-color: #f1f1f1;
+}
 
 
 
