@@ -135,12 +135,16 @@
                                         $numberOfMurid = $rowNumMurid[0];
 
                                     ?>
-                                    <button class="completedTask"> Murid yang hantar : <?php echo "$numberOfCompleted / $numberOfMurid"; ?> </button> 
                                     
+                                    <?php if ($numberOfCompleted == $numberOfMurid){ ?>
+                                        <button class="completedTask"> Semua Hantar ! </button> 
+                                    <?php } else{ ?>
+                                        <button class="completedTask"> Murid yang hantar : <?php echo "$numberOfCompleted / $numberOfMurid"; ?> </button>
+                                    <?php } ?>
                                     
                                     <p style="opacity:0;">.</p>
                                     <div class="container">
-                                    <p style="opacity:0;"> PPP </p>
+                                    <p style="opacity:0;"> PP </p>
                                     <div class="overlay">
                                         <div class="text"><?php echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $IdTopik . '\')"> Info Lanjut</button>';?></div>
                                     </div>

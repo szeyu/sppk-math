@@ -48,6 +48,8 @@
             <p style="opacity:0;">.</p>
         </div>
     </div>
+    <hr>
+    <p style="opacity:0;">.</p>
     
     
     <!-- OK button and go back to check Guru -->
