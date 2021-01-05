@@ -72,9 +72,9 @@
 
             <div class="muridHantar">
                 <div class = "muridHantarContainer">
-                    <br>
-                    <br>
                     <input type="text" name="search" id="searchMurid" onkeyup="filterMurid()" placeholder="Cari.." spellcheck="false">
+                    <br>
+                    <br>
                     <br>
                     <br>
                     <h1 style="margin-left: 4.5%;"> Murid yang hantar </h1>
