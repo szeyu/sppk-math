@@ -130,12 +130,12 @@
                     <h2 style='margin-left: 5%;'> subTopik : $subTopik </h2>
                     <h2 style='margin-left: 5%;'> tajuk : $tajuk </h2>
                     <h2 style='margin-left: 5%;'> markah : $markahDB %</h2>
-                    <p style='opacity: 0';>.</p>
+                    <p style='opacity: 0;'>.</p>
                     <h2 style='margin-left: 5%;'> NoIC : $NoIC </h2>
                     <h2 style='margin-left: 5%;'> Nama : $nama </h2>
-                    <p style='opacity: 0';>.</p>
+                    <p style='opacity: 0;'>.</p>
                 </div>
-                <p style='opacity: 0';>.</p>
+                <br><br>
             </div>
             ";
 
