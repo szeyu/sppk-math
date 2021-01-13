@@ -9,7 +9,22 @@
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
     </head>
+    <?php 
+        if (isset($_GET['error'])){
+            // do nothing
+        }else{
+            echo"
+            <style>
+                .containerLogin {
+                    animation-name:fadeIn;
+                    animation-duration:4s;
+                    
+                }
+            </style>
+            ";
+        }
     
+    ?>
     <body class="login">
 
         <div class = "containerLogin">
