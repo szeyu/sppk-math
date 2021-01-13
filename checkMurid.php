@@ -66,7 +66,20 @@
             
             <div class = "graphMuridContainer">
                 <h1 style="margin-left: 4.5%;"> Prestasi sendiri </h1>
+                <hr>
                 <!-- <h2> display graph </h2> -->
+
+                <?php 
+                    // $standardDeviation = "SELECT STDEVP(markah) FROM PEREKODAN WHERE NoIC='".$_SESSION['NoIC']."'";
+
+
+                ?>
+
+                <br>
+                <h2 style="margin-left: 4.5%;"> Standard Deviation : </h2>
+                <br>
+                <br>
+                <h2 style="margin-left: 4.5%;"> Graph </h2>
                 
                 <script>
                 window.onload = function () {
