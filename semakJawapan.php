@@ -213,11 +213,27 @@
                     $jawapanBetul = $resultSetPilihan[3];
                 }
 
-                $tempJawapanMurid = $jawapanMurid[$i-1];
+                $ABCDJawapanMurid = $jawapanMurid[$i-1];
+                if ($ABCDJawapanMurid=='A'){
+                    $tempJawapanMurid = 0;
+                }
+                else if ($ABCDJawapanMurid=='B'){
+                    $tempJawapanMurid = 1;
+                }
+                else if ($ABCDJawapanMurid=='C'){
+                    $tempJawapanMurid = 2;
+                }
+                else if ($ABCDJawapanMurid=='D'){
+                    $tempJawapanMurid = 3;
+                }
+
+                $tempJawapanMurid;
                 // echo $tempJawapanMurid;
-                if ($tempJawapanMurid == $answer){
+                if ($ABCDJawapanMurid == $answer){
                     $correct += 1;
+
                     
+
 
                     //display question and student answer in green
                     echo "
@@ -254,16 +270,16 @@
                                 </div>
         
                                 <script>
-                                    if ('$tempJawapanMurid'=='A'){
+                                    if ($tempJawapanMurid==0){
                                         document.getElementById('radioA$i').checked = true;
                                     }
-                                    else if ('$tempJawapanMurid'=='B'){
+                                    else if ($tempJawapanMurid==1){
                                         document.getElementById('radioB$i').checked = true;
                                     }
-                                    else if ('$tempJawapanMurid'=='C'){
+                                    else if ($tempJawapanMurid==2){
                                         document.getElementById('radioC$i').checked = true;
                                     }
-                                    else if ('$tempJawapanMurid'=='D'){
+                                    else if ($tempJawapanMurid==3){
                                         document.getElementById('radioD$i').checked = true;
                                     }
 
@@ -278,12 +294,13 @@
                             </div>
                             <!-- <p> correct </p>  -->
                         </div>
+                        <h3 style='margin-left: 5%;'> Jawapan anda : ($answer) $jawapanBetul &#9989;</h3>
                         <br>
                     ";
 
 
                 } 
-                else if ($tempJawapanMurid != $answer){
+                else if ($ABCDJawapanMurid != $answer){
                     //display question and student answer in red   plus display correct answer below
                     echo "
                     <div class='wrong'>
@@ -319,16 +336,16 @@
                             </div>
 
                             <script>
-                                if ('$tempJawapanMurid'=='A'){
+                                if ($tempJawapanMurid==0){
                                     document.getElementById('radioA$i').checked = true;
                                 }
-                                else if ('$tempJawapanMurid'=='B'){
+                                else if ($tempJawapanMurid==1){
                                     document.getElementById('radioB$i').checked = true;
                                 }
-                                else if ('$tempJawapanMurid'=='C'){
+                                else if ($tempJawapanMurid==2){
                                     document.getElementById('radioC$i').checked = true;
                                 }
-                                else if ('$tempJawapanMurid'=='D'){
+                                else if ($tempJawapanMurid==3){
                                     document.getElementById('radioD$i').checked = true;
                                 }
 
@@ -343,7 +360,8 @@
                         </div>
                         <!-- <p> wrong </p> -->
                     </div>
-                    <h3 style='margin-left: 5%;'> Jawapan betul: ($answer) $jawapanBetul </h3>
+                    <h3 style='margin-left: 5%;'> Jawapan Anda: ($ABCDJawapanMurid) $resultSetPilihan[$tempJawapanMurid] &#10060;</h3>
+                    <h3 style='margin-left: 5%;'> Jawapan betul: ($answer) $jawapanBetul &#9989;</h3>
                     <br>
                     ";
 
