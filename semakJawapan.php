@@ -294,7 +294,7 @@
                             </div>
                             <!-- <p> correct </p>  -->
                         </div>
-                        <h3 style='margin-left: 5%;'> Jawapan anda : ($answer) $jawapanBetul &#9989;</h3>
+                        <h3 style='margin-left: 5%;'> Jawapan Anda : ($answer) $jawapanBetul &#9989;</h3>
                         <br>
                     ";
 
@@ -361,7 +361,7 @@
                         <!-- <p> wrong </p> -->
                     </div>
                     <h3 style='margin-left: 5%;'> Jawapan Anda: ($ABCDJawapanMurid) $resultSetPilihan[$tempJawapanMurid] &#10060;</h3>
-                    <h3 style='margin-left: 5%;'> Jawapan betul: ($answer) $jawapanBetul &#9989;</h3>
+                    <h3 style='margin-left: 5%;'> Jawapan Betul: ($answer) $jawapanBetul &#9989;</h3>
                     <br>
                     ";
 
