@@ -289,8 +289,8 @@ div.logOut a:hover{                /*thumbnail*/
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('/Image/searchIcon.png');
-    background-size: 100%;
+    background-image: url('Image/searchIcon.png');
+    background-size: 10%;
     background-position: 5px 5px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -301,6 +301,7 @@ div.logOut a:hover{                /*thumbnail*/
   
 .collectionMurid input[type=text]:focus {
     width: 45%;
+    background-size: 5%;
 }
 
 
@@ -354,8 +355,8 @@ div.logOut a:hover{                /*thumbnail*/
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('/Image/searchIcon.png');
-    background-size: 100%;
+    background-image: url('Image/searchIcon.png');
+    background-size: 10%;
     background-position: 5px 5px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -366,6 +367,7 @@ div.logOut a:hover{                /*thumbnail*/
   
 .perekodanMurid input[type=text]:focus {
     width: 45%;
+    background-size: 5%;
 }
 
 
