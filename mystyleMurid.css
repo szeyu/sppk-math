@@ -100,6 +100,74 @@ html {
 }
 
 
+
+
+
+/*///////////////////// alert box   /////////////////////////*/
+/* Designing dialog box */
+#alert_container { 
+    display: none; 
+    background-image: linear-gradient( #a138af, #5951d3); 
+    background-size:cover; 
+    color: white; 
+    position: absolute; 
+    width: 350px; 
+    border-radius: 5px; 
+    left: 50%; 
+    margin-left: -160px; 
+    padding: 16px 8px 8px; 
+    box-sizing: border-box; 
+} 
+
+/* Designing dialog box's okay buttun */
+#alert_container .yes { 
+    background-color: #4dd64d; 
+    display: inline-block; 
+    border-radius: 5px; 
+    border: 2px solid gray; 
+    padding: 5px; 
+    margin-right: 10px; 
+    text-align: center; 
+    width: 60px; 
+    /* float: right;  */
+} 
+
+#alert_container .no { 
+    background-color: #22b8cf; 
+    display: inline-block; 
+    border-radius: 5px; 
+    border: 2px solid gray; 
+    padding: 5px; 
+    margin-right: 10px; 
+    text-align: center; 
+    width: 95px; 
+    /* float: right;  */
+} 
+
+#alert_container .yes:hover { 
+    background-color: #83f396; 
+
+} 
+
+#alert_container .no:hover { 
+    background-color: #99e9f2; 
+
+} 
+
+/* Dialog box message decorating */
+#alert_container .message { 
+    text-align: left; 
+    padding: 10px 30px; 
+} 
+
+
+
+
+
+
+
+
+
 /*///////////////////banner///////////////////////*/
 .banner{
     text-align: center;
@@ -115,6 +183,9 @@ html {
     background-color: rgb(63, 58, 56);    /*to make border with dark colour */
     color: #f2f2f2;
     /*position: fixed;*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 .topnav a{
@@ -130,15 +201,18 @@ html {
     background-color: rgb(99, 192, 161);
     color: black;
     cursor: pointer;
+    border-bottom: 3px solid red;
 }
 
 .topnav a:active{                   /*when click on it, change to darker background colour*/
     background-color: rgba(145, 214, 219, 0.897);
     color: black;
+    border-bottom: 3px solid rgb(247, 29, 83);
 }
 
 .active {                        /*to make (selected page) this word has different colour*/
     background-color: rgb(69, 103, 143);
+    border-bottom: 3px solid red;
 }
 
 
