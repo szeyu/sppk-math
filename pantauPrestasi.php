@@ -48,7 +48,6 @@
             <p style="opacity:0;">.</p>
         </div>
     </div>
-    <hr>
     <p style="opacity:0;">.</p>
     
     
@@ -80,15 +79,6 @@
             <div class = "graphMuridContainer">
                 <br>
                 
-                <?php 
-                    // $standardDeviation = "SELECT STDEVP(markah) FROM PEREKODAN WHERE NoIC='".$_SESSION['NoIC']."'";
-                    
-
-                ?>
-
-                <br>
-                <h2 style="margin-left: 4.5%;"> Standard Deviation : </h2>
-                <br>
                 <br>
                 <h2 style="margin-left: 4.5%;"> Graph </h2>
                 
@@ -118,11 +108,25 @@
                         dataPoints: [
                             <?php 
                             // can work
+                            $number_of_topik = 0; 
+                            $sum_of_all_markah = 0;
+                            $sum_of_all_markah_power2 = 0;
                             while($rowMarkah = mysqli_fetch_array($resultMarkah)){ 
                                 $IdTopik = $rowMarkah['IdTopik'];
                                 $markahGraph = $rowMarkah['markah'];
+
+                                // getting info for stdv
+                                $number_of_topik += 1;
+                                $sum_of_all_markah += $markahGraph;
+                                $sum_of_all_markah_power2 += $markahGraph*$markahGraph;
+
                                 echo "{ label: '$IdTopik' , y: $markahGraph},";
                             }
+
+                            // calculating stdv
+                            $standardDeviation = sqrt(
+                                ($sum_of_all_markah_power2/$number_of_topik) - (($sum_of_all_markah/$number_of_topik)*($sum_of_all_markah/$number_of_topik))
+                            );
                             ?>
                         ]
                     }, 
@@ -179,6 +183,9 @@
                                 
                 
 
+                <br>
+                <br>
+                <h2 style="margin-left: 4.5%;"> Standard Deviation : <?php echo $standardDeviation; ?></h2>
                 <br>
                 <br>
             </div>
