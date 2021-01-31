@@ -2,7 +2,6 @@
     require_once 'checkPassword.php';
 
     // set the session variable to ""
-    session_start();
     $_SESSION['NoIC'] = "";
     $_SESSION['peranan'] = "";
     $_SESSION['NoTel'] = "";

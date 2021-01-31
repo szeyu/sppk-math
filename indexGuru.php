@@ -1,7 +1,9 @@
 <?php
     session_start();
-    //require "collectionGuru.php";
-    //require "registerKuiz.php";
+
+    if ($_SESSION['NoIC'] == ""){
+        header('Location: ./login.php');       // why you break inside
+    } 
 ?>
 
 <!DOCTYPE html>
