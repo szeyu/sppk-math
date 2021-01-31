@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    if ($_SESSION['NoIC'] == ""){
+        header('Location: ./login.php');       // why you break inside
+    } 
+?>
+
+<?php
     require "connectPHP.php";
     // get perekodan rekod in descending order because need latest on the top
     $selectDataFromRekod = "SELECT * FROM PEREKODAN ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
