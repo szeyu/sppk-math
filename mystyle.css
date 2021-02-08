@@ -223,9 +223,34 @@ html {
 
 /*/////////////////// Login //////////////////////////*/
 .login {
+    background: linear-gradient(241deg, rgba(4, 83, 253, 0.623), rgba(253, 5, 220, 0.61));
+    background-size: 140% 140%;
+
+    -webkit-animation: gradientMotion 15s ease infinite;
+    -moz-animation: gradientMotion 15s ease infinite;
+    animation: gradientMotion 15s ease infinite;
+}
+
+@-webkit-keyframes gradientMotion {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@-moz-keyframes gradientMotion {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@keyframes gradientMotion {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+
+.login {
     
     /* background-color: rgba(85, 196, 161, 0.596); */
-    background-image: linear-gradient(to bottom right, rgba(4, 83, 253, 0.623), rgba(253, 5, 220, 0.61));
+    /* background-image: linear-gradient(to bottom right, rgba(4, 83, 253, 0.623), rgba(253, 5, 220, 0.61)); */
     display: flex;
     border: 0px solid black;
     justify-content: center;
@@ -331,9 +356,35 @@ html {
 }
 
 .register {
+    background: linear-gradient(241deg, rgba(4, 83, 253, 0.623), rgba(253, 5, 220, 0.61));
+    background-size: 140% 140%;
+
+    -webkit-animation: gradientMotion 15s ease infinite;
+    -moz-animation: gradientMotion 15s ease infinite;
+    animation: gradientMotion 15s ease infinite;
+}
+
+@-webkit-keyframes gradientMotion {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@-moz-keyframes gradientMotion {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@keyframes gradientMotion {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+
+
+.register {
     
     /* background-color: rgba(85, 196, 161, 0.596); */
-    background-image: linear-gradient(to bottom right, rgba(4, 83, 253, 0.623), rgba(253, 5, 220, 0.61));
+    /* background-image: linear-gradient(to bottom right, rgba(4, 83, 253, 0.623), rgba(253, 5, 220, 0.61)); */
     display: flex;
     justify-content: center;
     align-items: center;
