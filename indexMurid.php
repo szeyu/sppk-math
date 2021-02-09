@@ -16,6 +16,7 @@
         <meta name="keywords" content="HTML, CSS, JavaScript">
         <meta name="author" content= "Sim Sze Yu">
         <link rel="stylesheet" href="mystyleMurid.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
 
 
         <!--Banner-->

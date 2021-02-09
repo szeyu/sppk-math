@@ -25,6 +25,7 @@
     <head>
         <title> Prestasi Sendiri </title>
         <link rel="stylesheet" href="mystyleMurid.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
 
     </head>
