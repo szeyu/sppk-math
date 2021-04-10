@@ -1,4 +1,10 @@
+<?php
+    session_start();
 
+    if ($_SESSION['NoIC'] == ""){
+        header('Location: ./login.php');       // why you break inside
+    } 
+?>
 
 <script>
     //set up global variable

@@ -1,6 +1,9 @@
 <?php
-    //require_once "checkPassword.php";
-    session_start(); // set up global variable
+    session_start();
+
+    if ($_SESSION['NoIC'] == ""){
+        header('Location: ./login.php');       // why you break inside
+    } 
 ?>
 
 <!DOCTYPE html>

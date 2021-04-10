@@ -1,6 +1,10 @@
 <?php
     session_start();
     $peranan = $_SESSION['peranan'];
+
+    if ($_SESSION['NoIC'] == ""){
+        header('Location: ./login.php');       // why you break inside
+    } 
 ?>
 
 
