@@ -83,7 +83,9 @@
             <br>
             <br>
             
-            
+            <!-- button to cetak laporan -->
+            <button type="button" class="print" name="print" onclick="window.print();"> Cetak Laporan </button> 
+
             <input type="text" name="search" id="searchRekod" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
             <datalist id="suggestion">
                 <option value="1.1"></option>
@@ -131,7 +133,7 @@
                 <br>
                 <br>
                 <h1 style="margin-left: 4.5%;"> Perekodan </h1>
-                <div style="overflow-x:auto;">
+                <div id="section-to-print" style="overflow-x:auto;">
                     
                     
                     <table id='rekodTable'>
@@ -143,7 +145,7 @@
                             <th>subTopik</th>
                             <th>tajuk</th>
                             <th>NoIC</th>
-                            <th>Tindakan</th>
+                            <th id="NoPrint">Tindakan</th>
                             
                         </tr>
 
@@ -163,7 +165,7 @@
                                 <td><?php echo $rowTopik['subTopik']; ?></td>
                                 <td><?php echo $rowTopik['tajuk']; ?></td>
                                 <td><?php echo $row['NoIC']; ?></td>
-                                <td>
+                                <td id="NoPrint">
                                     <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdRekod'] . '\')"> Semak jawapan </button>';
                                     ?>
                                     

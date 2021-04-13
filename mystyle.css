@@ -892,6 +892,28 @@ div .updateBalik a{
 
 
 /*///////////////////   Check Guru   ////////////////////////////*/
+/* to make the wanted place print only */
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    table {
+        max-height: none;
+    }
+    #section-to-print, #section-to-print * {
+      visibility: visible;
+    }
+    #NoPrint, #NoPrint * {
+        visibility: hidden;
+    }
+    #section-to-print {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+}
+
 
 #rekodTable {
     border-collapse: collapse;
@@ -982,7 +1004,22 @@ div .updateBalik a{
     opacity: 0.75;
 }
 
+.print button{
+    background-color: rgb(54, 116, 179);            /*button style*/
+    color: #f2f2f2;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s;
+    width: 10%;
+    font-size: medium;
+    margin-left: 2%;
+}
 
+.print button :hover{
+    opacity: 0.75;
+}
 
 
 
