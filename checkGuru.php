@@ -84,7 +84,7 @@
             <br>
             
             <!-- button to cetak laporan -->
-            <button type="button" class="print" name="print" onclick="window.print();"> Cetak Laporan </button> 
+            <span class="print"><button type="button" name="print" onclick="window.print();"> Cetak Laporan </button></span>
 
             <input type="text" name="search" id="searchRekod" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
             <datalist id="suggestion">
