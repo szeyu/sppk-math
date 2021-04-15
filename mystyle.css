@@ -169,11 +169,11 @@ html {
 /*///////////////////banner///////////////////////*/
 .banner{
     text-align: center;
-    background-color: rgb(194, 247, 240);
+    background-color:#dadede;
 }
-
+#dadede
 .banner h1,h2{
-    background-color: rgb(194, 247, 240);
+    background-color:#dadede;
 }
 
 
@@ -590,7 +590,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 .createGuru {
     
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     justify-content: center;
     align-items: center;
     border: 0px;
@@ -711,7 +711,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 /*/////////////////// collection Guru ////////////////////*/
 .collectionGuru{
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -939,7 +939,7 @@ div .updateBalik a{
 
 
 .perekodanGuru{
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -1026,7 +1026,7 @@ div .updateBalik a{
 
 
 .pantauMurid {
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -1140,7 +1140,7 @@ div .pantauPrestasiBalik a{
 
 
 .infoPantauMurid {
-    background-color: rgba(105, 223, 185, 0.596);
+    background-color:#dadede;
     align-items: center;
 }
 
@@ -1163,7 +1163,7 @@ div .pantauPrestasiBalik a{
 
 
 .graphMurid {
-    background-color: rgba(105, 223, 185, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -1187,7 +1187,7 @@ div .pantauPrestasiBalik a{
 /*////////////////////  Info Topik   ////////////////////*/
 
 .infoTopik{
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -1206,7 +1206,7 @@ div .pantauPrestasiBalik a{
 
 
 .muridHantar{
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 

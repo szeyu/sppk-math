@@ -21,7 +21,7 @@
 
         <!--Banner-->
         <div class="banner">
-            <div style="background-color:  rgb(194, 247, 240);">
+            <div style="background-color:  #dadede;">
                 <p style="opacity:0;">.</p>
                 <h1> Ilmu Di Hujung Jari </h1>
                 <h2> Matematik Tingkatan 4 (DLP) </h2>
@@ -29,7 +29,7 @@
                 <div class="logOut">
                     <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
                 </div> 
-                <p style="color: rgb(194, 247, 240);">.</p>
+                <p style="color: #dadede;">.</p>
             </div>
         </div>
         

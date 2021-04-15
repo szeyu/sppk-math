@@ -17,10 +17,10 @@
     
 
     <div class="banner" style="text-align:center;">
-        <div style="background-color:  rgb(194, 247, 240);">
+        <div style="background-color:  #dadede;">
             <p style="opacity: 0;">.</p>
-            <h1 style="background-color:  rgb(194, 247, 240);"> Ilmu Di Hujung Jari </h1>
-            <h2 style="background-color:  rgb(194, 247, 240);"> Matematik Tingkatan 4 (DLP) </h2>
+            <h1 style="background-color:  #dadede;"> Ilmu Di Hujung Jari </h1>
+            <h2 style="background-color:  #dadede;"> Matematik Tingkatan 4 (DLP) </h2>
             <!--log out button-->
             <div class="logOut">
                 <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
@@ -306,7 +306,7 @@
                             </div>
                             <!-- <p> correct </p>  -->
                         </div>
-                        <h3 style='margin-left: 5%;'> Jawapan Anda : ($answer) $jawapanBetul &#9989;</h3>
+                        <h3 style='margin-left: 5%;'> Jawapan Anda : ($answer) $jawapanBetul <span style='isolation: isolate;'>&#9989;</span></h3>
                         <br>
                     ";
 
@@ -372,8 +372,8 @@
                         </div>
                         <!-- <p> wrong </p> -->
                     </div>
-                    <h3 style='margin-left: 5%;'> Jawapan Anda: ($ABCDJawapanMurid) $resultSetPilihan[$tempJawapanMurid] &#10060;</h3>
-                    <h3 style='margin-left: 5%;'> Jawapan Betul: ($answer) $jawapanBetul &#9989;</h3>
+                    <h3 style='margin-left: 5%;'> Jawapan Anda: ($ABCDJawapanMurid) $resultSetPilihan[$tempJawapanMurid] <span style='isolation: isolate;'>&#10060;</span></h3>
+                    <h3 style='margin-left: 5%;'> Jawapan Betul: ($answer) $jawapanBetul <span style='isolation: isolate;'>&#9989;</span></h3>
                     <br>
                     ";
 

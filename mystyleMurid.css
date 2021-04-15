@@ -268,7 +268,7 @@ html {
 /*///////////////////banner///////////////////////*/
 .banner{
     text-align: center;
-    background-color: rgb(194, 247, 240);
+    background-color: #dadede;
 }
 
 
@@ -434,7 +434,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 /*///////////////////   Collection Murid   ////////////////////////////*/
 .collectionMurid{
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -500,7 +500,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 /*///////////////////   Prestasi Murid   ////////////////////////////*/
 .perekodanMurid{
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -563,7 +563,7 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 .graphMurid {
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -619,7 +619,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 .buatKuiz {
     
-    background-color: rgba(85, 196, 161, 0.596);
+    background-color: #dadede;
     justify-content: center;
     align-items: center;
     border: 0px;
@@ -828,7 +828,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 
 .semakJawapan {
-    background-color: rgba(94, 214, 176, 0.377);
+    background-color: #dadede;
     align-items: center;
 }
 
@@ -848,7 +848,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 
 .infoSemak {
-    background-color: rgba(85, 196, 161, 0.329);
+    background-color:#dadede;
     align-items: center;
 }
 
@@ -868,10 +868,12 @@ div.logOut a:hover{                /*thumbnail*/
 
 .correct {
     background-color: #c8f8c8;
+    isolation: isolate;
 }
 
 .wrong {
     background-color: #f8cdcd;
+    isolation: isolate;
 }
 
 

@@ -15,15 +15,15 @@
         
 
         <div class="banner">
-            <div style="background-color:  rgb(194, 247, 240);">
-                <p style="color: rgb(194, 247, 240);">.</p>
-                <h1 style="background-color:  rgb(194, 247, 240);"> Ilmu Di Hujung Jari </h1>
-                <h2 style="background-color:  rgb(194, 247, 240);"> Matematik Tingkatan 4 (DLP) </h2>
+            <div style="background-color:  #dadede;">
+                <p style="color: #dadede;">.</p>
+                <h1 style="background-color:  #dadede;"> Ilmu Di Hujung Jari </h1>
+                <h2 style="background-color:  #dadede;"> Matematik Tingkatan 4 (DLP) </h2>
                 <!--log out button-->
                 <div class="logOut">
                     <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
                 </div> 
-                <p style="color: rgb(194, 247, 240);">.</p>
+                <p style="color: #dadede;">.</p>
                 <br>
             </div>
             <div class="updateBalik">

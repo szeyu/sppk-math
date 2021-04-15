@@ -18,10 +18,10 @@
     
 
     <div class="banner" style="text-align:center;">
-        <div style="background-color:  rgb(194, 247, 240);">
+        <div style="background-color:  #dadede;">
             <p style="opacity: 0;">.</p>
-            <h1 style="background-color:  rgb(194, 247, 240);"> Ilmu Di Hujung Jari </h1>
-            <h2 style="background-color:  rgb(194, 247, 240);"> Matematik Tingkatan 4 (DLP) </h2>
+            <h1 style="background-color:  #dadede;"> Ilmu Di Hujung Jari </h1>
+            <h2 style="background-color:  #dadede;"> Matematik Tingkatan 4 (DLP) </h2>
             <!--log out button-->
             <div class="logOut">
                 <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
@@ -38,6 +38,14 @@
         <br>
     </div>
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+    function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+</script>
 
 
 <body>
