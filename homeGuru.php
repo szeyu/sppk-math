@@ -15,6 +15,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
     </head>
 
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+
     <body>
         <div class="homeGuru">
             <h1 style="background-color:rgba(172, 185, 189, 0.15);"> Selamat Datang </h1>
