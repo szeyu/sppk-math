@@ -36,10 +36,7 @@
             <p style="opacity:0;">.</p>
             <h1> Ilmu Di Hujung Jari </h1>
             <h2> Matematik Tingkatan 4 (DLP) </h2>
-            <!--log out button-->
-            <div class="logOut">
-                <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
-            </div> 
+            
             <p style="color: #dadede;">.</p>
         </div>
     </div>
@@ -51,6 +48,10 @@
         <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
         <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
         <a class="active">Prestasi Sendiri</a>
+        <!--log out button-->
+        <div class="logOut">
+            <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
+        </div> 
     </div>
 
     <script>
