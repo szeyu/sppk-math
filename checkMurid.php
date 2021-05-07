@@ -47,7 +47,7 @@
     <div id="topnav" class="topnav">
         <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
         <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
-        <a class="active">Prestasi Sendiri</a>
+        <a class="active" onclick="checkMurid()">Prestasi Sendiri</a>
         <!--log out button-->
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   

@@ -56,17 +56,14 @@
 
     <script>
         function homeGuru(){
-            // $("#contentGuru").load("homeGuru.php");
             window.location = 'indexGuru.php?content=homeGuru';
         }
 
         function createGuru(){
-            // $("#contentGuru").load("createGuru.php");
             window.location = 'indexGuru.php?content=createGuru';
         }
 
         function collectionGuru(){
-            // $("#contentGuru").load("collectionGuru.php");
             window.location = 'indexGuru.php?content=collectionGuru';
         }
 

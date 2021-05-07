@@ -12,7 +12,42 @@
         <title> Laman Utama </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
         <link rel="stylesheet" href="mystyleMurid.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
     </head>
+
+    <!--Banner-->
+    <div class="banner">
+        <div style="background-color:  #dadede;">
+            <p style="opacity:0;">.</p>
+            <h1> Ilmu Di Hujung Jari </h1>
+            <h2> Matematik Tingkatan 4 (DLP) </h2>
+            
+            <p style="color: #dadede;">.</p>
+        </div>
+    </div>
+    
+    
+
+    <!--Top navigation bar with index murid active-->
+    <div id="topnav" class="topnav">
+        <a class="active" onclick="homeMurid()">Laman Utama</a>     
+        <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
+        <a class="active-button" onclick="checkMurid()">Prestasi Sendiri</a>
+        <!--log out button-->
+        <div class="logOut">
+            <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
+        </div> 
+    </div>
+
+    <script>
+        function checkMurid(){
+            window.location = 'indexMurid.php?content=checkMurid';
+        }
+
+        function collectionMurid(){
+            window.location = 'indexMurid.php?content=collectionMurid';
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
