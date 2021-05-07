@@ -9,6 +9,10 @@
 
 <!DOCTYPE html>
 
+    <script> 
+        document.cookie = "font-size = 100";
+    </script>
+
     <head>
         <title> Index Murid </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 

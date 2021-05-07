@@ -56,6 +56,25 @@ thead, tbody tr {
 
 
 
+/* decrease and increase font size button */
+.decrease-btn{
+    padding: 13px 23px;
+    background-color: #0099ff;
+    color: white;
+    float: right;
+    border-radius: 5px;
+}
+
+.increase-btn{
+    padding: 13px 23px;
+    background-color: #0099ff;
+    color: white;
+    float: right;
+    margin-right: 5%;
+    border-radius: 5px;
+}
+
+
 
 @keyframes fadeIn {
     from {

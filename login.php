@@ -10,6 +10,9 @@
 ?>
 
 <!DOCTYPE html>
+    <script>
+        document.cookie = "currentZoom = 100";
+    </script>
     
     <head>
         <title> Login Screen </title>

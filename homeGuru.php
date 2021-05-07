@@ -40,27 +40,12 @@
         </div> 
 
         <!-- font size button -->
-        <button id="increase-btn" class="increase-btn" onclick="increaseFontSizeBy1px();"> + </button>
-        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSizeBy1px();"> - </button>
+        <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
     </div>
 
+    <script src="functionGuru.js"></script>
 
-
-
-    <script>
-        function createGuru(){
-            window.location = 'indexGuru.php?content=createGuru';
-        }
-
-        function collectionGuru(){
-            window.location = 'indexGuru.php?content=collectionGuru';
-        }
-
-        function checkGuru(){
-            window.location = 'indexGuru.php?content=checkGuru';
-        }
-
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
@@ -70,7 +55,7 @@
         window.addEventListener('load', addDarkmodeWidget);
     </script>
 
-    <body>
+    <body onload="reloadToCurrentZoom()">
         <div class="homeGuru">
             <h1 style="background-color:rgba(172, 185, 189, 0.15);"> Selamat Datang </h1>
             <hr>

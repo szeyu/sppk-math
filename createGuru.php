@@ -42,22 +42,13 @@
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
+
+        <!-- font size button -->
+        <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
     </div>
 
-    <script>
-        function homeGuru(){
-            window.location = 'indexGuru.php?content=homeGuru';
-        }
-
-        function collectionGuru(){
-            window.location = 'indexGuru.php?content=collectionGuru';
-        }
-
-        function checkGuru(){
-            window.location = 'indexGuru.php?content=checkGuru';
-        }
-
-    </script>
+    <script src="functionGuru.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
@@ -67,7 +58,7 @@
         window.addEventListener('load', addDarkmodeWidget);
     </script>
 
-    <body>
+    <body onload="reloadToCurrentZoom()">
         <h1 style="margin-left: 5.5%;"> Sediakan Kuiz </h1>
         <div class="createGuru">
             
