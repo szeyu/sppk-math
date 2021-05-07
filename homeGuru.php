@@ -33,12 +33,15 @@
         <a class="active-button" onclick="createGuru()">Sedia Kuiz</a>     
         <a class="active-button" onclick="collectionGuru()">Koleksi Kuiz</a>
         <a class="active-button" onclick="checkGuru()">Pantau Prestasi Murid</a>
-
         
         <!--log out button-->
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
+
+        <!-- font size button -->
+        <button id="increase-btn" class="increase-btn" onclick="increaseFontSizeBy1px();"> + </button>
+        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSizeBy1px();"> - </button>
     </div>
 
 
