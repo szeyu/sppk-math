@@ -144,13 +144,14 @@
                     
                     <table id='rekodTable'>
                         <tr class='tableHeader'>
-                            <th>IdRekod</th>
+                            <!-- <th>IdRekod</th> -->
                             <th>markah</th>
                             <th>tarikh</th>
                             <th>IdTopik</th>
                             <th>subTopik</th>
                             <th>tajuk</th>
                             <th>NoIC</th>
+                            <th>Nama</th>
                             <th id="NoPrint">Tindakan</th>
                             
                         </tr>
@@ -162,15 +163,20 @@
                                 $selectDataFromTopik = "SELECT * FROM TOPIK WHERE IdTopik = '".$row['IdTopik']."'";
                                 $resultTopik = mysqli_query($con,$selectDataFromTopik);         // query
                                 $rowTopik = mysqli_fetch_array($resultTopik);
+
+                                $selectNamaFromNoIC = "SELECT NAMA FROM PENGGUNA WHERE NoIC = '".$row['NoIC']."'";
+                                $resultNama = mysqli_query($con,$selectNamaFromNoIC);         // query
+                                $rowNama = mysqli_fetch_array($resultNama);
                             ?>
                             <tr>
-                                <td><?php echo $row['IdRekod']; ?></td>
+                                <!-- <td><?php //echo $row['IdRekod']; ?></td> -->
                                 <td><?php echo $row['markah']; ?></td>
                                 <td><?php echo $row['tarikh']; ?></td>
                                 <td><?php echo $row['IdTopik']; ?></td>
                                 <td><?php echo $rowTopik['subTopik']; ?></td>
                                 <td><?php echo $rowTopik['tajuk']; ?></td>
                                 <td><?php echo $row['NoIC']; ?></td>
+                                <td><?php echo $rowNama[0]; ?></td>
                                 <td id="NoPrint">
                                     <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdRekod'] . '\')"> Semak jawapan </button>';
                                     ?>
