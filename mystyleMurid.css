@@ -56,20 +56,25 @@ thead, tbody tr {
 
 /* decrease and increase font size button */
 .decrease-btn{
-    padding: 13px 23px;
+    padding: 4px 23px;
     background-color: #0099ff;
     color: white;
     float: right;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-right: 2px;
 }
 
 .increase-btn{
-    padding: 13px 23px;
+    padding: 4px 23px;
     background-color: #0099ff;
     color: white;
     float: right;
     margin-right: 5%;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .decrease-btn:hover{
