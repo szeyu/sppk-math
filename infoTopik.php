@@ -39,6 +39,15 @@
     </div>
 </head>
 
+<br>
+<div>
+    <!-- font size button -->
+    <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+    <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
+</div>
+
+<script src="functionGuru.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
     function addDarkmodeWidget() {
@@ -48,7 +57,7 @@
 </script>
 
 
-<body>
+<body onload="reloadToCurrentZoom()">
     <?php
         require "connectPHP.php";
        

@@ -37,6 +37,7 @@
 
     </head>
 
+    
     <!--Banner-->
     <div class="banner">
         <div style="background-color:  #dadede;">
@@ -54,8 +55,17 @@
             <p style="opacity:0;">.</p>
         </div>
     </div>
-    <p style="opacity:0;">.</p>
     
+    
+    <div>
+        <!-- font size button -->
+        <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
+    </div>
+
+    <p style="opacity:0;">.</p>
+    <br>
+    <script src="functionGuru.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
@@ -67,7 +77,7 @@
     
     
 
-    <body class="checkMurid">
+    <body class="checkMurid" onload="reloadToCurrentZoom()">
 
         <div class="infoPantauMurid">
             <br>
@@ -187,12 +197,18 @@
 
                 }
                 </script>
+
+                <script>
+                    setTimeout(function(){
+                        window.onload = reloadToCurrentZoom();
+                    }, 1600); // give the browser time to load this graph before change zoom
+                </script>
+
                 </head>
                 <body>
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                                 
-                
 
                 <br>
                 <br>

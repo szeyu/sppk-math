@@ -141,7 +141,7 @@
                             <th>IdTopik</th>
                             <th>subTopik</th>
                             <th>tajuk</th>
-                            <th>NoIC</th>
+                            <!-- <th>NoIC</th> -->
                             <th>Nama</th>
                             <th id="NoPrint">Tindakan</th>
                             
@@ -166,7 +166,7 @@
                                 <td><?php echo $row['IdTopik']; ?></td>
                                 <td><?php echo $rowTopik['subTopik']; ?></td>
                                 <td><?php echo $rowTopik['tajuk']; ?></td>
-                                <td><?php echo $row['NoIC']; ?></td>
+                                <!-- <td><?php //echo $row['NoIC']; ?></td> -->
                                 <td><?php echo $rowNama[0]; ?></td>
                                 <td id="NoPrint">
                                     <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdRekod'] . '\')"> Semak jawapan </button>';
