@@ -48,23 +48,22 @@
         <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
         <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
         <a class="active" onclick="checkMurid()">Prestasi Sendiri</a>
+
         <!--log out button-->
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
+
+        <!-- font size button -->
+        <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
     </div>
 
-    <script>
-        function homeMurid(){
-            window.location = 'indexMurid.php?content=homeMurid';
-        }
+    <script src="functionMurid.js"></script>
 
-        function collectionMurid(){
-            window.location = 'indexMurid.php?content=collectionMurid';
-        }
-    </script>
+    
 
-    <body class="checkMurid">
+    <body class="checkMurid" onload="reloadToCurrentZoom()">
 
         <!-- here display graph or statistic like standard deviation -->
         <div class = "graphMurid">
@@ -185,6 +184,17 @@
 
                 }
                 </script>
+
+                <script>
+                    // document.addEventListener('DOMContentLoaded', function() {
+                    //     window.onload = reloadToCurrentZoom();
+                    // }, false);
+
+                    setTimeout(function(){
+                        window.onload = reloadToCurrentZoom();
+                    }, 1600);
+                </script>
+
                 </head>
                 <body>
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>

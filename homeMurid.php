@@ -37,17 +37,13 @@
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
+
+        <!-- font size button -->
+        <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+        <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
     </div>
 
-    <script>
-        function checkMurid(){
-            window.location = 'indexMurid.php?content=checkMurid';
-        }
-
-        function collectionMurid(){
-            window.location = 'indexMurid.php?content=collectionMurid';
-        }
-    </script>
+    <script src="functionMurid.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
@@ -57,7 +53,7 @@
         window.addEventListener('load', addDarkmodeWidget);
     </script>
 
-    <body>
+    <body onload="reloadToCurrentZoom()">
         <div class = "homeMurid">
 
             <h1> Selamat Datang </h1>

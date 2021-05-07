@@ -38,6 +38,15 @@
     </div>
 </head>
 
+<br>
+<div>
+    <!-- font size button -->
+    <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+    <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
+</div>
+
+<script src="functionMurid.js"></script>
+
 <script> 
     function backToOrigin(){
         if ('<?php echo $peranan; ?>' == 'murid'){
@@ -56,7 +65,7 @@
     window.addEventListener('load', addDarkmodeWidget);
 </script>
 
-<body>
+<body onload="reloadToCurrentZoom()">
     <?php
    
         require "connectPHP.php";

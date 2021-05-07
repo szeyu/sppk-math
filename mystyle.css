@@ -74,6 +74,26 @@ thead, tbody tr {
     border-radius: 5px;
 }
 
+.decrease-btn:hover{
+    background-color: #40affa;
+}
+
+.increase-btn:hover{
+    background-color: #40affa;
+}
+
+.decrease-btn:active{
+    background-color: #4396ce;
+    box-shadow: 0 3px #666;
+    transform: translateY(3px);
+}
+
+.increase-btn:active{
+    background-color: #4396ce;
+    box-shadow: 0 3px #666;
+    transform: translateY(3px);
+}
+
 
 
 @keyframes fadeIn {

@@ -35,6 +35,17 @@
         
     </div>
 </head>
+
+<br>
+<div>
+    <!-- font size button -->
+    <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
+    <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
+</div>
+
+<script src="functionMurid.js"></script>
+
+
 <div class="openCalculator">
     <a onclick="openSide()">&#9776; Calculator</a>
 </div>
@@ -72,7 +83,7 @@
     function clr() 
     { 
         document.getElementById("result").value = ""; 
-    } #dadede
+    }
 </script> 
 
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
@@ -127,7 +138,7 @@
 </div>
 
 
-<body>
+<body onload="reloadToCurrentZoom()">
     <?php
    
         require "connectPHP.php";
