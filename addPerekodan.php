@@ -1,7 +1,7 @@
 <html>
     <body>
-        
         <?php
+            // connect to MySQL database
             require "connectPHP.php";
 
 
@@ -9,9 +9,10 @@
             //                     NoIC
             ////////////////////////////////////////////////////////////////
             session_start();  
-            $NoIC = $_SESSION['NoIC'];
+            $NoIC = $_SESSION['NoIC'];  // get the NoIC of the student who submit the kuiz
             echo "NoIC ".$NoIC."<br>";
             
+            // if Murid click hantar Kuiz button
             if(isset($_POST['hantar-kuiz-button'])){
                 
                 ///////////////////////////////////////////////////////////
@@ -45,11 +46,6 @@
                     $resultJawapan = mysqli_query($con,$checkJawapanSQL);         // query
                     $rowJawapan = mysqli_fetch_assoc($resultJawapan);
                     $jawapan[] = $rowJawapan['jawapan'];   
-
-                    // echo $IdSoalan." ";
-                    // foreach ($jawapan as $ct) { echo $ct; }
-                    // echo "<br>";
-                        
                 }
                 echo "Jawapan ";
                 foreach ($jawapan as $ct) { echo $ct; }
@@ -81,8 +77,6 @@
                 $IdRekod = "R".$intRekod;       // note that the R will concatenate with last number + 1
                 echo "IdRekod ".$IdRekod."<br>";
                 
-
-
 
 
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -168,22 +162,17 @@
                 $markah = ($correct/$noSoalan) * 100;
                 echo "Markah :".$markah."<br>";
 
-
                 //////////////////////////////////////////////////////////////
                 //                      tarikh
                 //////////////////////////////////////////////////////////////
                 $tarikh = date("dmy");
                 echo "tarikh ".$tarikh."<br>";
 
-               
-
                 //////////////////////////////////////////////////////////////
                 //                  add data to PEREKODAN
                 //////////////////////////////////////////////////////////////
                 $addDataToPerekodan = "INSERT INTO PEREKODAN (IdRekod, markah, tarikh, jawapanMurid, NoIC, IdTopik) VALUES ('".$IdRekod."','".$markah."','".$tarikh."','".$jawapanMuridDB."','".$NoIC."','".$IdTopik."')";
                 mysqli_query($con, $addDataToPerekodan);
-
-
 
 
                 header('Location: ./semakJawapan.php?IdRekod='.$IdRekod);       // direct user to semakJawapan page

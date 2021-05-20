@@ -2,7 +2,7 @@
 <html>
     <body>
         <?php
-       
+            // connect to mySQL Database
             require "connectPHP.php";
             
             session_start(); //set up global variable
@@ -12,6 +12,7 @@
                 $NoIC = $_POST['NoIC'];               // get the value from what user type in NoIC
                 $KataLaluan = $_POST['KataLaluan'];    // get the value from what user type in KataLalauan
                 
+                // check wheter the input is null or not
                 if (empty ($NoIC)){
                     header('Location: ./login.php?error=NoIC dikehendaki');
                     exit();
@@ -22,6 +23,7 @@
                     echo "Valid input";
                 }
 
+                // check the format of NoIC
                 if (preg_match("/^[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[0-9]{2}[0-9]{4}$/" ,$NoIC)){  
                 } else{
                     //$errors['NoIC'] =   "NoIC dalam format salah";
@@ -43,7 +45,6 @@
                         $_SESSION['NoTel'] = $row['NoTel'];
                         $_SESSION['nama'] = $row['nama'];
 
-
                         if($row['peranan'] == 'murid'){        // if peranan is murid, it will login as murid
                             header('Location: ./indexMurid.php?content=homeMurid');
                         }
@@ -57,18 +58,11 @@
                     exit();
                 }
                 else{
-                    
                     header('Location: ./login.php?error=NoIC atau KataLaluan salah');       // ask user to type again
-
                     exit();
                 }
                 mysqli_free_result($result);        //clear the memory
-                //mysqli_free_result($peranan);
             }
-                
-            //mysqli_close($con);        //disconnect
-            
-
         ?>
     </body>
 </html>

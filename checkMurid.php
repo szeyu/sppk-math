@@ -21,13 +21,11 @@
 ?>
 
 <!DOCTYPE html>
-    
     <head>
         <title> Prestasi Sendiri </title>
         <link rel="stylesheet" href="mystyleMurid.css">
         <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
-
     </head>
 
     <!--Banner-->
@@ -40,28 +38,22 @@
             <p style="color: #dadede;">.</p>
         </div>
     </div>
-    
-    
 
     <!--Top navigation bar with index murid active-->
     <div id="topnav" class="topnav">
         <a class="active-button" onclick="homeMurid()">Laman Utama</a>     
         <a class="active-button" onclick="collectionMurid()">Koleksi Kuiz</a>
         <a class="active" onclick="checkMurid()">Prestasi Sendiri</a>
-
         <!--log out button-->
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
-
         <!-- font size button -->
         <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
         <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
     </div>
 
     <script src="functionMurid.js"></script>
-
-    
 
     <body class="checkMurid" onload="reloadToCurrentZoom()">
 
@@ -125,10 +117,8 @@
                             );
 
                             ?>
-
                             // { label: "R1" , y: 44 },     
                             // { label: "R2" , y: 37 },     
-                            
                         ]
                     }, 
                     
@@ -158,14 +148,10 @@
                                     echo "{ label: '$IdTopikTemp'  , y: $purata},";
                                 }
                             ?>
-
-
                             // { label: "T1" , y: 20 }, 
                             // { label: "T2" , y: 20 },    
                             // { label: "T3" , y: 50 },     
                             // { label: "T4" , y: 50 }, 
-                                
-                            
                         ]
                     }]
                 });
@@ -200,6 +186,7 @@
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                 
+                <!-- darkmode js library -->
                 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
                 <script>
                     function addDarkmodeWidget() {
@@ -207,12 +194,10 @@
                     }
                     window.addEventListener('load', addDarkmodeWidget);
                 </script>
-                
-                <br>
-                <br>
+      
+                <br><br>
                 <h2 style="margin-left: 4.5%;"> Standard Deviation : <?php echo $standardDeviation; ?></h2>
-                <br>
-                <br>
+                <br><br>
             </div>
         </div>
 
@@ -220,9 +205,7 @@
 
         <!-- here display the perekodan in the form of table -->
         <div class="perekodanMurid">
-            <br>
-            <br>
-            
+            <br><br>
             
             <input type="text" name="search" id="searchTopik" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
             <datalist id="suggestion">
@@ -266,14 +249,9 @@
             </datalist>
             
             <div class = "perekodanMuridContainer">
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br>
                 <h1 style="margin-left: 4.5%;"> Perekodan </h1>
                 <div>
-                    
-                    
                     <table id='topikTable'>
                         <tr class='tableHeader'>
                             <th>IdRekod</th>
@@ -282,11 +260,8 @@
                             <th>IdTopik</th>
                             <th>subTopik</th>
                             <th>tajuk</th>
-                            <th>Tindakan</th>
-                            
-                        </tr>
-
-                         
+                            <th>Tindakan</th>      
+                        </tr>    
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
                             <?php 
@@ -303,16 +278,11 @@
                                 <td><?php echo $rowTopik['tajuk']; ?></td>
                                 <td>
                                     <?php echo '<button type="button" class="semakJawapan" name="semakJawapan" onclick="semakJawapan(\'' . $row['IdRekod'] . '\')"> Semak jawapan </button>';
-                                    ?>
-                                    
-                                </td>
-                                
+                                    ?>  
+                                </td>   
                             </tr>
                     <?php } ?>
-
                     </table>
-
-                        
                 </div>
                     
                 <script>
@@ -338,29 +308,19 @@
                                 }
                             }
                         }
-                    }
-
-                            
+                    }  
                 </script>
 
                 <script>
                     function semakJawapan(id) {
                         window.location = 'semakJawapan.php?IdRekod=' + id;
                     }
-                    
                 </script>
 
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
+                <br><br><br><br><br>
             </div>
             <br>
             <p style="opacity:0;">.</p>
         </div>
-        
     </body>
-
 </html>

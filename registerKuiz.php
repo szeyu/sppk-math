@@ -1,15 +1,10 @@
 <html>
     <body>
-        
         <?php
+            // connect mySQL database
             require "connectPHP.php";
-
-            //session_start();
-        
             
             if(isset($_POST['register-quiz-button'])){
-
-                //require "addDataToDB.php";
                 // run add the subTajuk and tajuk SQL code to get the IdTopik first 
                 $subTopik = $_POST['subTopik'];
                 $tajuk = $_POST['tajuk'];
@@ -20,8 +15,6 @@
                 $jawapanB;
                 $jawapanC;
                 $jawapanD;
-                
-                
 
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //                                   IdTopik
@@ -50,10 +43,7 @@
                 }
                 //add data to TOPIK SQL
                 $addDataToTopik = "INSERT INTO TOPIK (IdTopik, tajuk, subTopik) VALUES ('".$IdTopik."','".$tajuk."','".$subTopik."')";
-
-                // add some query code here
-                //////////// QUERY CODE /////////////////
-                mysqli_query($con, $addDataToTopik);
+                mysqli_query($con, $addDataToTopik); // query
 
 
 
@@ -168,9 +158,7 @@
                     $intPilihan++;                 // to add new IdPilihan that is unique
                     $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
                     $addPilihanAToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanA."','".$pilihanA."','".$IdSoalan."')";
-                    //add query code here
-                    /////////// QUERY CODE //////////////
-                    mysqli_query($con, $addPilihanAToPilihan);
+                    mysqli_query($con, $addPilihanAToPilihan); // query
 
                     
                     
@@ -185,9 +173,7 @@
                     $intPilihan++;                 // to add new IdPilihan that is unique
                     $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
                     $addPilihanBToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanB."','".$pilihanB."','".$IdSoalan."')";
-                    //add query code here
-                    /////////// QUERY CODE //////////////
-                    mysqli_query($con, $addPilihanBToPilihan);
+                    mysqli_query($con, $addPilihanBToPilihan); // query
                     
                     
 
@@ -202,9 +188,7 @@
                     $intPilihan++;                 // to add new IdPilihan that is unique
                     $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
                     $addPilihanCToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanC."','".$pilihanC."','".$IdSoalan."')";
-                    //add query code here
-                    /////////// QUERY CODE //////////////
-                    mysqli_query($con, $addPilihanCToPilihan);
+                    mysqli_query($con, $addPilihanCToPilihan); // query
 
 
 
@@ -219,20 +203,13 @@
                     $intPilihan++;                 // to add new IdPilihan that is unique
                     $IdPilihan = "P".$intPilihan;       // note that the P will concatenate with last number + 1
                     $addPilihanDToPilihan = "INSERT INTO PILIHAN (IdPilihan, jawapan, pilihan, IdSoalan) VALUES ('".$IdPilihan."','".$jawapanD."','".$pilihanD."','".$IdSoalan."')";
-                    //add query code here
-                    /////////// QUERY CODE //////////////
-                    mysqli_query($con, $addPilihanDToPilihan);
+                    mysqli_query($con, $addPilihanDToPilihan); // query
                 }
                 
-                // here add session message
-                //$_SESSION['registerQuizMessage'] = "Soalan berjaya dimuat naik!";
-
                 echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
                 header('Location: ./indexGuru.php?content=createGuru');       // direct user to home page
                 exit();
             }
-            
-            
         ?>
     </body>
 </html>

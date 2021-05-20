@@ -1,9 +1,10 @@
-// page zoom
+// page zoom to current zoom set in cookie when change page
 function reloadToCurrentZoom(){
     currentZoom = parseInt(getCookie("currentZoom"));
     document.body.style.zoom = currentZoom + "%";
 }
 
+// function to get value of cookie
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -24,11 +25,11 @@ function increaseFontSize(){
     currentZoom = parseInt(getCookie("currentZoom"));
     console.log(currentZoom);
     if (currentZoom >= 135){
-        //
+        // if current zoom more than 135% then do nothing
     }else{
-        zoomIn = currentZoom+5;
+        zoomIn = currentZoom+5; // zoom in 5%
         document.body.style.zoom = zoomIn + "%";
-        document.cookie = "currentZoom=" + zoomIn;
+        document.cookie = "currentZoom=" + zoomIn; // store current zoom value in cookie
     }
 }
 
@@ -36,11 +37,11 @@ function decreaseFontSize(){
     currentZoom = parseInt(getCookie("currentZoom"));
     console.log(currentZoom);
     if (currentZoom <= 75){
-        //
+        // if current zoom less than 75% then do nothing
     }else{
-        zoomOut = currentZoom-5;
+        zoomOut = currentZoom-5; // zoom out 5%
         document.body.style.zoom = zoomOut + "%";
-        document.cookie = "currentZoom=" + zoomOut;
+        document.cookie = "currentZoom=" + zoomOut; // store current zoom value in cookie
     }
 }
 

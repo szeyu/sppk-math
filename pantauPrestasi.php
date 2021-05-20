@@ -7,10 +7,12 @@
 ?>
 
 <?php
-
+    // get the student NoIC from URL
     $NoIC = $_GET['NoIC'];
 
+    // connect to mySQl database
     require "connectPHP.php";
+
     // get perekodan rekod that is from the same user[IC] and in descending order because need latest on the top
     $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$NoIC."' ORDER BY LENGTH(IdRekod) DESC, IdRekod DESC";
     $result = mysqli_query($con,$selectDataFromRekod);         // query
@@ -19,25 +21,20 @@
     $selectMarkahFromRekod = "SELECT * FROM PEREKODAN WHERE NoIC = '".$NoIC."' ORDER BY LENGTH(IdTopik), IdTopik ";
     $resultMarkah = mysqli_query($con,$selectMarkahFromRekod);         // query    
 
-
     $selectMuridInfo = "SELECT * FROM PENGGUNA WHERE NoIC = '".$NoIC."'";
     $resultMurid = mysqli_query($con,$selectMuridInfo);         // query    
     $rowMurid = mysqli_fetch_array($resultMurid);
     $nama = $rowMurid['nama'];
     $NoTel = $rowMurid['NoTel'];
-
 ?>
 
 <!DOCTYPE html>
-    
     <head>
         <title> Pantau Prestasi Murid </title>
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
-
     </head>
 
-    
     <!--Banner-->
     <div class="banner">
         <div style="background-color:  #dadede;">
@@ -56,7 +53,6 @@
         </div>
     </div>
     
-    
     <div>
         <!-- font size button -->
         <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
@@ -67,6 +63,7 @@
     <br>
     <script src="functionGuru.js"></script>
 
+    <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -74,11 +71,8 @@
         }
         window.addEventListener('load', addDarkmodeWidget);
     </script>
-    
-    
 
     <body class="checkMurid" onload="reloadToCurrentZoom()">
-
         <div class="infoPantauMurid">
             <br>
             <h1 style="margin-left: 5%;"> Info Murid </h1>
@@ -92,15 +86,12 @@
             <br>
         </div>
         
-
         <!-- here display graph or statistic like standard deviation -->
         <div class = "graphMurid">
             <br>
             <h1 style="margin-left: 4.5%;"> Prestasi Murid </h1>
             <div class = "graphMuridContainer">
-                <br>
-                
-                <br>
+                <br><br>
                 <h2 style="margin-left: 4.5%;"> Graph </h2>
                 
                 <script>
@@ -209,16 +200,11 @@
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                                 
-
-                <br>
-                <br>
+                <br><br>
                 <h2 style="margin-left: 4.5%;"> Standard Deviation : <?php echo $standardDeviation; ?></h2>
-                <br>
-                <br>
+                <br><br>
             </div>
             <br><br>
         </div>
-        
     </body>
-
 </html>

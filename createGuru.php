@@ -7,7 +7,7 @@
 ?>
 
 <script>
-    //set up global variable
+    // declare local variable
     var noSoalanCounter = 1;
 </script>
 
@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
-        
     </head>
 
     <!--Banner-->
@@ -26,10 +25,8 @@
             <p style="color: #dadede;">.</p>
             <h1 style="background-color:  #dadede;"> Ilmu Di Hujung Jari </h1>
             <h2 style="background-color:  #dadede;"> Matematik Tingkatan 4 (DLP) </h2>
-            
             <p style="color: #dadede;">.</p>
         </div>
-        
     </div>
 
     <!--Top navigation bar-->
@@ -42,7 +39,6 @@
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
-
         <!-- font size button -->
         <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
         <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
@@ -50,6 +46,7 @@
 
     <script src="functionGuru.js"></script>
     
+    <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -61,7 +58,6 @@
     <body onload="reloadToCurrentZoom()">
         <h1 style="margin-left: 5.5%;"> Sediakan Kuiz </h1>
         <div class="createGuru">
-            
             <hr>
             <br>
             <div class="createGuruContainer">
@@ -113,11 +109,9 @@
                             <option value="Mutually Exclusive Events and Non-Mutually Exclusive Events"></option>
                             <option value="Application of Probability of Combined Events"></option>
                             <option value="Financial Planning of combined Events"></option>
-                        </datalist>
-                       
+                        </datalist>  
                     </div>
-                    <br>
-                    <br>
+                    <br><br>
                     <hr>
                     <br>
                     <label for="soalan"> Soalan 1 :</label>
@@ -133,11 +127,7 @@
                             <option value="D"> D </option>
                         </select> 
                     </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    <br><br><br><br><br>
                     <div class="pilihanBox">
                         <div>
                         <label for="pilihanA" style="float: left;"> pilihan A :</label>
@@ -173,19 +163,13 @@
 
                     <!-- when clicked then add create quiz form below -->
                     <a name="add-question-button" onclick="tambahSoalan()"> Tambah (+) </a><br>
-                    <br>
-                    <br>
-                    <br>
+                    <br><br><br>
                     <a name="delete-question-button" onclick="deleteSoalan()"> Hapus (-) </a><br>
-                    <br>
-                    <br>
-                    <br>
+                    <br><br><br>
                     <button type="submit" name="register-quiz-button"> Muat Naik </button>
-
                 </form>
                 
                 <script>
-                    
                     var noSoalan = "soalan" + noSoalanCounter;
                     var down = document.getElementById("soalanDitambah");
 
@@ -199,10 +183,8 @@
                         divForm.innerHTML += "<div id= 'soalanForm" + noSoalanCounter +"'><br><br><br><hr><br><label for='soalan'> Soalan " +noSoalanCounter+" :</label><input type='text' placeholder='Soalan " +noSoalanCounter+"' id='soalan" +noSoalanCounter+"' name='soalan" +noSoalanCounter+"' spellcheck='false' required autocomplete='off'><br><br><div class='jawapanBox'><label for='jawapan'> Jawapan :</label><select name='jawapan" +noSoalanCounter+"' id='jawapan" +noSoalanCounter+"'><option value='A'> A </option><option value='B'> B </option><option value='C'> C </option><option value='D'> D </option></select> </div><br><br><br><br><br><div class='pilihanBox'><div><label for='pilihanA' style=float: left;> pilihan A :</label></div><div><input type='text' placeholder='Pilihan A Soalan " +noSoalanCounter+"' id='pilihanA" +noSoalanCounter+"' name='pilihanA" +noSoalanCounter+"' spellcheck='false' required autocomplete='off'></div><div><label for='pilihanB' style=float: left;> pilihan B :</label></div><div><input type='text' placeholder='Pilihan B Soalan " +noSoalanCounter+"' id='pilihanB" +noSoalanCounter+"' name='pilihanB" +noSoalanCounter+"' spellcheck='false' required autocomplete='off'></div><div><label for='pilihanC' style=float: left;> pilihan C :</label></div><div><input type='text' placeholder='Pilihan C Soalan " +noSoalanCounter+"' id='pilihanC" +noSoalanCounter+"' name='pilihanC" +noSoalanCounter+"' spellcheck='false' required autocomplete='off'></div><div><label for='pilihanD' style=float: left;> pilihan D :</label></div><div><input type='text' placeholder='Pilihan D Soalan " +noSoalanCounter+"' id='pilihanD" +noSoalanCounter+"' name='pilihanD" +noSoalanCounter+"' spellcheck='false' required autocomplete='off'></div><br></div>";
                         document.getElementById('soalanDitambah').appendChild(divForm);
 
-    
                         return false;
                     }
-
 
                     function deleteSoalan(){
 
@@ -212,18 +194,12 @@
                             deleteElement.parentNode.removeChild(deleteElement);
                             noSoalanCounter--; 
                         }
-
                         return false;
-                        
                     }
-
-                    
                 </script>
 
-                
                 <p style="color: white;">.</P>
-                <br>
-                <br>
+                <br><br>
             </div>
             <br>
         </div>

@@ -9,11 +9,10 @@
 <html>
     <body>
         <?php
-       
+            // to connect to mySQL database
             require "connectPHP.php";
             
             if(isset($_GET['IdTopik'])){
-                
                 // for the removal step of soalan pls follow these steps
                 // 0) delete Perekodan
                 // 1) delete pilihan
@@ -22,7 +21,6 @@
 
                 // need IdTopik to find all the Soalan
                 // need all the Soalan to find all the pilihan
-                
 
                 // this is IdTopik
                 $IdTopik = $_GET['IdTopik'];               // get the value from URL
@@ -46,7 +44,6 @@
                     $resultSetSoalan[] = $rowSoalan['IdSoalan'];
                 }
 
-
                 foreach ($resultSetSoalan as $IdSoalan){
                     $checkIdPilihanSQL = "SELECT IdPilihan FROM PILIHAN WHERE IdSoalan = '".$IdSoalan."'";
                     $resultPilihan = mysqli_query($con,$checkIdPilihanSQL);         // query
@@ -69,12 +66,9 @@
                 $deleteTopikSQL = "DELETE FROM TOPIK WHERE IdTopik = '".$IdTopik."'";
                 mysqli_query($con,$deleteTopikSQL);         // query
                 
-                
-
                 header('Location: ./indexGuru.php?content=collectionGuru');
                 exit();
             }
-                
         ?>
     </body>
 </html>

@@ -6,9 +6,7 @@
     } 
 ?>
 
-
 <!DOCTYPE html>
-    
     <head>
         <title> Laman Utama </title>
         <link rel="stylesheet" href="mystyle.css">
@@ -24,7 +22,6 @@
             <h2 style="background-color:  #dadede;"> Matematik Tingkatan 4 (DLP) </h2>       
             <p style="color: #dadede;">.</p>
         </div>
-        
     </div>
 
     <!--Top navigation bar-->
@@ -33,12 +30,10 @@
         <a class="active-button" onclick="createGuru()">Sedia Kuiz</a>     
         <a class="active-button" onclick="collectionGuru()">Koleksi Kuiz</a>
         <a class="active-button" onclick="checkGuru()">Pantau Prestasi Murid</a>
-        
         <!--log out button-->
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
-
         <!-- font size button -->
         <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
         <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
@@ -46,7 +41,7 @@
 
     <script src="functionGuru.js"></script>
 
-
+    <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -66,7 +61,5 @@
                 <pre id="IC"> Nombor IC          :  <?php echo $_SESSION['NoIC']; ?></pre>
                 <pre id="role"> peranan              :  <?php echo $_SESSION['peranan']; ?></pre>
         </div>
-        
     </body>
-
 </html>

@@ -7,13 +7,11 @@
 ?>
 
 <!DOCTYPE html>
-    
     <head>
         <title> Koleksi Soalan </title>
         <link rel="stylesheet" href="mystyleMurid.css">
         <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
-
     </head>
 
     <!--Banner-->
@@ -22,12 +20,9 @@
             <p style="opacity:0;">.</p>
             <h1> Ilmu Di Hujung Jari </h1>
             <h2> Matematik Tingkatan 4 (DLP) </h2>
-            
             <p style="color: #dadede;">.</p>
         </div>
     </div>
-    
-    
 
     <!--Top navigation bar with index murid active-->
     <div id="topnav" class="topnav">
@@ -38,7 +33,6 @@
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
         </div> 
-
         <!-- font size button -->
         <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
         <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
@@ -46,6 +40,7 @@
 
     <script src="functionMurid.js"></script>
 
+    <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -56,13 +51,10 @@
 
 
     <body class="collectionMurid" onload="reloadToCurrentZoom()">
-
         <h1 style="margin-left: 4.5%;"> Koleksi Soalan</h1>
         <br>
         <div class="collectionMurid">
-            <br>
-            <br>
-            
+            <br><br>
             
             <input type="text" name="search" id="searchTopik" onkeyup="filterTopik()" placeholder="Cari.." list="suggestion" spellcheck="false" autofocus>
             <datalist id="suggestion">
@@ -106,14 +98,10 @@
             </datalist>
             
             <div class = "collectionMuridContainer">
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br>
                 <h2 style="margin-left: 5%;"> Belum Buat </h2>
                 <div>
                     <?php
-
                         require "connectPHP.php";
 
                         $selectDataFromTopik = "SELECT * FROM TOPIK ORDER BY LENGTH(IdTopik), IdTopik";
@@ -125,42 +113,30 @@
                             <th>IdTopik</th>
                             <th>Sub topik</th>
                             <th>Tajuk</th>
-                            <th>Tindakan</th>
-                            
-                        </tr>
-
-                         
+                            <th>Tindakan</th>     
+                        </tr>             
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
-
-
                             <!--  need add function to control if the topik have done -->
                             <?php 
                                 $IdTopik = $row['IdTopik'];
                                 $selectDataFromRekod = "SELECT * FROM PEREKODAN WHERE IdTopik =  '".$IdTopik."' AND NoIC = '".$_SESSION['NoIC']."'";
                                 $resultRekod = mysqli_query($con,$selectDataFromRekod);         // query
-
                             ?>
 
                             <?php if (mysqli_num_rows($resultRekod) == 0) { ?>
-
                                 <tr>
                                     <td><?php echo $row['IdTopik']; ?></td>
                                     <td><?php echo $row['subTopik']; ?></td>
                                     <td><?php echo $row['tajuk']; ?></td>
                                     <td>
                                         <?php echo '<button type="button" class="doButton" name="doButton" onclick="buatKuiz(\'' . $row['IdTopik'] . '\')"> Buat dan Hantar </button>';
-                                        ?>
-                                        
+                                        ?>                                       
                                     </td>
-                                    
                                 </tr>
                             <?php } ?>
                     <?php } ?>
-
-                    </table>
-
-                        
+                    </table>  
                 </div>
                     
                 <script>
@@ -186,28 +162,19 @@
                                 }
                             }
                         }
-                    }
-
-                            
+                    }   
                 </script>
 
                 <script>
                     function buatKuiz(id) {
                         window.location = 'buatKuiz.php?IdTopik=' + id;
                     }
-                    
                 </script>
 
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
+                <br><br><br><br><br>
             </div>
             <br>
             <p style="opacity:0;">.</p>
         </div>
     </body>
-
 </html>

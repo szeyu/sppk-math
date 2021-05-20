@@ -18,16 +18,7 @@
             <p style="color: white;"> . </p>       <!--to make it space down-->
 
             <h2> Sila isikan borang pendaftaran tersebut </h2>       <!--Instruction-->
-            <br>
-            <br>
-            
-            <!--
-            <div class="container">
-                <?php //foreach($errors as $error):?>
-                    <li class="alert-tag"><?php //echo $error; ?></li>
-                <?php //endforeach;?>
-            </div>
-            -->
+            <br><br>
 
             <form action="register.php" method="POST">
 
@@ -38,24 +29,27 @@
                 <label for="NoIC"> Nombor IC: </label> <br>         <!--ask user to input NoIC-->
                 <input type="text" placeholder="04041714****" id = "newNoIC" name="newNoIC" value="" required><br>
                 <br>
+
                 <label for="nama"> Nama: </label> <br>     <!--ask user to input Nama-->
                 <input type="text" placeholder="Masukkan nama anda" id = "nama" name="nama" value="" required><br>
                 <br>
+
                 <label for="NoTel"> Nombor Telefon: </label> <br>     <!--ask user to input NoTel-->
                 <input type="text" placeholder="Masukkan nombor telefon anda" id = "NoTel" name="NoTel" value="" required><br>
                 <br>
+
                 <label for="KataLaluan"> Kata Laluan: </label> <br>     <!--ask user to input password-->
                 <input type="password" placeholder="Masukkan kata lauan anda" id = "KataLaluan" name="KataLaluan" required><br>
                 <!-- An element to toggle between password visibility -->
                 <input type="checkbox" onclick="showKataLaluan()">Show Password
-                <br>
-                <br>
+                <br><br>
+
                 <label for="KataLaluanKesah"> Kesahkan Kata Laluan: </label> <br>     <!--ask user to input password-->
                 <input type="password" placeholder="Kesahkan kata lauan anda" id = "KataLaluanKesah" name="KataLaluanKesah" required><br>
                 <!-- An element to toggle between password visibility -->
                 <input type="checkbox" onclick="showKataLaluanKesah()">Show Password
-                <br>
-                <br>
+                <br><br>
+
                 <button type="submit" name="register-button"> Daftar </button>    <!--register button-->
                 <button type="reset" value="reset"> semula </button>     <!--reset the value if type wrong -->
                 
@@ -64,7 +58,6 @@
             <p style="color: white;"> . </p>   <!--to make it space down-->
         </div>
     </body>
-
 
     <script>
         function showKataLaluan() {
@@ -84,7 +77,5 @@
                 x.type = "password";
             }
         }
-
     </script>
-
 </html>

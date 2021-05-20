@@ -7,7 +7,6 @@
 ?>
 
 <!DOCTYPE html>
-
     <head>
         <title> Index Guru </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -18,7 +17,6 @@
         <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
         
         <script>
-
             window.onload = function() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const content = urlParams.get('content');
@@ -44,9 +42,6 @@
                 }
             };
         </script>
-        
-        
     </head>
-
 </html>
 

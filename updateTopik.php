@@ -7,12 +7,10 @@
 ?>
 
 <html>
-
     <head>
         <title> Update Topik </title>
         <link rel="stylesheet" href="mystyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
-        
 
         <div class="banner">
             <div style="background-color:  #dadede;">
@@ -29,9 +27,7 @@
             <div class="updateBalik">
                 <a href="indexGuru.php?content=collectionGuru"> Balik </a>   
             </div> 
-            <br>
-            <br>
-            <br>
+            <br><br><br>
         </div>
     </head>
 
@@ -44,6 +40,7 @@
 
     <script src="functionGuru.js"></script>
 
+    <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -54,7 +51,7 @@
 
     <body onload="reloadToCurrentZoom()">
         <?php
-       
+            // connect to mySQL database
             require "connectPHP.php";
            
             if(isset($_GET['IdTopik'])){
@@ -70,7 +67,6 @@
                 $tajuk = $rowTopik['tajuk'];
                 $subTopik = $rowTopik['subTopik'];
 
- 
                 // select all IdSoalan with that IdTopik
                 $checkIdSoalanSQL = "SELECT * FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) DESC, IdSoalan ASC";
                 $resultSoalan = mysqli_query($con,$checkIdSoalanSQL);         // query
@@ -136,13 +132,9 @@
                                     <option value='Application of Probability of Combined Events'></option>
                                     <option value='Financial Planning of combined Events'></option>
                                 </datalist>
-                            
                             </div>
-                            <br>
-                            <br>
+                            <br><br>
                 ";
-
-
 
                 for ($i=1; $i <= $totalNumberOfSoalan; $i++){       // to loop till the end of question
                     //every loop use new array
@@ -159,7 +151,6 @@
                         $rowSoalan = mysqli_fetch_assoc($resultSoalan);
                         $resultSetIdSoalan[] = $rowSoalan['IdSoalan'];
                         
-                        
                         $checkIdPilihanSQL = "SELECT * FROM PILIHAN WHERE IdSoalan = '".$resultSetIdSoalan[$j]."'";
                         $resultPilihan = mysqli_query($con,$checkIdPilihanSQL);         // query
                         $rowPilihan = mysqli_fetch_assoc($resultPilihan);
@@ -169,11 +160,9 @@
 
                         // echo($rowPilihan['jawapan']);
                         // echo($rowPilihan['pilihan']);
-                        
                     }
                     //print_r($resultSetJawapan);
                     //echo($resultSetPilihan[0]);
-
 
                     $soalan = $rowSoalan['soalan'];  // then only we get the soalan
                     //echo $soalan;
@@ -213,7 +202,6 @@
                         <div id = 'soalanForm$i'>
                             <hr>
                             <br>
-
                             <label for='soalan'> Soalan $i  :</label>
                             <input type='text' placeholder='Soalan $i' id='soalan$i' name='soalan$i' spellcheck='false' required value='$soalan' autocomplete='off'><br>
                             <br>
@@ -222,11 +210,7 @@
                                 <select name='jawapan$i' id='jawapan$i'>$html_options</select> 
                             
                             </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                            <br><br><br><br><br>
                             <div class='pilihanBox'>
                                 <div>
                                 <label for='pilihanA' style='float: left;'> pilihan A :</label>
@@ -256,8 +240,7 @@
                             </div>
                             <br>
                         </div>
-                    ";
-                            
+                    "; 
                 }
 
                 echo "
@@ -267,17 +250,12 @@
 
                         <!-- when clicked then add create quiz form below -->
                         <a name='add-question-button' onclick='tambahSoalan()'> Tambah (+) </a><br>
-                        <br>
-                        <br>
-                        <br>
+                        <br><br><br>
                         <a name='delete-question-button' onclick='deleteSoalan()'> Hapus (-) </a><br>
-                        <br>
-                        <br>
-                        <br>
+                        <br><br><br>
                         <button type='submit' name='update-quiz-button' onclick='updateSoalan()'> Ubah </button>
                         </form>
-                        <br>
-                        <br>
+                        <br><br>
                         <p style=color: white;'>.</P>
                     <div>
                     <div>";
@@ -310,20 +288,10 @@
                         aux.removeChild(deleteElement);
                         noSoalanCounter--; 
                     }
-
                     return false;
-                    
                 }
-
-                
-
                 </script>";
-         
-
-                // header('Location: ./indexGuru.php?content=collectionGuru');
-                // exit();
             }
-                
         ?>
     </body>
 </html>

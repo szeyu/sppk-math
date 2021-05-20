@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 
     <?php 
-        // require "process.php";
+        // connect to mySQL database
         require "connectPHP.php";
 
         $counter = "SELECT COUNT(IdTopik) FROM TOPIK";
@@ -26,7 +26,6 @@
         <link rel="stylesheet" href="mystyle.css">
         <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--to fit the content base on what device user use-->
-        
     </head>
 
     <!--Banner-->
@@ -35,10 +34,8 @@
             <p style="color: #dadede;">.</p>
             <h1 style="background-color:  #dadede;"> Ilmu Di Hujung Jari </h1>
             <h2 style="background-color:  #dadede;"> Matematik Tingkatan 4 (DLP) </h2>
-            
             <p style="color: #dadede;">.</p>
         </div>
-        
     </div>
 
     <!--Top navigation bar-->
@@ -50,8 +47,7 @@
         <!--log out button-->
         <div class="logOut">
             <a href="login.php" onclick="return confirm('Log Keluar?')"> Log Keluar </a>   
-        </div> 
-
+        </div>
         <!-- font size button -->
         <button id="increase-btn" class="increase-btn" onclick="increaseFontSize();"> + </button>
         <button id="decrease-btn" class="decrease-btn" onclick="decreaseFontSize();"> - </button>
@@ -59,6 +55,7 @@
 
     <script src="functionGuru.js"></script>
 
+        <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -116,33 +113,21 @@
                     <option value="Application of Probability of Combined Events"></option>
                     <option value="Financial Planning of combined Events"></option>
                 </datalist>
-                
-                <!-- <p style = "background-color: white;">.</p> -->
-
-            
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br>
                 <div>
                     <?php
-
                         require "connectPHP.php";
-
                         $selectDataFromTopik = "SELECT * FROM TOPIK ORDER BY LENGTH(IdTopik) DESC, IdTopik DESC";
                         $result = mysqli_query($con,$selectDataFromTopik);         // query
                     ?>
-                    
+
                     <table id='topikTable'>
                         <tr class='tableHeader'>
                             <th>IdTopik</th>
                             <th>Sub topik</th>
                             <th>Tajuk</th>
-                            <th>Tindakan</th>
-                            
-                        </tr>
-
-                         
+                            <th>Tindakan</th>   
+                        </tr>  
                     <?php 
                         while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results ?>
                             <tr>
@@ -150,23 +135,9 @@
                                 <td><?php echo $row['subTopik']; ?></td>
                                 <td><?php echo $row['tajuk']; ?></td>
                                 <td>
-                                    <?php echo '<button type="button" class="changeButton" name="change-button" onclick="updateTopik(\'' . $row['IdTopik'] . '\')"> Ubah </button>';
-                                    ?>
-                                    
-                                    <!-- <a href="indexGuru.php?change=<?php //echo $row['IdTopik']; ?>"
-                                        class="changeButton"> Ubah </a> -->                        
-                                    <?php echo '<button type="button" class="deleteButton" name="delete-button" onclick="deleteTopik(\'' . $row['IdTopik'] . '\')"> Padamkan </button>';
-                                    ?>
-                                    <!-- <a href="indexGuru.php?delete=<?php //echo $row['IdTopik']; ?>"
-                                        class="deleteButton"> Padamkan </a> -->
-
-                                    <?php
-                                    $IdTopik=$row['IdTopik'];
-                                    ?>
-
-                                    <?php //echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $IdTopik . '\')"> Info </button>';
-                                    ?>
-
+                                    <?php echo '<button type="button" class="changeButton" name="change-button" onclick="updateTopik(\'' . $row['IdTopik'] . '\')"> Ubah </button>';?>                
+                                    <?php echo '<button type="button" class="deleteButton" name="delete-button" onclick="deleteTopik(\'' . $row['IdTopik'] . '\')"> Padamkan </button>';?>
+                                    <?php$IdTopik=$row['IdTopik'];?>
 
                                     <?php 
                                         $countCompleted = "SELECT COUNT(IdRekod) FROM PEREKODAN WHERE IdTopik = '".$IdTopik."'";
@@ -174,12 +145,10 @@
                                         $rowNumComplete = mysqli_fetch_array($resultNumComplete);
                                         $numberOfCompleted = $rowNumComplete[0];
 
-
                                         $countNumberOfMurid = "SELECT COUNT(NoIC) FROM PENGGUNA WHERE peranan = 'murid'";
                                         $resultNumMurid = mysqli_query($con,$countNumberOfMurid);         // query
                                         $rowNumMurid = mysqli_fetch_array($resultNumMurid);
                                         $numberOfMurid = $rowNumMurid[0];
-
                                     ?>
                                     
                                     <?php if ($numberOfCompleted == $numberOfMurid){ ?>
@@ -190,20 +159,15 @@
                                     
                                     <p style="opacity:0;">.</p>
                                     <div class="container">
-                                    <p style="opacity:0;"> PP </p>
-                                    <div class="overlay">
-                                        <div class="text"><?php echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $IdTopik . '\')"> Info Lanjut</button>';?></div>
+                                        <p style="opacity:0;"> PP </p>
+                                        <div class="overlay">
+                                            <div class="text"><?php echo '<button type="button" class="infoButton" name="info-button" onclick="infoTopik(\'' . $IdTopik . '\')"> Info Lanjut</button>';?></div>
+                                        </div>
                                     </div>
-                                    </div>
-
-                                </td>
-                                
+                                </td>  
                             </tr>
                     <?php } ?>
-
                     </table>
-
-                        
                 </div>
                     
                 <script>
@@ -229,9 +193,7 @@
                                 }
                             }
                         }
-                    }
-
-                            
+                    }     
                 </script>
 
                 <script>
@@ -246,7 +208,6 @@
                         }else {
                             //do nothing
                         }
-                        
                     }
 
                     function updateTopik(id) {
@@ -258,17 +219,10 @@
                     }
                     
                 </script>
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br><br>
 
             </div>
             <br>
         </div>
-        
     </body>
-    
 </html>

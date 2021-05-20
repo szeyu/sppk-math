@@ -60,6 +60,7 @@
 
     <script src="functionGuru.js"></script>
 
+    <!-- dark mode js library -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
@@ -70,9 +71,7 @@
 
 
     <body class="checkGuru" onload="reloadToCurrentZoom()">
-    
         <h1 style="margin-left: 4.5%;"> Pantau Prestasi Murid </h1>
-
 
         <!-- put search bar for perekodan -->
         <!-- so can put perekodan table here -->
@@ -239,13 +238,9 @@
             <input type="text" name="search" id="searchMurid" onkeyup="filterMurid()" placeholder="Cari.." spellcheck="false">
             
             <div class = "pantauMuridContainer">
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br>
                 <h1 style="margin-left: 4.5%;"> Murid </h1>
                 <div style="overflow-x:auto;">
-                    
                     
                     <table id='muridTable'>
                         <tr class='tableHeader'>
@@ -253,10 +248,7 @@
                             <th>nama</th>
                             <th>NoTel</th>
                             <th>Tindakan</th>
-                            
                         </tr>
-
-                         
                     <?php 
                         while($rowMurid = mysqli_fetch_array($resultMurid)){   //Creates a loop to loop through murid ?>
                             <tr>
@@ -305,19 +297,15 @@
                             }
                         }
                     }
-                }
-
-                        
+                }    
             </script>
 
             <script>
                 function pantauPrestasi(id) {
                     window.location = 'pantauPrestasi.php?NoIC=' + id;
                 }
-                
             </script>
 
         <div>
     </body>
-    
 </html>
