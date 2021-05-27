@@ -137,7 +137,7 @@
                                 <td>
                                     <?php echo '<button type="button" class="changeButton" name="change-button" onclick="updateTopik(\'' . $row['IdTopik'] . '\')"> Ubah </button>';?>                
                                     <?php echo '<button type="button" class="deleteButton" name="delete-button" onclick="deleteTopik(\'' . $row['IdTopik'] . '\')"> Padamkan </button>';?>
-                                    <?php$IdTopik=$row['IdTopik'];?>
+                                    <?php $IdTopik=$row['IdTopik'];?>
 
                                     <?php 
                                         $countCompleted = "SELECT COUNT(IdRekod) FROM PEREKODAN WHERE IdTopik = '".$IdTopik."'";
