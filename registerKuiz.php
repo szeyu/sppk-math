@@ -206,8 +206,11 @@
                     mysqli_query($con, $addPilihanDToPilihan); // query
                 }
                 
-                echo '<script> alert("Soalan berjaya dimuat naik!"); </script>';
-                header('Location: ./indexGuru.php?content=createGuru');       // direct user to home page
+                echo '<script> 
+                alert("Soalan berjaya dimuat naik!"); 
+                window.location = "indexGuru.php?content=createGuru";
+                </script>';
+                //header('Location: ./indexGuru.php?content=createGuru');       // direct user to home page
                 exit();
             }
         ?>

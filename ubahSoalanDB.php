@@ -249,7 +249,11 @@
                     mysqli_query($con, $addPilihanDToPilihan); // query
                 }
                 
-                header('Location: ./indexGuru.php?content=collectionGuru');       // direct user to collectionGuru page
+                echo '<script> 
+                alert("Soalan berjaya diubah!"); 
+                window.location = "indexGuru.php?content=collectionGuru";
+                </script>';
+                //header('Location: ./indexGuru.php?content=collectionGuru');       // direct user to collectionGuru page
                 exit();
             }
         ?>

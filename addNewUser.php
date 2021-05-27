@@ -37,7 +37,7 @@
                 }
 
                 // select all with the NoIC and Password same with what user type in (to check whether alr exst or not)
-                $checkExistanceSQL = "SELECT * FROM PENGGUNA WHERE NoIC = '".$NoIC."'OR KataLaluan = '".$KataLaluan."' OR NoTel = '".$NoTel."' LIMIT 1";
+                $checkExistanceSQL = "SELECT * FROM PENGGUNA WHERE NoIC = '".$NoIC."' OR NoTel = '".$NoTel."' LIMIT 1";
 
                 $result = mysqli_query($con,$checkExistanceSQL);         // run the checkexist
 
@@ -52,8 +52,12 @@
                     $addDataToPengguna = "INSERT INTO PENGGUNA (NoIC, KataLaluan, peranan, NoTel, nama) VALUES ('".$NoIC."','".$KataLaluan."','".$perananAuto."','".$NoTel."', '".$nama."')";
 
                     mysqli_query($con, $addDataToPengguna);       //run addDataToPengguna
-                        
-                    header('Location: ./login.php');       // direct user to login page to login
+                    
+                    echo '<script> 
+                    alert("Terima Kasih kerana mendaftar dalam sistem ini. Sila log Masuk."); 
+                    window.location = "login.php";
+                    </script>';
+                    //header('Location: ./login.php');       // direct user to login page to login
                     exit();
                 }
             }
