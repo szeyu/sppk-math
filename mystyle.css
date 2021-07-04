@@ -600,7 +600,7 @@ div.logOut{
 }
 
 div.logOut a{
-    background-color: rgb(36, 104, 173);   /*button style*/
+    background-color: rgb(36, 104, 173);  
     color: #f2f2f2;
     padding: 14px 25px;
     margin: auto;
@@ -611,7 +611,7 @@ div.logOut a{
     transition: all 0.5s;
 }
 
-div.logOut a:hover{                /*thumbnail*/
+div.logOut a:hover{             
     opacity: 0.8;
 }
 
@@ -650,7 +650,7 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 
-.createGuruContainer input[type = text]{          /*input style*/
+.createGuruContainer input[type = text]{       
     width: 75%;
     padding: 12px 20px;
     display: inline-block;
@@ -663,7 +663,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 
 .createGuruContainer button{
-    background-color: rgb(54, 116, 179);            /*button style*/
+    background-color: rgb(54, 116, 179);            
     color: #f2f2f2;
     padding: 14px 25px;
     margin: 6px 4px;
@@ -678,12 +678,12 @@ div.logOut a:hover{                /*thumbnail*/
     transition: all 0.5s;
 }
 
-.createGuruContainer button:hover{                /*thumbnail*/
+.createGuruContainer button:hover{                
     opacity: 0.8;
 }
 
 .createGuruContainer a{
-    background-color: rgb(54, 116, 179);            /*button style*/
+    background-color: rgb(54, 116, 179);           
     color: #f2f2f2;
     padding: 14px 25px;
     margin: 6px 4px;
@@ -697,7 +697,7 @@ div.logOut a:hover{                /*thumbnail*/
     transition: all 0.5s;
 }
 
-.createGuruContainer a:hover{                /*thumbnail*/
+.createGuruContainer a:hover{               
     opacity: 0.8;
 }
 
@@ -720,9 +720,7 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 .pilihanBox input[type = text]{
-    margin-right: auto;
-    
-    
+    margin-right: auto; 
 }
 
 .jawapanBox{
@@ -749,6 +747,47 @@ div.logOut a:hover{                /*thumbnail*/
     padding-bottom: 5px;
     margin-top: 2px;
 }
+
+
+.pilih_fail button{
+    background-color: rgb(54, 116, 179);            
+    color: #f2f2f2;
+    padding: 16px 25px;
+    margin: 6px 4px;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    border-radius: 5px;
+    float: right;
+    margin-right: 5.5%;
+    text-align: center;
+    font-size: medium;
+    transition: all 0.5s;
+}
+
+.pilih_fail button:hover{               
+    opacity: 0.8;
+}
+
+.pilih_fail label{
+    font-size: 20px;
+    margin-left:58%;
+}
+
+.pilih_fail input[type = file]{
+    background-color: white;            
+    padding: 14px 25px;
+    margin: 6px 4px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 5px;
+    margin-left: 58%;
+    text-align: center;
+    font-size: medium;
+    transition: all 0.5s;
+}
+
 
 
 /*/////////////////// collection Guru ////////////////////*/
@@ -797,7 +836,7 @@ div.logOut a:hover{                /*thumbnail*/
 
 
 .deleteButton{
-    background-color: rgb(228, 81, 76);            /*button style*/
+    background-color: rgb(228, 81, 76);           
     color: #f2f2f2;
     padding: 12px 25px;
     border: none;
@@ -818,7 +857,7 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 .changeButton{
-    background-color: rgb(54, 116, 179);            /*button style*/
+    background-color: rgb(54, 116, 179);          
     color: #f2f2f2;
     padding: 12px 25px;
     border: none;
@@ -836,7 +875,7 @@ div.logOut a:hover{                /*thumbnail*/
 }
 
 .infoButton{
-    background-color: rgb(54, 179, 137);            /*button style*/
+    background-color: rgb(54, 179, 137);           
     color: #f2f2f2;
     padding: 12px 25px;
     border: none;
@@ -849,12 +888,9 @@ div.logOut a:hover{                /*thumbnail*/
     margin-top: 2%;
 }
 
-/* .infoButton:hover{
-    opacity: 0.75;
-} */
 
 .completedTask{
-    background-color: rgb(54, 179, 110);            /*button style*/
+    background-color: rgb(54, 179, 110);            
     color: #f2f2f2;
     padding: 12px 25px;
     border: none;
@@ -915,12 +951,12 @@ div.updateBalik{
 }
 
 
-div.updateBalik a:hover{                /*thumbnail*/
+div.updateBalik a:hover{                
     opacity: 0.8;
 }
 
 div .updateBalik a{
-    background-color: rgb(36, 104, 173);   /*button style*/
+    background-color: rgb(36, 104, 173);   
     color: #f2f2f2;
     padding: 14px 46px;
     margin: auto;
