@@ -243,9 +243,16 @@
 
                                 //get the subTopik and tajuk
                                 var rowContent = lines[1].split(",");
-                                var subTopik = document.getElementById("subTopik").value += rowContent[0];
-                                var tajuk = document.getElementById("tajuk").value += rowContent[1];
+                                var subTopik = document.getElementById("subTopik").value = rowContent[0];
+                                var tajuk = document.getElementById("tajuk").value = rowContent[1];
 
+
+                                // to clear all the empty soalan space until left soalan 1 space
+                                while (noSoalanCounter > 1){
+                                    var deleteElement = document.getElementById("soalanForm" + noSoalanCounter);
+                                    deleteElement.parentNode.removeChild(deleteElement);
+                                    noSoalanCounter--; 
+                                }
 
                                 // getting NoSoalan, soalan, pilihanA, pilihanB, pilihanC, pilihanD, jawapan
                                 // for id soalan 1 first
