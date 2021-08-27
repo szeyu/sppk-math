@@ -244,15 +244,7 @@
                 }
 
                 echo "
-                        <!-- add new soalan here -->
-                        <div id='soalanDitambah'></div>
-                        <br>
-
-                        <!-- when clicked then add create quiz form below -->
-                        <a name='add-question-button' onclick='tambahSoalan()'> Tambah (+) </a><br>
-                        <br><br><br>
-                        <a name='delete-question-button' onclick='deleteSoalan()'> Hapus (-) </a><br>
-                        <br><br><br>
+                        <br><br>
                         <button type='submit' name='update-quiz-button' onclick='updateSoalan()'> Ubah </button>
                         </form>
                         <br><br>
@@ -260,37 +252,6 @@
                     <div>
                     <div>";
 
-                echo "<script>     
-                
-                var noSoalan = 'soalan' + noSoalanCounter;
-                var down = document.getElementById('soalanDitambah');
-
-                // create <br> element
-                var br =document.createElement('br');
-
-                function tambahSoalan(){
-                    noSoalanCounter++;
-
-                    var divForm = document.createElement('div');
-                    divForm.innerHTML += \"<div id= 'soalanForm\" + noSoalanCounter +\"'><br><br><br><hr><br><label for='soalan'> Soalan \" +noSoalanCounter+\" :</label><input type='text' placeholder='Soalan \" +noSoalanCounter+\"' id='soalan\" +noSoalanCounter+\"' name='soalan\" +noSoalanCounter+\"' spellcheck='false' required><br><br><div class='jawapanBox'><label for='jawapan'> Jawapan :</label><select name='jawapan\" +noSoalanCounter+\"' id='jawapan\" +noSoalanCounter+\"'><option value='A'> A </option><option value='B'> B </option><option value='C'> C </option><option value='D'> D </option></select> </div><br><br><br><br><br><div class='pilihanBox'><div><label for='pilihanA' style=float: left;> pilihan A :</label></div><div><input type='text' placeholder='Pilihan A Soalan \" +noSoalanCounter+\"' id='pilihanA\" +noSoalanCounter+\"' name='pilihanA\" +noSoalanCounter+\"' spellcheck='false' required></div><div><label for='pilihanB' style=float: left;> pilihan B :</label></div><div><input type='text' placeholder='Pilihan B Soalan \" +noSoalanCounter+\"' id='pilihanB\" +noSoalanCounter+\"' name='pilihanB\" +noSoalanCounter+\"' spellcheck='false' required></div><div><label for='pilihanC' style=float: left;> pilihan C :</label></div><div><input type='text' placeholder='Pilihan C Soalan \" +noSoalanCounter+\"' id='pilihanC\" +noSoalanCounter+\"' name='pilihanC\" +noSoalanCounter+\"' spellcheck='false' required></div><div><label for='pilihanD' style=float: left;> pilihan D :</label></div><div><input type='text' placeholder='Pilihan D Soalan \" +noSoalanCounter+\"' id='pilihanD\" +noSoalanCounter+\"' name='pilihanD\" +noSoalanCounter+\"' spellcheck='false' required></div><br></div>\";
-                    document.getElementById('soalanDitambah').appendChild(divForm);
-
-                    return false;
-                }
-
-                function deleteSoalan(){
-
-                    //alert (noSoalanCounter);
-                    //last step is to subtract noSoalanCounter by 1
-                    if (noSoalanCounter > 1){
-                        var deleteElement = document.getElementById('soalanForm' + noSoalanCounter);
-                        var aux = deleteElement.parentNode;
-                        aux.removeChild(deleteElement);
-                        noSoalanCounter--; 
-                    }
-                    return false;
-                }
-                </script>";
             }
         ?>
     </body>
