@@ -19,8 +19,8 @@
                 $changeDataOfTopik = "UPDATE TOPIK SET tajuk='".$tajuk."', subTopik='".$subTopik."' WHERE IdTopik='".$IdTopik."'";
                 mysqli_query($con, $changeDataOfTopik);     // querry
 
-
-
+                // untuk tujuan recalculate markah
+                $jawapanBetul_urutan = "";
 
                 // select all IdSoalan with that IdTopik
                 $checkIdSoalanSQL = "SELECT IdSoalan FROM SOALAN WHERE IdTopik = '".$IdTopik."' ORDER BY LENGTH(IdSoalan) DESC, IdSoalan ASC";
@@ -42,6 +42,8 @@
                     $jawapanC = 0;
                     $jawapanD = 0;
 
+                    // cancatinate correct answer char
+                    $jawapanBetul_urutan = $jawapanBetul_urutan.$jawapan;
 
                     // determine which jawapan = 1
                     if ($jawapan == "A"){ 
@@ -126,6 +128,36 @@
                     mysqli_query($con, $changeDataOfPilihanD); // query
 
                 }
+
+
+                ///////////////////////////////////////////////////////////////////////////////////////
+                //     recalculate markah in perekodan (untuk murid yang sudah buat kuiz topik ini)
+                ///////////////////////////////////////////////////////////////////////////////////////
+
+                $selectPerekodan = "SELECT NoIC, jawapanMurid FROM PEREKODAN WHERE IdTopik = '".$IdTopik."'";
+                $resultPerekodan = mysqli_query($con,$selectPerekodan);         // query
+
+                // cek setiap murid yang sudah buat kuiz topik ini
+                while($rowPerekodan = mysqli_fetch_array($resultPerekodan)){
+
+                    // get their Jawapan
+                    $jawapanMurid = $rowPerekodan['jawapanMurid'];
+                    // get their NoIC
+                    $NoIC = $rowPerekodan['NoIC'];
+
+                    $correct = 0;
+
+                    for ($ans = 0; $ans < $noSoalan; $ans++){
+                        if ($jawapanBetul_urutan[ans] == $jawapanMurid[ans]){
+                            $correct++;
+                        }
+                    }
+
+                    $markah = ($correct/$noSoalan) * 100;
+                    $changeDataOfMarkah = "UPDATE PEREKODAN SET markah='".$markah."' WHERE NoIC='".$NoIC."' AND IdTopik = '".$IdTopik."'";
+                    mysqli_query($con, $changeDataOfMarkah);        // query
+                }
+
                 
                 
                 echo '<script> 
