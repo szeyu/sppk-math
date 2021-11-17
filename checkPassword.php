@@ -46,10 +46,20 @@
                         $_SESSION['nama'] = $row['nama'];
 
                         if($row['peranan'] == 'murid'){        // if peranan is murid, it will login as murid
-                            header('Location: ./indexMurid.php?content=homeMurid');
+                            echo "
+                            <script>
+                                alert('Login berjaya!');
+                                window.location.href = ('indexMurid.php?content=homeMurid')
+                            </script>";
+                            //header('Location: ./indexMurid.php?content=homeMurid');
                         }
                         else if ($row['peranan'] == 'guru'){            // if peranan is guru, it will login as guru
-                            header('Location: ./indexGuru.php?content=homeGuru');
+                            echo "
+                            <script>
+                                alert('Login berjaya!');
+                                window.location.href = ('indexGuru.php?content=homeGuru')
+                            </script>";
+                            //header('Location: ./indexGuru.php?content=homeGuru');
                         }
                     }
                     else{

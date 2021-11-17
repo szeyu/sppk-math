@@ -65,7 +65,7 @@
             <div class = "pilih_fail">
                 <label for="pilih_fail"> Pilih fail CSV: </label>
                 <input type="file" id="myFile">
-                <button onclick='processFile()'>Proses</button>
+                <button onclick='processFile(); alert("Soalan akan dimuat naik.");'>Proses</button>
             </div>
             <br>
 
